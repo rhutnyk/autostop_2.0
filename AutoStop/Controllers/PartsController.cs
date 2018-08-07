@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.OData;
@@ -6,9 +7,9 @@ using AutoStop.Models;
 
 namespace AutoStop.Controllers
 {
-    [EnableQuery(PageSize = 10)]
+    [EnableQuery(PageSize = 20)]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class PartsController : ODataController
+    public class PartsController : ApiController
     {
         WorkWithData data = new WorkWithData();
         
@@ -17,7 +18,8 @@ namespace AutoStop.Controllers
         {
             try
             {
-                return Ok(data.GetParts());
+                var result = data.LeftJoinTable(data.GetParts());
+                return Ok(result);
             }
             catch (Exception ex)
             {
@@ -43,7 +45,8 @@ namespace AutoStop.Controllers
         {
             try
             {
-                return Ok(data.GetByString(desc));
+                var result = data.LeftJoinTable(data.GetByString(desc));
+                return Ok(result);
             }
             catch (Exception ex)
             {
@@ -56,7 +59,8 @@ namespace AutoStop.Controllers
         {
             try
             {
-                return Ok(data.GetByNumber(number));
+                var result = data.LeftJoinTable(data.GetByNumber(number));
+                return Ok(result);
             }
             catch (Exception ex)
             {

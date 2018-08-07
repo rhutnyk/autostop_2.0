@@ -103,5 +103,21 @@ namespace AutoStop.Models
             }
         }
 
+
+        public IEnumerable<Analog> GetAllAnalogs()
+        {
+            return db.Analogs;
+        }
+
+
+        public IEnumerable<PartIsAnalog> LeftJoinTable (IEnumerable<Part> leftTable)
+        {
+            var c = leftTable.Count();
+            var result = leftTable.GroupJoin(GetAllAnalogs(), lang => lang.id, pers => pers.partId,
+               (lang, ps) => new PartIsAnalog { parts = lang, IsAnalog = ps.FirstOrDefault(), Count = c });
+
+            return result;
+        }
+
     }
 }
