@@ -1,13 +1,13 @@
-import React from 'react';
-import '../App.css';
+// import React from 'react';
+// import '../App.css';
 
 
-function Product() {
-    return (
-        <div id="res">   
-        </div>
-    );
-}
+// function Product() {
+//     return (
+//         <div id="res">   
+//         </div>
+//     );
+// }
 
 
-export default Product
+// export default Product

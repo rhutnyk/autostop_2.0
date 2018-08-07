@@ -1,56 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" type="text/css" href="w3.css">
-<link rel="stylesheet" href="fotorama.css">
-<!-- <link rel="stylesheet" href="<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">"> -->
-<script src="w3.js"></script>
-<script src="jquery.js"></script>
-<script src="fotorama.js"></script>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="w3.css">
+  <link rel="stylesheet" href="fotorama.css">
+  <!-- <link rel="stylesheet" href="<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">"> -->
+  <script src="w3.js"></script>
+  <script src="jquery.js"></script>
+  <script src="fotorama.js"></script>
+
 </head>
+
 <body>
- <!--header-->
-<div class="headerr row">
-    <div class="w3-col m3 w3-center meNu menu" >
-     <a href="#menu"><img src="image/LOGO.svg"></a>
-    </div> 
-    <div class="w3-col m6 w3-center meNu1 menu" >
-     <a href="#pronas"><i class="fa fa-id-card-o"></i> ПРО НАС</a>
-     <a href="#gale"><i class="fa fa-picture-o"></i> ГАЛЕРЕЯ</a>
-     <a href="#cont"><i class="fa fa-envelope"></i> КОНТАКТИ</a>
+  <!--header-->
+  <div class="headerr row">
+    <div class="w3-col m3 w3-center meNu menu">
+      <a href="#menu">
+        <img src="image/LOGO.svg">
+      </a>
     </div>
-        
-    <div class="w3-col m3 w3-center meNu1 menu">
-     <a href="#search" onclick="openNav0()"><i class="fa fa-search"></i> ПОШУК</a>
-    </div> 
-    <div class="boTo1 w3-col s2  w3-center menu" onclick="openNav()"><i class="fa fa-navicon"></i></div>
-     <div class="boTo w3-col s8  w3-center menu"><a href="#menu"><img src="image/LOGO.svg"></a></div>
-     <div class="boTo1 w3-col s2  w3-center menu" onclick="openNav0()"><i class="fa fa-search"></i></div>
-     
-</div>
-<!--header-->
-<!--open_closeNav-->
-<div id="mySidenav" class="sidenav menu">
-  <a href="#pronas" onclick="closeNav()"><i class="fa fa-id-card-o"></i> ПРО НАС</a>
-  <a href="#gale" onclick="closeNav()"><i class="fa fa-picture-o"></i> ГАЛЕРЕЯ</a>
-  <a href="#cont" onclick="closeNav()"><i class="fa fa-envelope"></i> КОНТАКТИ</a>
-  <a href="#search" onclick="closeNav(), openNav0()"><i class="fa fa-search"></i> ПОШУК</a>
-</div>
-<div>
-    
-<div id="mySidenav0" class="sidenav0">
-  <a href="javascript:void(1)" class="closebtn0" onclick="closeNav0()">&times;</a>
-  <div class="w3-container w3-padding-top w3-margin">
-  <div id="root"></div>
-  <!-- <form action="/action_page.php">
+    <div class="w3-col m6 w3-center meNu1 menu">
+      <a href="#pronas">
+        <i class="fa fa-id-card-o"></i> ПРО НАС</a>
+      <a href="#gale">
+        <i class="fa fa-picture-o"></i> ГАЛЕРЕЯ</a>
+      <a href="#cont">
+        <i class="fa fa-envelope"></i> КОНТАКТИ</a>
+    </div>
+
+    <div class="w3-col m3 w3-center meNu1 menu search-btn" onclick="openNav0()">
+      <!-- <a href="#search" onclick="openNav0()"> -->
+        <i class="fa fa-search"></i> ПОШУК
+      <!-- </a> -->
+    </div>
+    <div class="boTo1 w3-col s2  w3-center menu" onclick="openNav()">
+      <i class="fa fa-navicon"></i>
+    </div>
+    <div class="boTo w3-col s8  w3-center menu">
+      <a href="#menu">
+        <img src="image/LOGO.svg">
+      </a>
+    </div>
+    <div class="boTo1 w3-col s2  w3-center menu" onclick="openNav0()">
+      <i class="fa fa-search"></i>
+    </div>
+
+  </div>
+  <!--header-->
+  <!--open_closeNav-->
+  <div id="mySidenav" class="sidenav menu">
+    <a href="#pronas" onclick="closeNav()">
+      <i class="fa fa-id-card-o"></i> ПРО НАС</a>
+    <a href="#gale" onclick="closeNav()">
+      <i class="fa fa-picture-o"></i> ГАЛЕРЕЯ</a>
+    <a href="#cont" onclick="closeNav()">
+      <i class="fa fa-envelope"></i> КОНТАКТИ</a>
+    <a href="#search" onclick="closeNav(), openNav0()">
+      <i class="fa fa-search"></i> ПОШУК</a>
+  </div>
+  <div>
+
+    <div id="mySidenav0" class="sidenav0">
+      <a href="javascript:void(1)" class="closebtn0" onclick="closeNav0()">&times;</a>
+      <div class="w3-container w3-padding-top w3-margin">
+        <div id="root"></div>
+        <!-- <form action="/action_page.php">
    <p class="w3-text-white">Курс Євро:</p>
    
     <input type="text" id="fname" name="firstname" placeholder="30.00">
@@ -61,145 +83,178 @@
     <br><br>
     <input type="submit" value="Submit">
   </form> -->
-</div>
-</div>
-</div>
-<!--open_closeNav--> 
-    
-    <div id="menu" style="background: #121212;">
-       <div style="height: 60px;"></div>
-        <!--Slideshow-->
-        <div>
-<div id="bgMySlides">
- <div class="w3-display-container mySlides">
-  <img src="image/images%203.jpg" class="w3-animate-fading">
-  <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black w3-opacity w3-display-hover w3-panel  w3-container">
-    <div class="w3-animate-top w3-wide"><h1><img src="image/LOGO.svg" style="width: 400px"></h1></div>
-  </div>   
- </div>
- <div class="w3-display-container mySlides">
-  <img src="image/images%204.jpg" class="w3-animate-fading">
-  <div id="leftBox" class="w3-display-left w3-large w3-container w3-padding-16 w3-black w3-opacity w3-display-hover w3-panel w3-border w3-container">
-    <div class="w3-animate-right w3-wide"><h4>Завітавши до нас, Ви можете придбати оригінальні автозапчастини до французьких автомобілів </h4></div>
-  </div>   
- </div>
- <div class="w3-display-container mySlides">
-  <img src="image/images%205.jpg" class="w3-animate-fading">
-  <div  id="rightBox" class="w3-display-right w3-large w3-container w3-padding-16 w3-black w3-opacity w3-display-hover w3-panel w3-border w3-container">
-    <div class="w3-animate-left"><h4>Кваліфіковані продавці-консультанти допоможуть Вам не розгубитися серед великої кількості автозапчастин та підберуть вашому авто саме те, що потрібно.</h4></div>
-  </div> 
- </div>
-</div>
-<!--Slideshow-->
-   </div>
-    </div>
-    <div class="bgimg1" id="pronas">
-        <h2 class="w3-center w3-text-red proNas"><i class="fa fa-id-card-o"></i> ПРО НАС</h2>
-        <p class="proNas1">У 2009 році з напливом француських автомобілів на Український 
-ринок нами було прийнято рішеня про створення автоамагазину для комфортного обслуговування клієнтів 
-якісними автозапчастинами, до француських авто. На той час ми були оді з перших автомагазинів по 
-француських авто у Львові. Ця подія дала змогу нашим клієнтам в стислі терміни отримувати замовлення,
-та головне те що клієнти могли вибрати серед значної кількості брендів дорогих чи бюджетних.
-На сьогодні Автостоп налічує 10000 постійних клієнтів та понад 30000 товарів в наявності. Завітавши до нас, 
-ви можете придбати оригінальні автозапчастини до французьких автомобілів та іх замінники, а також моторні, 
-трансмісійні мастила та авто хімію. Крім того до ваших послуг стіл замовлень до корейських та японських автомобілів.
-Продаж гуртом та в роздріб. Широкий асортимент. Гнучкі ціни. Постійним клієнтам знижки. Найкоротші
-терміни замовлень. Доставка по місту. Запрошуємо до співпраці автосервіси, автомагазини. Будемо роді 
-бачити вас в числі наших клієнтів. З повагою колектив АВТОСТОП.</p>
-  <div class="w3-row w3-center infoo">
-    <div class="w3-half  w3-text-light-grey infooo">
-      <h2 class="w3-text-red">Олива моторна</h2>
-      <img src="image/oil.png">
-      <p>В залежності від призначення їх поділяють на оливи для дизельних двигунів, оливи для бензинових двигунів та універсальні моторні оливи, що призначені для змащування двигунів обох типів. Всі сучасні моторні оливи складаються з базових олив і присадок для покращення властивостей.</p>
-    </div>
-    <div class="w3-half  w3-text-light-grey infooo">
-      <h2 class="w3-text-red">Масляний фільтр</h2>
-       <img src="image/%D0%BC%D0%B0%D1%81%D0%BB%D1%8F%D0%BD%D1%8B%D0%B5%20%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0%20300x300%20(1).png">
-      <p>Масляний фільтр — фільтр, що призначений для видалення забруднень з моторних і трансмісійних олив, мастил або робочих рідин гідроприводів.</p>
-    </div>
-   <div class="w3-row w3-center"> 
-    <div class="w3-half  w3-text-light-grey infooo">
-      <h2 class="w3-text-red">Паливний фільтр</h2>
-      <img src="image/%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80-%D1%82%D0%BE%D0%BF%D0%BB%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9.png">
-      <p>Паливний фільтр — елемент конструкції паливної системи, що містить фільтрувальний елемент, розташований у паливній магістралі, призначений для затримання твердих часток у паливі, яке надходить до двигуна внутрішнього згоряння.</p>
-    </div>
-    <div class="w3-half  w3-text-light-grey infooo">
-      <h2 class="w3-text-red">Повітряний фільтр</h2>
-      <img src="image/%D0%B2%D0%BE%D0%B7%D0%B4%D1%83%D1%88%D0%BD%D1%8B%D0%B9-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80-%D1%81%D0%B8%D1%82%D1%80%D0%BE%D0%B5%D0%BD-%D1%814.png">
-      <p>Повітряний фільтр — фільтр для очищення повітря від завислих частинок в побуті та на виробництві.
-      Фільтри, які застосовуються для очистки газів, класифікують за різними ознаками: за формою фільтрувальних елементів, способом підводу запилених газів, формою корпусу, призначенню та ін.</p>
-    </div>
-   </div>
-  </div>
-    </div>
-    <div class="bgimg2" id="gale">
-    <h2 class="w3-center w3-text-red"><i class="fa fa-picture-o"></i> ГАЛЕРЕЯ</h2>
-    <div class="fotorama" data-nav="thumbs" data-loop="true" data-autoplay="true" data-arrows="false" data-transition="crossfade" data-width="100%" data-height="70%" data-thumbwidth="30px" data-thumbheight="30px">
-    <img src="image1/1200px-ElringKlinger-Logo.svg.png">
-    <img src="image1/20142431112429_kyb.png">
-    <img src="image1/2016-02-02-11-59-zf_cropped_80.png">
-    <img src="image1/21WdhIKqgNL.jpg">
-    <img src="image1/512.jpg">
-    <img src="image1/876979948_w640_h640_cid2154539_pid571361181-0a94e0f5.png">
-    <img src="image1/banner_contiTech_select.png">
-    <img src="image1/Bosch-logo.png">
-    <img src="image1/brembo%20(1).png">
-    <img src="image1/Brembo.png">
-    <img src="image1/Brembo_logo_symbol_red.png">
-    <img src="image1/champion.jpg">
-    <img src="image1/continental-ag-png-continental-ag-logo-png-2000.png">
-    <img src="image1/corteco-logo.png">
-    <img src="image1/delphi-logo.png">
-    <img src="image1/elring-logo.png">
-    <img src="image1/logo-schmitz.png">
-    <img src="image1/logo-elring.png">
-</div>    
-</div>
-    <div class="bgimg1 w3-text-grey" id="cont">
-      <h2 class="w3-center w3-text-red"><i class="fa fa-envelope"></i> КОНТАКТИ</h2> 
-      <div class="w3-row w3-center">
-    <div class="w3-half  w3-text-white">
-      <h3 class="w3-text-white">Наша адреса:</h3>
-      <div id="tell">
-        <i class="fa fa-map-marker" style="width:30px"></i> УКРАЇНА, ЛЬВІВ <br>
-        <i class="fa fa"></i> ВУЛ. НАУКОВА, 96<br>
-        <i class="fa fa-phone"></i> Тел: +3073-11-01-104<br>
-        <i class="fa fa-phone"></i> Тел: +3067-67-57-544<br>
-        <i class="fa fa-phone"></i> Тел: +3067-67-57-543<br>
-        <i class="fa fa-phone"></i> Тел: +308(032) 263-00-33<br>
-        <i class="fa fa-phone"></i> Тел: +308(032) 264-23-00<br>
-        <i class="fa fa-envelope"> </i> Email: petro.dutko@gmail.com<br>
       </div>
     </div>
-    <div id="lisst" class="w3-half  w3-text-grey">
-     <h3 class="w3-text-white">Написати листа</h3>
-      <div class="w3-container w3-padding-top w3-small">
-  <form action="/action_page.php">
-    <input class="w3-small" type="text" id="fname" name="firstname" placeholder="Name">
-    <input  class="w3-small" type="text" id="lname" name="lastname" placeholder="Mail">
-    <textarea  class="w3-small" id="subject" name="subject" placeholder="Write something..."></textarea>
-    <br>
-    <br>
-    <input type="submit" value="Submit" class="w3-small">
-  </form>
-</div>
-    </div> 
+  </div>
+  <!--open_closeNav-->
+
+  <div id="menu" style="background: #121212;">
+    <div style="height: 60px;"></div>
+    <!--Slideshow-->
+    <div>
+      <div id="bgMySlides">
+        <div class="w3-display-container mySlides">
+          <img src="image/images%203.jpg" class="w3-animate-fading">
+          <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black w3-opacity w3-display-hover w3-panel  w3-container">
+            <div class="w3-animate-top w3-wide">
+              <h1>
+                <img src="image/LOGO.svg" style="width: 400px">
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="w3-display-container mySlides">
+          <img src="image/images%204.jpg" class="w3-animate-fading">
+          <div id="leftBox" class="w3-display-left w3-large w3-container w3-padding-16 w3-black w3-opacity w3-display-hover w3-panel w3-border w3-container">
+            <div class="w3-animate-right w3-wide">
+              <h4>Завітавши до нас, Ви можете придбати оригінальні автозапчастини до французьких автомобілів </h4>
+            </div>
+          </div>
+        </div>
+        <div class="w3-display-container mySlides">
+          <img src="image/images%205.jpg" class="w3-animate-fading">
+          <div id="rightBox" class="w3-display-right w3-large w3-container w3-padding-16 w3-black w3-opacity w3-display-hover w3-panel w3-border w3-container">
+            <div class="w3-animate-left">
+              <h4>Кваліфіковані продавці-консультанти допоможуть Вам не розгубитися серед великої кількості автозапчастин та
+                підберуть вашому авто саме те, що потрібно.</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Slideshow-->
     </div>
-        <div class="w3-row w3-center" style="width:80%; margin: auto;">   
-        <div class="w3-grayscale" style="height: 300px">
-<div>
-  <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41198.50301773468!2d24.06696108416729!3d49.80662661396878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4bbcf56742c5a1ab!2z0JDQstGC0L7RgdGC0L7Qvw!5e0!3m2!1suk!2sua!4v1513073237487" width="100%" height="250px" frameborder="0" style="border:0" allowfullscreen>
-</iframe> -->
-</div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU"></script>
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script> -->
-    </div>      
+  </div>
+  <div class="bgimg1" id="pronas">
+    <h2 class="w3-center w3-text-red proNas">
+      <i class="fa fa-id-card-o"></i> ПРО НАС</h2>
+    <p class="proNas1">У 2009 році з напливом француських автомобілів на Український ринок нами було прийнято рішеня про створення автоамагазину
+      для комфортного обслуговування клієнтів якісними автозапчастинами, до француських авто. На той час ми були оді з перших
+      автомагазинів по француських авто у Львові. Ця подія дала змогу нашим клієнтам в стислі терміни отримувати замовлення,
+      та головне те що клієнти могли вибрати серед значної кількості брендів дорогих чи бюджетних. На сьогодні Автостоп налічує
+      10000 постійних клієнтів та понад 30000 товарів в наявності. Завітавши до нас, ви можете придбати оригінальні автозапчастини
+      до французьких автомобілів та іх замінники, а також моторні, трансмісійні мастила та авто хімію. Крім того до ваших
+      послуг стіл замовлень до корейських та японських автомобілів. Продаж гуртом та в роздріб. Широкий асортимент. Гнучкі
+      ціни. Постійним клієнтам знижки. Найкоротші терміни замовлень. Доставка по місту. Запрошуємо до співпраці автосервіси,
+      автомагазини. Будемо роді бачити вас в числі наших клієнтів. З повагою колектив АВТОСТОП.</p>
+    <div class="w3-row w3-center infoo">
+      <div class="w3-half  w3-text-light-grey infooo">
+        <h2 class="w3-text-red">Олива моторна</h2>
+        <img src="image/oil.png">
+        <p>В залежності від призначення їх поділяють на оливи для дизельних двигунів, оливи для бензинових двигунів та універсальні
+          моторні оливи, що призначені для змащування двигунів обох типів. Всі сучасні моторні оливи складаються з базових
+          олив і присадок для покращення властивостей.</p>
+      </div>
+      <div class="w3-half  w3-text-light-grey infooo">
+        <h2 class="w3-text-red">Масляний фільтр</h2>
+        <img src="image/%D0%BC%D0%B0%D1%81%D0%BB%D1%8F%D0%BD%D1%8B%D0%B5%20%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0%20300x300%20(1).png">
+        <p>Масляний фільтр — фільтр, що призначений для видалення забруднень з моторних і трансмісійних олив, мастил або робочих
+          рідин гідроприводів.</p>
+      </div>
+      <div class="w3-row w3-center">
+        <div class="w3-half  w3-text-light-grey infooo">
+          <h2 class="w3-text-red">Паливний фільтр</h2>
+          <img src="image/%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80-%D1%82%D0%BE%D0%BF%D0%BB%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9.png">
+          <p>Паливний фільтр — елемент конструкції паливної системи, що містить фільтрувальний елемент, розташований у паливній
+            магістралі, призначений для затримання твердих часток у паливі, яке надходить до двигуна внутрішнього згоряння.</p>
+        </div>
+        <div class="w3-half  w3-text-light-grey infooo">
+          <h2 class="w3-text-red">Повітряний фільтр</h2>
+          <img src="image/%D0%B2%D0%BE%D0%B7%D0%B4%D1%83%D1%88%D0%BD%D1%8B%D0%B9-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80-%D1%81%D0%B8%D1%82%D1%80%D0%BE%D0%B5%D0%BD-%D1%814.png">
+          <p>Повітряний фільтр — фільтр для очищення повітря від завислих частинок в побуті та на виробництві. Фільтри, які
+            застосовуються для очистки газів, класифікують за різними ознаками: за формою фільтрувальних елементів, способом
+            підводу запилених газів, формою корпусу, призначенню та ін.</p>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="bgimg2" id="gale">
+    <h2 class="w3-center w3-text-red">
+      <i class="fa fa-picture-o"></i> ГАЛЕРЕЯ</h2>
+    <div class="fotorama" data-nav="thumbs" data-loop="true" data-autoplay="true" data-arrows="false" data-transition="crossfade"
+      data-width="100%" data-height="70%" data-thumbwidth="30px" data-thumbheight="30px">
+      <img src="image1/1200px-ElringKlinger-Logo.svg.png">
+      <img src="image1/20142431112429_kyb.png">
+      <img src="image1/2016-02-02-11-59-zf_cropped_80.png">
+      <img src="image1/21WdhIKqgNL.jpg">
+      <img src="image1/512.jpg">
+      <img src="image1/876979948_w640_h640_cid2154539_pid571361181-0a94e0f5.png">
+      <img src="image1/banner_contiTech_select.png">
+      <img src="image1/Bosch-logo.png">
+      <img src="image1/brembo%20(1).png">
+      <img src="image1/Brembo.png">
+      <img src="image1/Brembo_logo_symbol_red.png">
+      <img src="image1/champion.jpg">
+      <img src="image1/continental-ag-png-continental-ag-logo-png-2000.png">
+      <img src="image1/corteco-logo.png">
+      <img src="image1/delphi-logo.png">
+      <img src="image1/elring-logo.png">
+      <img src="image1/logo-schmitz.png">
+      <img src="image1/logo-elring.png">
     </div>
-    <div class="w3-center w3-black">
+  </div>
+  <div class="bgimg1 w3-text-grey" id="cont">
+    <h2 class="w3-center w3-text-red">
+      <i class="fa fa-envelope"></i> КОНТАКТИ</h2>
+    <div class="w3-row w3-center">
+      <div class="w3-half  w3-text-white">
+        <h3 class="w3-text-white">Наша адреса:</h3>
+        <div id="tell">
+          <i class="fa fa-map-marker" style="width:30px"></i> УКРАЇНА, ЛЬВІВ
+          <br>
+          <i class="fa fa"></i> ВУЛ. НАУКОВА, 96
+          <br>
+          <i class="fa fa-phone"></i> Тел: +3073-11-01-104
+          <br>
+          <i class="fa fa-phone"></i> Тел: +3067-67-57-544
+          <br>
+          <i class="fa fa-phone"></i> Тел: +3067-67-57-543
+          <br>
+          <i class="fa fa-phone"></i> Тел: +308(032) 263-00-33
+          <br>
+          <i class="fa fa-phone"></i> Тел: +308(032) 264-23-00
+          <br>
+          <i class="fa fa-envelope"> </i> Email: petro.dutko@gmail.com
+          <br>
+        </div>
+      </div>
+      <div id="lisst" class="w3-half ">
+          <div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41198.50301773468!2d24.06696108416729!3d49.80662661396878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4bbcf56742c5a1ab!2z0JDQstGC0L7RgdGC0L7Qvw!5e0!3m2!1suk!2sua!4v1513073237487"
+                width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen>
+              </iframe>
+            </div>
+        <!-- <h3 class="w3-text-white">Написати листа</h3>
+        <div class="w3-container w3-padding-top w3-small">
+          <form action="/action_page.php">
+            <input class="w3-small" type="text" id="fname" name="firstname" placeholder="Name">
+            <input class="w3-small" type="text" id="lname" name="lastname" placeholder="Mail">
+            <textarea class="w3-small" id="subject" name="subject" placeholder="Write something..."></textarea>
+            <br>
+            <br>
+            <input type="submit" value="Submit" class="w3-small">
+          </form>
+        </div> -->
+      </div>
+    </div>
+    <!-- <div class="w3-row w3-center" style="width:80%; margin: auto;"> -->
+      <!-- <div class="w3-grayscale" style="height: 300px"> -->
+        <!-- <div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41198.50301773468!2d24.06696108416729!3d49.80662661396878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4bbcf56742c5a1ab!2z0JDQstGC0L7RgdGC0L7Qvw!5e0!3m2!1suk!2sua!4v1513073237487"
+            width="100%" height="250px" frameborder="0" style="border:0" allowfullscreen>
+          </iframe>
+        </div> -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU"></script>
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script> -->
+      <!-- </div> -->
+    <!-- </div> -->
+  </div>
+  <div class="w3-center w3-black">
     <p class="w3-text-grey" style="padding: 0; margin: 0">made by</p>
-    <a href="http://bitsorchestra.com/"><img src="image/logoBits.png" style="height: 50px; margin: auto; padding-bottom: 20px;"></a>
-    </div>
-    <script src="main.js"></script>
+    <a href="http://bitsorchestra.com/">
+      <img src="image/logoBits.png" style="height: 50px; margin: auto; padding-bottom: 20px;">
+    </a>
+  </div>
+  <script src="main.js"></script>
 </body>
+
 </html>

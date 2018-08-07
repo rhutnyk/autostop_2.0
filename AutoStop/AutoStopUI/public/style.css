@@ -2,6 +2,11 @@ body{
     background-color: black;
 }
 
+.search-btn{
+    cursor: pointer;
+    color: red;
+}
+
 /*header*/
 .headerr {
 z-index: 1;
@@ -26,6 +31,9 @@ padding-right: 10px;
     color: white; 
 }
 @media screen and (max-width: 700px) {
+    .search-btn{
+        display: none;
+    }
     .meNu1{
     padding-top:0px
     }
@@ -63,7 +71,7 @@ padding-right: 10px;
     top: 0;
     left: 0;
     background-color: #111;
-    opacity: 0.9;
+    /* opacity: 0.9; */
     overflow-x: hidden;
     transition: 1.0s;
     padding-top: 60px;
