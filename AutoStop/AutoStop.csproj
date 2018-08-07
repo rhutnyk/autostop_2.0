@@ -208,6 +208,7 @@
     <Compile Include="Models\Model1.cs" />
     <Compile Include="Models\ParseXml.cs" />
     <Compile Include="Models\Part.cs" />
+    <Compile Include="Models\PartIsAnalog.cs" />
     <Compile Include="Models\WorkWithData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -16028,8 +16029,7 @@
     <Content Include="AutoStopUI\public\w3.css" />
     <Content Include="AutoStopUI\public\w3.js" />
     <Content Include="AutoStopUI\src\App.css" />
-    <Content Include="AutoStopUI\src\App.js" />
-    <Content Include="AutoStopUI\src\App.test.js" />
+    <Content Include="AutoStopUI\src\App.jsx" />
     <Content Include="AutoStopUI\src\components\Euro_exchange.jsx" />
     <Content Include="AutoStopUI\src\components\Product.jsx" />
     <Content Include="AutoStopUI\src\components\Search.jsx" />
@@ -16037,6 +16037,7 @@
     <Content Include="AutoStopUI\src\index.js" />
     <Content Include="AutoStopUI\src\logo.svg" />
     <Content Include="AutoStopUI\src\registerServiceWorker.js" />
+    <Content Include="AutoStopUI\src\services\DataService.jsx" />
     <Content Include="Parts.xml" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
@@ -22773,7 +22774,6 @@
     <Content Include="AutoStopUI\package.json" />
     <Content Include="AutoStopUI\public\manifest.json" />
     <Content Include="AutoStopUI\README.md" />
-    <Content Include="AutoStopUI\website.publishproj" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
