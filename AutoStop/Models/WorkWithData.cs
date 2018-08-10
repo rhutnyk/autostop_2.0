@@ -8,22 +8,30 @@ namespace AutoStop.Models
     public class WorkWithData
     {
         Model1 db = new Model1();
-        
 
-        public IEnumerable<Part> GetParts()
+
+        //public IEnumerable<Part> GetParts()
+        //{
+        //    try
+        //    {
+        //        var parts = db.Parts;
+        //        return parts;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
+
+
+        public PartsResponce GetParts(int skip, int take)
         {
-            try
-            {
-                var parts = db.Parts;
-                return parts;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            var response = CreatePartsResponse(db.Parts, skip, take);
+
+            return response;
         }
 
-
+        //???? need to count
         public IEnumerable<Part> GetAnalog(int id)
         {
             try
@@ -32,6 +40,7 @@ namespace AutoStop.Models
                           join a in db.Analogs on p.id equals a.analogId
                           where a.partId == id
                           select p;
+
 
                 return res;
             }
@@ -42,13 +51,14 @@ namespace AutoStop.Models
         }
 
 
-        public IEnumerable<Part> GetByString(string str)
+        public PartsResponce GetByDescription(string str, int skip, int take)
         {
             try
             {
                 var filtered = db.Parts.Where(a => a.Description.IndexOf(str) > -1);
-                
-                return filtered;
+                var responce = CreatePartsResponse(filtered, skip, take);
+
+                return responce;
             }
             catch (Exception ex)
             {
@@ -57,13 +67,14 @@ namespace AutoStop.Models
         }
         
 
-        public IEnumerable<Part> GetByNumber(string number)
+        public PartsResponce GetByNumber(string number, int skip, int take)
         {
             try
             {
                 var filtered = db.Parts.Where(a => a.Number.Replace("-", "").Replace(".", "").Replace(" ","").IndexOf(number) > -1);
+                var responce = CreatePartsResponse(filtered, skip, take);
 
-                return filtered;
+                return responce;
             }
             catch (Exception ex)
             {
@@ -112,12 +123,23 @@ namespace AutoStop.Models
 
         public IEnumerable<PartIsAnalog> LeftJoinTable (IEnumerable<Part> leftTable)
         {
-            var c = leftTable.Count();
-            var result = leftTable.GroupJoin(GetAllAnalogs(), lang => lang.id, pers => pers.partId,
-               (lang, ps) => new PartIsAnalog { Parts = lang, IsAnalog = ps.FirstOrDefault(), Count = c });
+
+            var result = leftTable.GroupJoin(db.Analogs, lang => lang.id, pers => pers.partId,
+               (lang, ps) => new PartIsAnalog { Part = lang, IsAnalog = ps.FirstOrDefault() == null ? false : true });
 
             return result;
         }
+
+
+        //create parts with count and isAnalog
+        private PartsResponce CreatePartsResponse(IQueryable<Part> parts, int skip, int take)
+        {
+            var count = parts.Count();
+            var tRes = parts.OrderBy(a => a.id).Skip(skip).Take(take);
+            var result = LeftJoinTable(tRes);
+            return new PartsResponce { Count = count, Items = result };
+        }
+
 
     }
 }

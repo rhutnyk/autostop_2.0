@@ -1,23 +1,25 @@
 ﻿using System;
 using System.Web.Http;
 using System.Web.Http.Cors;
-using System.Web.Http.OData;
 using AutoStop.Models;
 
 namespace AutoStop.Controllers
 {
-    [EnableQuery(PageSize = 20)]
+    //[EnableQuery(PageSize = 20)]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class PartsController : ApiController
     {
+        const int TakeDefault = 20;
         WorkWithData data = new WorkWithData();
 
-
-        public IHttpActionResult Get()
+        
+        public IHttpActionResult Get(int skip = 0, int take = 20)
         {
             try
             {
-                var result = data.LeftJoinTable(data.GetParts());
+                //var result = data.LeftJoinTable(data.GetParts());
+                var result = data.GetParts(skip, take);
+
                 return Ok(result);
             }
             catch (Exception ex)
@@ -26,8 +28,8 @@ namespace AutoStop.Controllers
             }
         }
 
-
-        public IHttpActionResult Get(int analog)
+        //??? need count
+        public IHttpActionResult Get(int analog, int skip = 0, int take = TakeDefault)
         {
             try
             {
@@ -40,11 +42,11 @@ namespace AutoStop.Controllers
         }
 
 
-        public IHttpActionResult Get(string desc)
+        public IHttpActionResult Get(string desc, int skip = 0, int take = TakeDefault)
         {
             try
             {
-                var result = data.LeftJoinTable(data.GetByString(desc));
+                var result = data.GetByDescription(desc, skip, take);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -54,11 +56,11 @@ namespace AutoStop.Controllers
         }
 
 
-        public IHttpActionResult Get(string number, string str = null)
+        public IHttpActionResult GetNum(string number, int skip = 0, int take = TakeDefault)
         {
             try
             {
-                var result = data.LeftJoinTable(data.GetByNumber(number));
+                var result = data.GetByNumber(number, skip, take);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -70,7 +72,14 @@ namespace AutoStop.Controllers
         
         public IHttpActionResult GetCurrency(string rate)
         {
-            return Ok(new { currency = "euro", rate = ParseXml.GetCurrencyRate() });
+            try
+            {
+                return Ok(new { currency = "euro", rate = ParseXml.GetCurrencyRate() });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

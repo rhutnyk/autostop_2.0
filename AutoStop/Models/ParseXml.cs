@@ -54,7 +54,7 @@ namespace AutoStop.Models
                 var analogs = ANet.InsertAnalogToDb(GetAnalogFromXml());
                 log.Message += analogs;
 
-                GetExchangeRate();
+                GetExchangeRateFromXml();
             }
             catch (Exception ex)
             {
@@ -135,7 +135,7 @@ namespace AutoStop.Models
         }
 
 
-        private static void GetExchangeRate()
+        private static void GetExchangeRateFromXml()
         {
             xEmp = XElement.Load(fileExchange);
             ExchangeRate = xEmp.Element("Euro_rate").Value;
@@ -143,9 +143,12 @@ namespace AutoStop.Models
 
 
         //public method get currency
-
         public static string GetCurrencyRate()
         {
+            if(ExchangeRate == null)
+            {
+                GetExchangeRateFromXml();
+            }
             return ExchangeRate;
         }
 

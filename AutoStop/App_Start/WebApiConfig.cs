@@ -16,11 +16,11 @@ namespace AutoStop
             config.EnableCors();
 
             ODataModelBuilder builder = new ODataConventionModelBuilder();
-            builder.EntitySet<Part>("parts");
+            //builder.EntitySet<Part>("parts");
             builder.EntitySet<Log>("parser");
-           
+
             config.Routes.MapODataServiceRoute("api", "api", builder.GetEdmModel());
-            
+
             // Web API routes
             config.MapHttpAttributeRoutes();
 
