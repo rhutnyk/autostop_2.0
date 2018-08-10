@@ -10,29 +10,16 @@ namespace AutoStop.Models
         Model1 db = new Model1();
 
 
-        //public IEnumerable<Part> GetParts()
-        //{
-        //    try
-        //    {
-        //        var parts = db.Parts;
-        //        return parts;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
 
-
-        public PartsResponce GetParts(int skip, int take)
+        public PartsResponse GetParts(int skip, int take)
         {
             var response = CreatePartsResponse(db.Parts, skip, take);
 
             return response;
         }
 
-        //???? need to count
-        public IEnumerable<Part> GetAnalog(int id)
+        
+        public PartsResponse GetAnalog(int id, int skip, int take)
         {
             try
             {
@@ -41,8 +28,9 @@ namespace AutoStop.Models
                           where a.partId == id
                           select p;
 
+                var result = CreatePartsResponse(res, skip, take);
 
-                return res;
+                return result;
             }
             catch (Exception ex)
             {
@@ -51,14 +39,15 @@ namespace AutoStop.Models
         }
 
 
-        public PartsResponce GetByDescription(string str, int skip, int take)
+        public PartsResponse GetByDescription(string str, int skip, int take)
         {
             try
             {
-                var filtered = db.Parts.Where(a => a.Description.IndexOf(str) > -1);
-                var responce = CreatePartsResponse(filtered, skip, take);
+                var desc = str.Replace(".", "").Replace("-", "").Replace(",", "").Replace(" ", "");
+                var filtered = db.Parts.Where(a => a.Description.IndexOf(desc) > -1);
+                var response = CreatePartsResponse(filtered, skip, take);
 
-                return responce;
+                return response;
             }
             catch (Exception ex)
             {
@@ -67,14 +56,15 @@ namespace AutoStop.Models
         }
         
 
-        public PartsResponce GetByNumber(string number, int skip, int take)
+        public PartsResponse GetByNumber(string number, int skip, int take)
         {
             try
             {
-                var filtered = db.Parts.Where(a => a.Number.Replace("-", "").Replace(".", "").Replace(" ","").IndexOf(number) > -1);
-                var responce = CreatePartsResponse(filtered, skip, take);
+                var num = number.Replace(".", "").Replace("-", "").Replace(",", "").Replace(" ", "");
+                var filtered = db.Parts.Where(a => a.Number.Replace("-", "").Replace(".", "").Replace(" ","").IndexOf(num) > -1);
+                var response = CreatePartsResponse(filtered, skip, take);
 
-                return responce;
+                return response;
             }
             catch (Exception ex)
             {
@@ -117,29 +107,48 @@ namespace AutoStop.Models
 
         public IEnumerable<Analog> GetAllAnalogs()
         {
-            return db.Analogs;
+            try
+            {
+                return db.Analogs;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
 
         public IEnumerable<PartIsAnalog> LeftJoinTable (IEnumerable<Part> leftTable)
         {
+            try
+            {
+                var result = leftTable.GroupJoin(db.Analogs, lang => lang.id, pers => pers.partId,
+                   (lang, ps) => new PartIsAnalog { Part = lang, IsAnalog = ps.FirstOrDefault() == null ? false : true });
 
-            var result = leftTable.GroupJoin(db.Analogs, lang => lang.id, pers => pers.partId,
-               (lang, ps) => new PartIsAnalog { Part = lang, IsAnalog = ps.FirstOrDefault() == null ? false : true });
-
-            return result;
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
 
         //create parts with count and isAnalog
-        private PartsResponce CreatePartsResponse(IQueryable<Part> parts, int skip, int take)
+        private PartsResponse CreatePartsResponse(IQueryable<Part> parts, int skip, int take)
         {
-            var count = parts.Count();
-            var tRes = parts.OrderBy(a => a.id).Skip(skip).Take(take);
-            var result = LeftJoinTable(tRes);
-            return new PartsResponce { Count = count, Items = result };
+            try
+            {
+                var count = parts.Count();
+                var tRes = parts.OrderBy(a => a.id).Skip(skip).Take(take);
+                var result = LeftJoinTable(tRes);
+                return new PartsResponse { Count = count, Items = result };
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-
 
     }
 }

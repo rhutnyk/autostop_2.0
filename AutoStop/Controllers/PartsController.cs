@@ -5,7 +5,6 @@ using AutoStop.Models;
 
 namespace AutoStop.Controllers
 {
-    //[EnableQuery(PageSize = 20)]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class PartsController : ApiController
     {
@@ -17,7 +16,6 @@ namespace AutoStop.Controllers
         {
             try
             {
-                //var result = data.LeftJoinTable(data.GetParts());
                 var result = data.GetParts(skip, take);
 
                 return Ok(result);
@@ -28,12 +26,14 @@ namespace AutoStop.Controllers
             }
         }
 
-        //??? need count
+        
         public IHttpActionResult Get(int analog, int skip = 0, int take = TakeDefault)
         {
             try
             {
-                return Ok(data.GetAnalog(analog));
+                var result = data.GetAnalog(analog, skip, take);
+
+                return Ok(result);
             }
             catch (Exception ex)
             {
