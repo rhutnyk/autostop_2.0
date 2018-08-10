@@ -11,8 +11,10 @@ namespace AutoStop.Models
     public static class ParseXml
     {
         static bool isStart = false;
+        static string ExchangeRate;
         static WorkWithData db;
         static readonly string file = HostingEnvironment.MapPath(@"~/Parts.xml");
+        static readonly string fileExchange = HostingEnvironment.MapPath(@"~/Misc_Data.xml");
         static XElement xEmp;
         static XNamespace ns;
 
@@ -38,18 +40,21 @@ namespace AutoStop.Models
             Log log = new Log();
             try
             {
+                
                 log.LogDate = DateTime.Now;
                 log.FileName = Path.GetFileName(file);
 
                 xEmp = XElement.Load(file);
                 ns = xEmp.GetDefaultNamespace();
-                
+
                 log.FileName += " (Size:" + new FileInfo(file).Length / 1024 + "KB)";
 
                 var parts = ANet.InsertPartToDb(GetPartsFromXml());
                 log.Message = parts;
                 var analogs = ANet.InsertAnalogToDb(GetAnalogFromXml());
                 log.Message += analogs;
+
+                GetExchangeRate();
             }
             catch (Exception ex)
             {
@@ -127,6 +132,21 @@ namespace AutoStop.Models
             {
                 throw ex;
             }
+        }
+
+
+        private static void GetExchangeRate()
+        {
+            xEmp = XElement.Load(fileExchange);
+            ExchangeRate = xEmp.Element("Euro_rate").Value;
+        }
+
+
+        //public method get currency
+
+        public static string GetCurrencyRate()
+        {
+            return ExchangeRate;
         }
 
     }

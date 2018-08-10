@@ -16038,6 +16038,7 @@
     <Content Include="AutoStopUI\src\logo.svg" />
     <Content Include="AutoStopUI\src\registerServiceWorker.js" />
     <Content Include="AutoStopUI\src\services\DataService.jsx" />
+    <Content Include="Misc_Data.xml" />
     <Content Include="Parts.xml" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">

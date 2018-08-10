@@ -10,7 +10,7 @@ namespace AutoStop.Models
     public class PartIsAnalog
     {
        public int Count { get; set; } 
-       public Part parts { get; set; }
+       public Part Parts { get; set; }
        public Analog IsAnalog { get; set; } 
 
     }

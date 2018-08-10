@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.OData;
@@ -12,7 +11,7 @@ namespace AutoStop.Controllers
     public class PartsController : ApiController
     {
         WorkWithData data = new WorkWithData();
-        
+
 
         public IHttpActionResult Get()
         {
@@ -27,7 +26,7 @@ namespace AutoStop.Controllers
             }
         }
 
-        
+
         public IHttpActionResult Get(int analog)
         {
             try
@@ -40,7 +39,7 @@ namespace AutoStop.Controllers
             }
         }
 
-        
+
         public IHttpActionResult Get(string desc)
         {
             try
@@ -54,7 +53,7 @@ namespace AutoStop.Controllers
             }
         }
 
-        
+
         public IHttpActionResult Get(string number, string str = null)
         {
             try
@@ -66,6 +65,12 @@ namespace AutoStop.Controllers
             {
                 return BadRequest(ex.Message);
             }
+        }
+
+        
+        public IHttpActionResult GetCurrency(string rate)
+        {
+            return Ok(new { currency = "euro", rate = ParseXml.GetCurrencyRate() });
         }
     }
 }

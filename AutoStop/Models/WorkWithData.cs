@@ -114,7 +114,7 @@ namespace AutoStop.Models
         {
             var c = leftTable.Count();
             var result = leftTable.GroupJoin(GetAllAnalogs(), lang => lang.id, pers => pers.partId,
-               (lang, ps) => new PartIsAnalog { parts = lang, IsAnalog = ps.FirstOrDefault(), Count = c });
+               (lang, ps) => new PartIsAnalog { Parts = lang, IsAnalog = ps.FirstOrDefault(), Count = c });
 
             return result;
         }
