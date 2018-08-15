@@ -69,7 +69,7 @@ namespace AutoStop.Models
                     db = new WorkWithData();
                     db.AddLog(log);
                     
-                }catch(Exception ex) { }
+                }catch(Exception ex) { log.Message = ex.Message; }
             }
         }
 
