@@ -70,6 +70,7 @@ padding-right: 10px;
 /*open_closeNav*/
 .sidenav {
     height: 100%;
+    margin-top: 60px;
     width: 0;
     position: fixed;
     z-index: 1;
@@ -96,17 +97,19 @@ padding-right: 10px;
 }
 .sidenav .closebtn {
     position: absolute;
-    top: 0;
+    top: -6px;
     right: 0;
-    font-size: 36px;
-    padding-right: 30px
+    font-size: 20px;
+    padding-right: 30px;
 }
+
 @media screen and (max-height: 700px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }  
 .sidenav0 {
     height: 100%;
+    margin-top: 60px;
     width: 0;
     position: fixed;
     z-index: 1;
