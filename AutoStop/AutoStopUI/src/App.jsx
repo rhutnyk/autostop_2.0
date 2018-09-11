@@ -74,7 +74,7 @@ export default class App extends React.Component {
     this.setState({ showLoading: true })
     this.dataSvc.filter(this.state.number, this.state.keyword)
       .then(res => {
-        this.lengthData = res[0].Count;
+        this.lengthData = res.Count;
         this.setState({ data: res, showLoading: false });
       })
       .catch(() => this.setState({ showLoading: false }))
@@ -99,7 +99,8 @@ export default class App extends React.Component {
   }
 
   render() {
-
+  console.log(this.state.data);
+  
     return (
       <div className="App">
         <Loading show={this.state.showLoading} />
@@ -120,7 +121,7 @@ export default class App extends React.Component {
 
         <div id="res">
           {
-            this.state.data.length > 0 ?
+            this.state.data.Items && this.state.data.Items.length > 0 ?
               <table className="table table-bordered">
                 <thead>
                   <tr className="table-header">
@@ -133,14 +134,15 @@ export default class App extends React.Component {
                 </thead>
                 <tbody>
                   {
-                    this.state.data.map((element, i) =>
+                    this.state.data.Items.map((curItem, i) =>
                       <React.Fragment key={i}>
+                      
                         <tr className={this.state.positionAnalog === i ? 'analogs red' : ''}>
-                          <td> {element.parts.Number} </td>
-                          <td> {element.parts.Description} </td>
-                          <td> {element.parts.Qty} </td>
-                          <td> {element.parts.Price} </td>
-                          <td className={`analog-icon ${element.IsAnalog? '': 'disable'}`} onClick={() => this.showAnalog(element, i)}>
+                          <td> {curItem.Part.Number} </td>
+                          <td> {curItem.Part.Description} </td>
+                          <td> {curItem.Part.Qty} </td>
+                          <td> {curItem.Part.Price} </td>
+                          <td className={`analog-icon ${curItem.IsAnalog? '': 'disable'}`} onClick={() => this.showAnalog(curItem, i)}>
                             <i className="fa fa-clone" aria-hidden="true" title="Аналоги" />
                           </td>
                         </tr>
