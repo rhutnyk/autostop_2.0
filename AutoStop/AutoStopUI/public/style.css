@@ -308,8 +308,8 @@ input[type=submit]:hover {
 #cont .w3-row{
     width:80%;
     margin: auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 #cont .w3-half {
     height: 350px;
