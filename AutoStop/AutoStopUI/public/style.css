@@ -1,6 +1,10 @@
 body{
     background-color: black;
 }
+.contt {
+    position: fixed;
+    overflow-y: scroll;
+}
 
 .search-btn{
     cursor: pointer;
