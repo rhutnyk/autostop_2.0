@@ -1,7 +1,7 @@
 //open_closeNav
 
 function openNav() {
-    window.addEventListener('scroll', noscroll);
+    // window.addEventListener('scroll', noscroll);
     if (screen.width < 600) {
         document.getElementById("co2").classList.add = "contt";
         document.getElementById("mySidenav").style.width = "100%";
@@ -12,19 +12,19 @@ function openNav() {
 }
 
 function closeNav() {
-    window.removeEventListener('scroll', noscroll);
+    // window.removeEventListener('scroll', noscroll);
     document.getElementById("mySidenav").style.width = "0";
 }
 
 
-function noscroll() {
-    window.scrollTo(0, 0);
-}
+// function noscroll() {
+//     window.scrollTo(0, 0);
+// }
 
 
 
 function openNav0() {
-    window.addEventListener('scroll', noscroll);
+    // window.addEventListener('scroll', noscroll);
     if (screen.width < 600) {
         document.getElementById("mySidenav0").style.width = "100%";
     } else {
@@ -34,7 +34,7 @@ function openNav0() {
 }
 
 function closeNav0() {
-    window.removeEventListener('scroll', noscroll);
+    // window.removeEventListener('scroll', noscroll);
     document.getElementById("mySidenav0").style.width = "0";
 }
 //open_closeNav
