@@ -38,12 +38,12 @@
         <i class="fa fa-envelope"></i> КОНТАКТИ</a>
     </div>
 
-    <div class="w3-col m3 w3-center meNu1 menu search-btn" onclick="openNav0()">
+    <div id="nawOpenJq" class="w3-col m3 w3-center meNu1 menu search-btn" onclick="openNav0()">
       <!-- <a href="#search" onclick="openNav0()"> -->
         <i class="fa fa-search"></i> ПОШУК
       <!-- </a> -->
     </div>
-    <div class="boTo1 w3-col s2  w3-center menu" onclick="openNav()">
+    <div id="closeLeft" class="boTo1 w3-col s2  w3-center menu" onclick="openNav()">
       <i class="fa fa-navicon"></i>
     </div>
     <div class="boTo w3-col s8  w3-center menu">
@@ -51,7 +51,7 @@
         <img src="image/LOGO.svg">
       </a>
     </div>
-    <div class="boTo1 w3-col s2  w3-center menu" onclick="openNav0()">
+    <div id="searchJq" class="boTo1 w3-col s2  w3-center menu" onclick="openNav0()">
       <i class="fa fa-search"></i>
     </div>
 
@@ -59,7 +59,9 @@
   <!--header-->
   <!--open_closeNav-->
   <div id="mySidenav" class="sidenav menu">
-      <a href="javascript:void(1)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="javascript:void(1)" class="closebtn " onclick="closeNav()">&times;</a>
+    <div id="closeLeft" class="closeLeft">
+      
     <a href="#pronas" onclick="closeNav()">
       <i class="fa fa-id-card-o"></i> ПРО НАС</a>
     <a href="#gale" onclick="closeNav()">
@@ -68,11 +70,13 @@
       <i class="fa fa-envelope"></i> КОНТАКТИ</a>
     <a href="#search" onclick="closeNav(), openNav0()">
       <i class="fa fa-search"></i> ПОШУК</a>
+    </div>
   </div>
   <div>
 
     <div id="mySidenav0" class="sidenav0">
-      <a href="javascript:void(1)" class="closebtn0" onclick="closeNav0()">&times;</a>
+      <a id="closeNawJq" href="javascript:void(1)" class="closebtn0" onclick="closeNav0()">&times;</a>
+      <div id="nawRight" class="closeRight">
       <div class="w3-container w3-padding-top w3-margin">
         <div id="root"></div>
         <!-- <form action="/action_page.php">
@@ -88,6 +92,7 @@
   </form> -->
       </div>
     </div>
+  </div>
   </div>
   <!--open_closeNav-->
 

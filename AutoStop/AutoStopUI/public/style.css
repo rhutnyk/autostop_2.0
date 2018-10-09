@@ -173,6 +173,13 @@ input[type=submit] {
 input[type=submit]:hover {
     color: red;
 }
+.closeRight {
+display: none;
+}
+.closeLeft {
+    display: none;
+    }
+
 /*open_closeNav*/
 /*Slideshow*/
 #bgMySlides {

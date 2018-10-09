@@ -1,5 +1,25 @@
 //open_closeNav
 
+$(document).ready(function(){
+    $('#nawOpenJq').click(function(){
+        $('#nawRight').fadeIn(1300);
+    });
+    $('#closeNawJq').click(function(){
+        $('#nawRight').fadeOut(300);
+    })
+
+    $('#searchJq').click(function(){
+        $('#nawRight').fadeIn(1300);
+    })
+    $('#closeLeft').click(function(){
+        $('.closeLeft').fadeIn(1300);
+    })
+    $('.closebtn').click(function(){
+        $('.closeLeft').fadeOut(300);
+    })
+})
+
+
 function openNav() {
     // window.addEventListener('scroll', noscroll);
     if (screen.width < 600) {
