@@ -76,9 +76,8 @@ export default class App extends React.Component {
     this.setState({ showLoading: true })
     this.dataSvc.filter(this.state.number, this.state.keyword)
       .then(res => {
-
         this.lengthData = res.Count;
-        this.setState({ data: res, showLoading: false });
+        this.setState({ data: res, showLoading: false, analogs: [], positionAnalog: null  });
       })
       .catch(() => this.setState({ showLoading: false }))
   }
