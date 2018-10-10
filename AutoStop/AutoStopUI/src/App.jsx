@@ -34,7 +34,7 @@ export default class App extends React.Component {
   handleScroll = () => {
     var a = this.elementWithScroll.scrollTop;
     var b = this.elementWithScroll.scrollHeight - this.elementWithScroll.clientHeight;
-    if (a >= b && !this.loading && this.state.data && !(this.state.data.Items.length >= this.lengthData) ) {
+    if (a >= b && !this.loading && this.state.data && !(this.state.data.Items.length >= this.lengthData)) {
       this.loadData();
     }
   }
@@ -49,8 +49,8 @@ export default class App extends React.Component {
         if (res) {
           this.setState((prevState) => {
             prevState.data.Items.push(...res.Items);
-            return{data: prevState.data}
-          }, () => this.setState({showLoading: false}))
+            return { data: prevState.data }
+          }, () => this.setState({ showLoading: false }))
           this.loading = false;
         }
       })
@@ -76,34 +76,41 @@ export default class App extends React.Component {
     this.setState({ showLoading: true })
     this.dataSvc.filter(this.state.number, this.state.keyword)
       .then(res => {
-      
+
         this.lengthData = res.Count;
         this.setState({ data: res, showLoading: false });
       })
       .catch(() => this.setState({ showLoading: false }))
   }
 
-  showAnalog = (element, i) => {
-    this.dataSvc.select(element.Part.id)
-      .then(res => {
-        this.setState({ analogs: res, positionAnalog: i })
-      })
+  showAnalog = (element, i, close) => {
+    if (close) {
+      this.setState({ analogs: [], positionAnalog: null })
+    } else {
+      this.dataSvc.select(element.Part.id)
+        .then(res => {
+          this.setState({ analogs: res, positionAnalog: i })
+        })
+    }
+
   }
 
   clear = () => {
+
+
     this.skip = 0;
+
     this.setState({
-      data: [],
       analogs: [],
       positionAnalog: null,
       number: '',
       keyword: '',
-    })
+    }, () => this.submit())
   }
 
   render() {
-  console.log(this.state.data);
-  
+    console.log(this.state.data);
+
     return (
       <div className="App">
         <Loading show={this.state.showLoading} />
@@ -139,14 +146,20 @@ export default class App extends React.Component {
                   {
                     this.state.data.Items.map((curItem, i) =>
                       <React.Fragment key={i}>
-                      
+
                         <tr className={this.state.positionAnalog === i ? 'analogs red' : ''}>
                           <td> {curItem.Part.Number} </td>
                           <td> {curItem.Part.Description} </td>
                           <td> {curItem.Part.Qty} </td>
                           <td> {curItem.Part.Price} </td>
-                          <td className={`analog-icon ${curItem.IsAnalog? '': 'disable'}`} onClick={() => this.showAnalog(curItem, i)}>
-                            <i className="fa fa-clone" aria-hidden="true" title="Аналоги" />
+                          <td className={`analog-icon ${curItem.IsAnalog ? '' : 'disable'}`} onClick={() => this.showAnalog(curItem, i, this.state.positionAnalog === i)}>
+                            {/* <i className="fa fa-clone" aria-hidden="true" title="Аналоги" /> */}
+                            <i
+                              className={`fa fa-chevron-${this.state.positionAnalog === i ? 'up' : 'down'}`}
+                          
+                              aria-hidden="true"
+                              title="Аналоги"
+                            />
                           </td>
                         </tr>
 
