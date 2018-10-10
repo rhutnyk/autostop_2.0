@@ -21,7 +21,8 @@ export default class App extends React.Component {
   };
 
   componentDidMount() {
-    this.elementWithScroll = document.getElementById('mySidenav0');
+    this.elementWithScroll = document.getElementById('res');
+    console.log(this.elementWithScroll)
     this.elementWithScroll.addEventListener('scroll', this.handleScroll);
     this.submit()
   }
@@ -33,7 +34,7 @@ export default class App extends React.Component {
   handleScroll = () => {
     var a = this.elementWithScroll.scrollTop;
     var b = this.elementWithScroll.scrollHeight - this.elementWithScroll.clientHeight;
-    if (a >= b && !this.loading && this.state.data && !(this.state.data.length >= this.lengthData)) {
+    if (a >= b && !this.loading && this.state.data && !(this.state.data.Items.length >= this.lengthData) ) {
       this.loadData();
     }
   }
@@ -46,9 +47,10 @@ export default class App extends React.Component {
     this.dataSvc.take(this.skip)
       .then(res => {
         if (res) {
-          const _data = this.state.data;
-          _data.push(...res);
-          this.setState({ data: _data, showLoading: false })
+          this.setState((prevState) => {
+            prevState.data.Items.push(...res.Items);
+            return{data: prevState.data}
+          }, () => this.setState({showLoading: false}))
           this.loading = false;
         }
       })
@@ -74,6 +76,7 @@ export default class App extends React.Component {
     this.setState({ showLoading: true })
     this.dataSvc.filter(this.state.number, this.state.keyword)
       .then(res => {
+      
         this.lengthData = res.Count;
         this.setState({ data: res, showLoading: false });
       })
@@ -81,7 +84,7 @@ export default class App extends React.Component {
   }
 
   showAnalog = (element, i) => {
-    this.dataSvc.select(element.parts.id)
+    this.dataSvc.select(element.Part.id)
       .then(res => {
         this.setState({ analogs: res, positionAnalog: i })
       })
@@ -148,18 +151,18 @@ export default class App extends React.Component {
                         </tr>
 
                         {
-                          this.state.analogs.length > 0 && this.state.positionAnalog === i ?
+                          this.state.analogs && this.state.analogs.Items && this.state.positionAnalog === i ?
                             <React.Fragment>
                               <tr>
                                 <td className="analogs-header" colSpan="5">Аналоги</td>
                               </tr>
 
-                              {this.state.analogs.map((analog, i) =>
+                              {this.state.analogs.Items.map((analog, i) =>
                                 <tr key={i} className="analogs">
-                                  <td> {analog.Number} </td>
-                                  <td> {analog.Description} </td>
-                                  <td> {analog.Qty} </td>
-                                  <td colSpan="2"> {analog.Price} </td>
+                                  <td> {analog.Part.Number} </td>
+                                  <td> {analog.Part.Description} </td>
+                                  <td> {analog.Part.Qty} </td>
+                                  <td colSpan="2"> {analog.Part.Price} </td>
                                 </tr>
                               )}
                             </React.Fragment>

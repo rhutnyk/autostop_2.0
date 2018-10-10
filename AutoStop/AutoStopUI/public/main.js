@@ -7,7 +7,6 @@ $(document).ready(function(){
     $('#closeNawJq').click(function(){
         $('#nawRight').fadeOut(300);
     })
-
     $('#searchJq').click(function(){
         $('#nawRight').fadeIn(1300);
     })
