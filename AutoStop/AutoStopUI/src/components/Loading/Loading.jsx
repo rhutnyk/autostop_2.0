@@ -30,7 +30,7 @@ export default class Loading extends React.Component {
 
                 <div className="loading-window">
                     <div className="car">
-                        <div className="strike"></div>
+                        {/* <div className="strike"></div>
                         <div className="strike strike2"></div>
                         <div className="strike strike3"></div>
                         <div className="strike strike4"></div>
@@ -41,7 +41,7 @@ export default class Loading extends React.Component {
                         <div className="car-detail center1"></div>
                         <div className="car-detail front"></div>
                         <div className="car-detail wheel"></div>
-                        <div className="car-detail wheel wheel2"></div>
+                        <div className="car-detail wheel wheel2"></div> */}
                         <div className="text">Завантажую...</div>
                     </div>
                 </div>

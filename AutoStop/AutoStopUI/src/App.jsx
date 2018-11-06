@@ -23,17 +23,17 @@ export default class App extends React.Component {
   componentDidMount() {
     this.elementWithScroll = document.getElementById('res');
     console.log(this.elementWithScroll)
-    this.elementWithScroll.addEventListener('scroll', this.handleScroll);
+    this.elementWithScroll.addEventListener('scroll', this.handleScroll);//
     this.submit()
   }
 
   componentWillUnmount() {
-    this.elementWithScroll.removeEventListener('scroll', this.handleScroll);
+    this.elementWithScroll.removeEventListener('scroll', this.handleScroll);//
   }
 
   handleScroll = () => {
     var a = this.elementWithScroll.scrollTop;
-    var b = this.elementWithScroll.scrollHeight - this.elementWithScroll.clientHeight;
+    var b = this.elementWithScroll.scrollHeight - this.elementWithScroll.clientHeight;//
     if (a >= b && !this.loading && this.state.data && !(this.state.data.Items.length >= this.lengthData)) {
       this.loadData();
     }
@@ -58,7 +58,7 @@ export default class App extends React.Component {
 
   }
 
-  changeValue = e => {
+  changeValue = e => {//
     const name = e.target.name;
     const value = e.target.value;
 
@@ -69,17 +69,17 @@ export default class App extends React.Component {
   };
 
   submit = e => {
-    this.skip = 0;
+    //this.skip = 0;
     if (e) {
       e.preventDefault();
     }
     this.setState({ showLoading: true })
     this.dataSvc.filter(this.state.number, this.state.keyword)
-      .then(res => {
+      .then(res => {//
         this.lengthData = res.Count;
         this.setState({ data: res, showLoading: false, analogs: [], positionAnalog: null  });
       })
-      .catch(() => this.setState({ showLoading: false }))
+      .catch(() => this.setState({ showLoading: false }))//
   }
 
   showAnalog = (element, i, close) => {
@@ -94,18 +94,18 @@ export default class App extends React.Component {
 
   }
 
-  clear = () => {
+  // clear = () => {
 
 
-    this.skip = 0;
+  //   //this.skip = 0;
 
-    this.setState({
-      analogs: [],
-      positionAnalog: null,
-      number: '',
-      keyword: '',
-    }, () => this.submit())
-  }
+  //   this.setState({
+  //     // analogs: [],
+  //     // positionAnalog: null,
+  //     number: '',
+  //     keyword: '',
+  //   })
+  // }
 
   render() {
     console.log(this.state.data);
@@ -119,10 +119,10 @@ export default class App extends React.Component {
         </div>
 
         <form onSubmit={this.submit}>
-          <input type="text" onChange={(e) => this.changeValue(e)} name="number" placeholder="Номер" value={this.state.number || ''} />
-          <input type="text" onChange={(e) => this.changeValue(e)} name="keyword" placeholder="Ключове слово" value={this.state.keyword || ''} />
+          <input  type="text" onChange={(e) => this.changeValue(e)} name="number" placeholder="Номер" value={this.state.number || ''}/><a className="closeBtnNumber">&times;</a>
+          <input type="text" onChange={(e) => this.changeValue(e)} name="keyword" placeholder="Ключове слово" value={this.state.keyword || ''} /><a className="closeBtnKeyword">&times;</a>
           <div className="all-btns">
-            <button className="btn-cancel" type="button" onClick={this.clear}><i className="fa fa-ban" aria-hidden="true" /> Clear</button>
+            {/* <button className="btn-cancel" type="button" onClick={this.clear}><i className="fa fa-ban" aria-hidden="true" /> Clear</button> */}
             <button className="btn-submit" type="submit">Search <i className="fa fa-search" aria-hidden="true" />  </button>
           </div>
 
@@ -174,7 +174,8 @@ export default class App extends React.Component {
                                   <td> {analog.Part.Number} </td>
                                   <td> {analog.Part.Description} </td>
                                   <td> {analog.Part.Qty} </td>
-                                  <td colSpan="2"> {analog.Part.Price} </td>
+                                  <td> {analog.Part.Price} </td>
+                                  <td className="analog-icon"> {} </td>
                                 </tr>
                               )}
                             </React.Fragment>
