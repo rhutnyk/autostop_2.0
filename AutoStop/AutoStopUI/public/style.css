@@ -1,59 +1,406 @@
+/*    header*/
 body {
+    padding: 0;
     margin: 0;
-    padding: 0;
-    background-color: #191C28;
 }
-.container {
-    max-width: 1920px;
-    height: 4217px;
-    background-color: #747474;
-    margin: auto;
+.conteiner{
+    height: 4300px;
 }
-.grid-container {
-    max-width: 1920px;
+.blue-back {
+    width: 100%;
+    height: 400px;
+    background-image: url('imageIMG/header/blue-back.jpg');
+    background-size: 100% 100%;
 }
-#menu {
-position: fixed;
-width: 100%;
-z-index: 3;
+.fixed-line {
+    position: fixed;
+    height: 140px;
+    width: 100%;
+    background-color: #00459f;
 }
-.grid-container {
+.fixed-menu{
+    position: fixed;
+    width: 100%;
+}
+.grid-menu {
     display: grid;
-    grid-template-columns: auto 122px 400px auto auto;
-  }
-.grid-item {
-    border: 1px solid rgba(0, 0, 0, 0.8);
-  }
-#logo {
-      width: 122px;
-      height: 108;
-  }
-ul {
+    grid-template-columns: 23% auto auto ;
+    
+}
+.menu-item {
+
+}
+.logo-svg-mobile {
+    display: none;
+    width: 80px;
+    height: 71px;
+    background-image: url('imageIMG/header/logo.svg');
+    float: left;
+}
+.logo-svg {
+    margin-top: 21px;
+    width: 122px;
+    height: 108px;
+    background-image: url('imageIMG/header/logo.svg');
+    float: left;
+}
+.text-menu ul {
     list-style-type: none;
-    margin: 35px 40px; 
-    padding: 0;
+    margin: 40px 40px; 
     overflow: hidden;
 }
-li {
+.text-menu li {
+    margin-top: 11px;
     float: left;
 }
 
-li a {
+.text-menu li a {
     display: block;
-    color: white;
+    color: #afc1ff;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 12px;
 }
-
-li a:hover {
+.text-menu li a:hover {
     border-bottom: 3px solid rgb(121, 188, 255);
 }
-.header img{
+.car-img {
+    position: absolute;
+    top: 135px;
     width: 100%;
+    z-index: 1;
 }
-.banner {
+.grid-car {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto ;
+}
+.car-item {
+}
+.grid-car {
+    width: 100%;
+    height: auto;
+}
+.grid-car img {
+    max-width: 700px;
+}
+.info-contact {
+    position: absolute;
+    top: 10px;
+    width: 100%; 
 
 }
+.grit-contact {
+    display: grid;
+    grid-template-columns: 25% auto auto auto auto auto auto auto auto ;
+}
+.contact-item {
+    color: white;
+}
+.contact-item img {
+    width: 90px;
+    margin-top: 10px;
+}
+.info-text {
+    margin-top: 10px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+.button-coll {
+    background-image: url('imageIMG/header/phone-icon.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    border: 2px solid #4F8E23;
+    color: white;
+    margin-top: 50px;
+    background-color: #4F8E23;
+    width: 204px;
+    height: 38px;
+    border-radius: 20px;
+    margin-right: 60px;
+}
+.button-mail {
+    background-image: url('imageIMG/header/@.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    border: 2px solid #4F8E23;
+    color: white;
+    margin-top: 50px;
+    background-color: #4F8E23;
+    width: 204px;
+    height: 38px;
+    border-radius: 20px;
+}
+.button-coll a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+}
+.button-mail a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+}
+.button-coll:hover {
+    background-image: url('imageIMG/header/phone-icon-h.png');
+    box-shadow: -1px -1px 50px 0px #4F8E23;
+    text-decoration: none;
+}
+.button-mail:hover {
+    background-image: url('imageIMG/header/@-h.png');
+    box-shadow: -1px -1px 50px 0px #4F8E23;
+}
+/*    header*/
+/*    content*/
+.for-as {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 35px;
+}
+.for-as-text {
+    width: 1136px;
+    margin: auto;
+    text-align: justify;
+    text-align: center;
+    font-size: 18px;
+}
+.for-as-grid-img{
+    display: grid;
+    grid-template-columns: 32% auto auto auto auto auto 32% ;
+}
+.for-as-item-img {
+    padding-top: 30px;
+    margin: auto;
+}
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: #dbdbdb;
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+.at-you-service {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 35px;
+}
+.at-you-service-gridd-1 {
+    display: grid;
+    grid-template-columns: 25% auto auto auto 25% ;
+}
+.service-item-1 {
+    padding-top: 90px;
+    margin: auto;
+    height: 200px;
+}
+.service-text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+.service-all {
+    height: 160px;
+    width: 200px;
+    margin: auto;
+}
+.service-img {
+    
+    width: 100px;
+    margin: auto;
+}
+.at-you-service-gridd-2 {
+    display: grid;
+    grid-template-columns: auto auto auto ;
+}
+.service-item-2 {
+    margin: auto;
+    max-height: 100px;
+}
+.red-line img{
+    width: 1000px;
+    height: auto;
+}
+.red-line-text {
+    position: relative;
+    bottom: 100px;
+    max-width:600px;
+    margin: auto;
+}
+.red-line-text p {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.8;
+}
+.grid-photo-product {
+    display: grid;
+    grid-template-columns: auto auto auto auto ;
+}
+.product-item {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+.info-all {
+    width: 500px;
+    margin: 40px auto 40px auto ;
+}
+.info-foto {
+    width: 400px;
+    height: 300px;
+    margin: auto;
+}
+.info-h {
+    height: 30px;
+    color: #0034c3;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+.info-text-product {
+    height: 120px;
+}
+.brend-list-grid {
+    display: grid;
+    grid-template-columns: 25% auto auto auto auto 25%;
+}
+.brend-img-item{
+    border: 1px solid;
+    height: 150px;
+}
+.brend-img {
+    border: 1px solid;
+    width: 120px;
+    margin: auto;
+}
+.footer {
+    background-color: #2a2a2a;
+    height: 800px;
+    width: 100%;
+}
+.contact-grid-footer {
+    display: grid;
+    grid-template-columns: 24% 30% 15% 15% auto ;
+}
+.contact-item-footer {
+    margin-top: 50px;
+    height: 400px;
+}
+.contact-map {
+    margin-top: 20px;
+    background-image: url('imageIMG/AutostopMap.jpg');
+    box-shadow: -1px -1px 100px 10px #000000;
+    width: 100%;
+    height: 100%;
+}
+.footer-tell {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin-left: 40px;
+    color: #808080;
+    line-height: 0.9;
+}
+.footer-addres {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin-left: 40px;
+    margin-top: 60px;
+    color: #808080;
+    line-height: 0.9;
+}
+.footer-mail {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin-left: 40px;
+    margin-top: 50px;
+    margin-top: 50px;
+    color: #c9c9c9;
+}
+.contact-item-footer-phone img{
+    width: 140px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.contact-item-footer-geo img{
+    width: 120px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 90px;
+    margin-left: 15px
+}
+.contact-grid-input {
+    display: grid;
+    grid-template-columns: 24% 30% auto auto auto;
+}
+.contact-item-input {
+    margin-top: 90px
+}
+#writetous{
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    border-radius: 15px;
+    background-color: #e3e3e3;
+    border: none;
+    box-shadow: -1px -1px 100px 10px #000000;
+}
+#youname {
+    background-color: #e3e3e3;
+    margin-left: 30px;
+    width: 100%;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+}
+#mail {
+    background-color: #e3e3e3;
+    margin-left: 30px;
+    width: 100%;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    margin-top: 20px;
+}
+#send {
+    margin-left: 30px;
+    background-color: #4F8E23;
+    width: 150px;
+    height: 33px;
+    border-radius: 15px;
+    border: none;
+    margin-top: 20px;
+    color: white;
+}
+.footer-menu-grid {
+    display: grid;
+    grid-template-columns: 24% 30% auto auto;
+}
+.menu-item-footer {
+    margin-top: 50px;
+    
+}
+.menu-item-footer span {
+    position: relative;
+    left: 100px;
+    bottom: 34px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding-right: 20px
+}
+.made-by {
+    position: relative;
+    top: 4px;
+    left: 30px;
+    color: #959595;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+/*    content*/
