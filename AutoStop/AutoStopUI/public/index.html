@@ -120,15 +120,50 @@
     footer {
         background-color: #2A2A2A;
         height: auto;
-        width: 100%%;
+        width: 100%;
         padding: 40px
     }
-    
+    /*Footer*/
+    footer {
+           background-color: #4a4a4a; 
+           height: 100%;
+           padding: 40px 0;
+       }
+       .map-img{
+           background-image: url("image/footer/map.jpg");
+           background-color: #cccccc;
+           height: 200px;
+           background-position: center;
+           background-repeat: no-repeat;
+           background-size: cover;
+           position: relative;
+       }
+       .geo-phone {
+           position: absolute;
+           right: 0;
+       }
+       .contakt {
+           color: white; 
+           font-size: 15px
+       }
+       input {
+           width: 100%;
+           margin-top: 20px;
+           border-radius: 10px;
+           border: none;
+           background-color: aliceblue;
+       }
+       .nam {
+           height: 150px;
+           background-color: blue;
+       }
+/*Footer*/
 </style>
 <!--Menu-->
 <div class="baner-img">
 <div class="fixed-top">
-<nav class="navbar navbar-expand-sm  navbar-dark">
+    
+<nav class="navbar navbar-expand-sm  navbar-dark nam">
   <!-- Brand -->
   <a class="navbar-brand collapse navbar-collapse nav-logo"  href="#"><img src="image/header/logo.svg" width="130" height="130" alt="logo"></a>
   <a class="navbar-brand navbar-toggler border-none"  style="margin-right: 0" href="#"><img src="image/header/logo.svg" width="80" height="80" alt="logo"></a>
@@ -290,26 +325,37 @@
 
 <!--Content-->
 <!--Footer-->
-   
-    <footer>
+<footer> 
     <div class="row">
-        <div class="col-sm"></div>
-        <div class="col-sm-4"><img src="image/footer/AutostopMap.jpg" width="100%"></div>
-        <div class="col-sm-3">
-        <p style="color: white">097 88 88 888</p>
-        <p style="color: white">097 88 88 888</p>
-        <p style="color: white">097 88 88 888</p>
-        <p style="color: white">097 88 88 888</p>
-        <p style="color: white">097 88 88 888</p>
-          </div>
-        <div class="col-sm-2 text-center"><img src="image/footer/phone%20mark%20gray.svg" style="width: 100%"><img src="image/footer/geo%20mark%20gray.svg" style="width: 100%"></div>
-        <div class="col-sm"></div>
-        
-        
+      <div class="col-md-2"></div>
+      <div class="col-md-4">
+       <div class="map-img"></div>
+      </div>
+      <div class="col-md-4">
+        <div class="geo-phone">
+        <div><img src="image/footer/geo%20mark%20gray.svg" style="width: 70px;margin: 0px 20px"></div>
+        <div><img src="image/footer/phone%20mark%20gray.svg" style="width: 65px;margin: 20px"></div>
+        </div>
+        <p class="text-left contakt">0978766666</p>
+        <p class="text-left contakt">0978766666</p>
+        <p class="text-left contakt">0978766666</p>
+        <p class="text-left contakt">0978766666</p>
+        <p class="text-left contakt">0978766666</p>
+        <p class="text-left contakt">0978766666</p>
+      </div>
+      <div class="col-md"></div>
     </div>
-    
-   
-    </footer>
+    <div class="row">
+      <div class="col-md"></div>
+      <div class="col-md-4"><input type="text" value="написати нам" style="height: 120px;"></div>
+      <div class="col-md-4">
+      <input type="text" value="name">
+      <input type="text" value="mail">
+      <input type="button" value="відправити" style="">
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </footer>
 <!--Footer-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
