@@ -12,7 +12,7 @@ namespace AutoStop.Controllers
         WorkWithData data = new WorkWithData();
 
         
-        public IHttpActionResult Get(int skip = 0, int take = 20)
+        public IHttpActionResult Get(int skip = 0, int take = TakeDefault)
         {
             try
             {

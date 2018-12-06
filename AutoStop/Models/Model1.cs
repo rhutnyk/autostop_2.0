@@ -13,7 +13,7 @@ namespace AutoStop.Models
         public virtual DbSet<Log> Logs { get; set; }
         public virtual DbSet<Part> Parts { get; set; }
         public virtual DbSet<Analog> Analogs { get; set; }
-       
+        public virtual DbSet<ContactUs> Contact { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

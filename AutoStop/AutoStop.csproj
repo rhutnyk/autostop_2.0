@@ -197,6 +197,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ParserController.cs" />
     <Compile Include="Controllers\PartsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -204,6 +205,7 @@
     </Compile>
     <Compile Include="Models\Analog.cs" />
     <Compile Include="Models\ANet.cs" />
+    <Compile Include="Models\ContactUs.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Model1.cs" />
     <Compile Include="Models\ParseXml.cs" />
