@@ -63,12 +63,15 @@ footer{
 @media screen and (max-width: 992px) {
     .nav-logo{
         margin-left: 0;
-        width: 25%;
+        width: 38%;
     }
     .main-img{
         margin-left: 0;
     }
     .main-img > img{
         width: 70%;
+    }
+    .logo-container{
+        width: 250px;
     }
   }
