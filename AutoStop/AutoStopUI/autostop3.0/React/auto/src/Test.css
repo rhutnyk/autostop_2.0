@@ -1,0 +1,19 @@
+.btn-self{
+    width: 70px;
+    height: 37px;
+    border-radius: 20px;
+    background: none;
+    border: 1px solid #53BAFF;
+    cursor: -webkit-grab;
+}
+
+.td-btn{
+    padding-top: 5px !important;
+    padding-bottom: 2px !important;
+    
+}
+
+.text-item{
+    color: #2E8EEB;
+    font-weight: 600;
+}
