@@ -1,8 +1,24 @@
-.navbar{
-    background-color: #031a67;
+#menu-nav{
+    background-color: rgba(43, 30, 143, 0);
+    /* opacity: .0; */
+    transition: .2s;
+}
+.opacity-naw{
+    transition: .2s;
+    background-color: rgb(30, 36, 143) !important;
+}
+.color-naw {
+    background-color: rgb(204, 19, 19) !important;
 }
 .block-left {
     width: 30%;
+}
+.navbar-toggler{
+    border: none;
+    padding:  0 10px 0 0;
+}
+.padding-zero{
+    padding: 7px;
 }
 .phone-b{
     height: 34px;
@@ -24,13 +40,13 @@
     width: 34px;
     background-image: url(image/header/burger.svg);
     background-repeat: no-repeat;
-    
 }
 .button-phone {
     background-image: url('image/header/phone-icon.png');
     background-repeat: no-repeat;
     height: 35px;
     width: 35px;
+    padding: 0;
 }
 .button-mail {
     background-image: url('image/header/@.png');

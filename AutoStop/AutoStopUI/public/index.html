@@ -11,22 +11,22 @@
     <title>Hello, world!</title>
 </head>
 <body>
-   <nav class="navbar navbar-expand-md  navbar-dark">
+   <nav id="menu-nav" class="navbar navbar-expand-md navbar-dark fixed-top">
   <!-- Brand -->
   <div class="d-none d-md-block block-left"></div>
   <a class="navbar-brand d-none d-md-block" href="#"><img src="image/header/logo.svg" width="120"></a>
   <a class="navbar-brand d-md-none d-lg-none " href="#"><img src="image/header/logo.svg" width="80"></a>
   <!-- Toggler/collapsibe Button -->
- <div class="row navbar-toggler border-none">
-  <div class="col"><div class="button-phone"></div></div>
-  <div class="col"><div class="button-mail"></div></div>
-  <button class="navbar-toggler border-none" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="padding: 0">
+ <div class="row navbar-toggler">
+  <div class="col padding-zero"><div class="button-phone"></div></div>
+  <div class="col padding-zero"><div class="button-mail"></div></div>
+  <button id="show-back" onclick="togler()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <div class="col"><img src="image/header/burger1.svg"></div>
   </button>
 </div>
   <!-- Navbar links -->
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav float-right">
       <li class="nav-item">
         <a class="nav-link" href="#">головна</a>
       </li>
@@ -44,7 +44,7 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
      <div class="back-image-1">
-      <img class="d-block w-100" src="image/header/blue-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 30px">
+      <img class="d-block w-100" src="image/header/blue-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 140px 30px 20px 30px">
       </div>
       <div class="carousel-caption d-none d-md-block">
       <img src="image/header/gears.svg" style="width: 15%;">
@@ -55,7 +55,7 @@
     </div>
     <div class="carousel-item">
       <div class="back-image-2">
-      <img class="d-block w-100" src="image/header/green-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 30px">
+      <img class="d-block w-100" src="image/header/green-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 140px 30px 20px 30px">
       </div>
       <div class="carousel-caption d-none d-md-block">
       <img src="image/header/gears.svg" style="width: 15%;">
@@ -66,7 +66,7 @@
     </div>
     <div class="carousel-item">
       <div class="back-image-3">
-      <img class="d-block w-100" src="image/header/red-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 30px">
+      <img class="d-block w-100" src="image/header/red-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 140px 30px 20px 30px">
       </div>
       <div class="carousel-caption d-none d-md-block">
       <img src="image/header/gears.svg" style="width: 15%;">
@@ -310,5 +310,23 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+        const header = document.getElementsByClassName('menu-nav');
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY>0);
+            if (scrolled) {
+                document.getElementById('menu-nav').classList.add('opacity-naw');
+            }
+                else {
+                    document.getElementById('menu-nav').classList.remove('opacity-naw');
+                }
+        });
+        function togler() {
+          const showback = document.getElementById("show-back");
+          showback.classList.toggle('collapsed');
+          console.log('hello');
+          document.getElementById('menu-nav').classList.toggle('color-naw');
+        };
+    </script>
 </body>
 </html>
