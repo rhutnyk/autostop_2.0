@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./search.css">
     <link rel="stylesheet" type="text/css" href="../src/index.css">
     <title>Document</title>
+    
 </head>
 
 
@@ -18,71 +19,72 @@
     
     <header>
 
-        <nav id="menu-nav" class="navbar navbar-expand-md navbar-dark fixed-top">
-            <!-- Brand -->
-            <div class="d-none d-md-block block-left"></div>
-            <a class="navbar-brand d-none d-md-block" href="#"><img src="../src/image/header/logo.svg" width="120"></a>
-            <a class="navbar-brand d-md-none d-lg-none " href="#"><img src="../src/image/header/logo.svg" width="80"></a>
-            <!-- Toggler/collapsibe Button -->
-           <div class="row navbar-toggler">
-            <div class="col padding-zero"><div class="button-phone"></div></div>
-            <div class="col padding-zero"><div class="button-mail"></div></div>
-            <button id="show-back" onclick="togler()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-              <div class="col"><img src="../src/image/header/burger1.svg"></div>
-            </button>
+      <nav id="menu-nav" class="navbar navbar-expand-md navbar-dark fixed-top">
+        <!-- Brand -->
+        <div class="d-none d-md-block block-left"></div>
+        <a id="trans" class="navbar-brand logo-transition-l" href="#"><img class="" src="../src/image/header/logo.svg" width=""></a>
+      
+      
+        <!-- Toggler/collapsibe Button -->
+       <div class="row navbar-toggler">
+        <div class="col padding-zero"><a href="tel:+380671234567"><div class="button-phone"></div></a></div>
+        <div class="col padding-zero"><a href=""><div class="button-mail"></div></a></div>
+        <button id="show-back" onclick="togler()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <div class="col"><img src="../src/image/header/burger1.svg"></div>
+        </button>
+      </div>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav float-right">
+            <li class="nav-item">
+              <div class="border-bot"><a class="nav-link" href="/">головна</a></div>
+            </li>
+            <li class="nav-item">
+              <div class="border-bot"><a class="nav-link" href="../src/search.html">товари</a></div>
+            </li>
+            <li class="nav-item">
+              <div class="border-bot"><a class="nav-link" href="#">контакти</a></div>
+            </li> 
+          </ul>
+        </div> 
+      </nav>  
+      <!--  Carousel -->
+         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+           <div class="back-image-1">
+            <img class="d-block w-100" src="../src/image/header/blue-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 140px 30px 20px 30px">
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+            <img src="../src/image/header/gears.svg" style="width: 15%;">
+          <p>ОРИГІНАЛЬНІ АВТОЗАПЧАСТИНИ ДО <br> ФРАНЦУСЬКИХ АВТОМОБІЛІВ</p>
+          <a  class="but-button-coll d-none d-md-inline" href="tel:+380671234567">ЗАТЕЛЕФОНУВАТИ</a>
+          <a  class="but-button-mail d-none d-md-inline" href="">НАПИШІТЬ НАМ</a>
+        </div>
           </div>
-            <!-- Navbar links -->
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-              <ul class="navbar-nav float-right">
-                <li class="nav-item">
-                  <div class="border-bot"><a class="nav-link" href="/">головна</a></div>
-                </li>
-                <li class="nav-item">
-                  <div class="border-bot"><a class="nav-link" href="../src/search.html">товари</a></div>
-                </li>
-                <li class="nav-item">
-                  <div class="border-bot"><a class="nav-link" href="#">контакти</a></div>
-                </li> 
-              </ul>
-            </div> 
-          </nav>  
-          <!--  Carousel -->
-             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-               <div class="back-image-1">
-                <img class="d-block w-100" src="../src/image/header/blue-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 140px 30px 20px 30px">
-                </div>
-                <div class="carousel-caption d-none d-md-block">
-                <img src="../src/image/header/gears.svg" style="width: 15%;">
-              <p>ОРИГІНАЛЬНІ АВТОЗАПЧАСТИНИ ДО <br> ФРАНЦУСЬКИХ АВТОМОБІЛІВ</p>
-              <button class="but-button-coll d-none d-md-inline"><a href="tel:+380671234567">ЗАТЕЛЕФОНУВАТИ</a></button>
-              <button class="but-button-mail d-none d-md-inline"><a href="">НАПИШІТЬ НАМ</a></button>
+          <div class="carousel-item">
+            <div class="back-image-2">
+            <img class="d-block w-100" src="../src/image/header/green-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 140px 30px 20px 30px">
             </div>
-              </div>
-              <div class="carousel-item">
-                <div class="back-image-2">
-                <img class="d-block w-100" src="../src/image/header/green-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 140px 30px 20px 30px">
-                </div>
-                <div class="carousel-caption d-none d-md-block">
-                <img src="../src/image/header/gears.svg" style="width: 15%;">
-              <p>ОРИГІНАЛЬНІ АВТОЗАПЧАСТИНИ ДО <br> ФРАНЦУСЬКИХ АВТОМОБІЛІВ</p>
-              <button class="but-button-coll d-none d-md-inline"><a href="tel:+380671234567">ЗАТЕЛЕФОНУВАТИ</a></button>
-              <button class="but-button-mail d-none d-md-inline"><a href="">НАПИШІТЬ НАМ</a></button>
+            <div class="carousel-caption d-none d-md-block">
+            <img src="../src/image/header/gears.svg" style="width: 15%;">
+          <p>ОРИГІНАЛЬНІ АВТОЗАПЧАСТИНИ ДО <br> ФРАНЦУСЬКИХ АВТОМОБІЛІВ</p>
+          <a  class="but-button-coll d-none d-md-inline" href="tel:+380671234567">ЗАТЕЛЕФОНУВАТИ</a>
+          <a  class="but-button-mail d-none d-md-inline" href="">НАПИШІТЬ НАМ</a>
+        </div>
+          </div>
+          <div class="carousel-item">
+            <div class="back-image-3">
+            <img class="d-block w-100" src="../src/image/header/red-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 140px 30px 20px 30px">
             </div>
-              </div>
-              <div class="carousel-item">
-                <div class="back-image-3">
-                <img class="d-block w-100" src="../src/image/header/red-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 140px 30px 20px 30px">
-                </div>
-                <div class="carousel-caption d-none d-md-block">
-                <img src="../src/image/header/gears.svg" style="width: 15%;">
-              <p>ОРИГІНАЛЬНІ АВТОЗАПЧАСТИНИ ДО <br> ФРАНЦУСЬКИХ АВТОМОБІЛІВ</p>
-              <button class="but-button-coll d-none d-md-inline"><a href="tel:+380671234567">ЗАТЕЛЕФОНУВАТИ</a></button>
-              <button class="but-button-mail d-none d-md-inline"><a href="">НАПИШІТЬ НАМ</a></button>
-            </div>
-              </div>
-            </div>
+            <div class="carousel-caption d-none d-md-block">
+            <img src="../src/image/header/gears.svg" style="width: 15%;">
+          <p>ОРИГІНАЛЬНІ АВТОЗАПЧАСТИНИ ДО <br> ФРАНЦУСЬКИХ АВТОМОБІЛІВ</p>
+          <a  class="but-button-coll d-none d-md-inline" href="tel:+380671234567">ЗАТЕЛЕФОНУВАТИ</a>
+          <a  class="but-button-mail d-none d-md-inline" href="">НАПИШІТЬ НАМ</a>
+        </div>
+          </div>
+        </div>
 
 
     </header>
@@ -221,6 +223,32 @@
 
 
     </footer>
+
+    <script>
+      const header = document.getElementsByClassName('menu-nav');
+      window.addEventListener('scroll', () => {
+          const scrolled = (window.scrollY>0);
+          if (scrolled) {
+              document.getElementById('menu-nav').classList.add('opacity-naw');
+              document.getElementById('trans').classList.add('logo-transition-s');
+          }
+              else {
+                  document.getElementById('menu-nav').classList.remove('opacity-naw');
+                  document.getElementById('trans').classList.remove('logo-transition-s');
+              }
+      });
+      function togler() {
+        const showback = document.getElementById("show-back");
+        showback.classList.toggle('collapsed');
+        console.log('hello');
+        document.getElementById('menu-nav').classList.toggle('color-naw');
+      };
+  </script>
+
+
+
+
+
 
 
 </body>
