@@ -1,7 +1,7 @@
 #menu-nav{
     background-color: rgba(43, 30, 143, 0);
     /* opacity: .0; */
-    transition: .2s;
+    /* transition: .1s; */
 }
 .opacity-naw{
     transition: .2s;
@@ -17,6 +17,18 @@
     border: none;
     padding:  0 10px 0 0;
     font-size: none;
+}
+.logo-transition-l{
+    width: 120px;
+    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width .2s; 
+    /* height 1s; */
+}
+.logo-transition-s{
+    width: 50px;
+    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width .5s; 
+    /* height 1s; */
 }
 .padding-zero{
     padding: 7px;
