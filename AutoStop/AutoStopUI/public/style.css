@@ -99,6 +99,10 @@
     height: 38px;
     border-radius: 20px;
     margin-right: 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    padding: 8px 40px 8px 40px ;
 }
 .but-button-mail {
     background-image: url(image/header/@.png);
@@ -111,25 +115,22 @@
     width: 204px;
     height: 38px;
     border-radius: 20px;
-}
-.but-button-coll a {
     text-decoration: none;
     color: white;
     font-size: 12px;
-}
-.but-button-mail a {
-    text-decoration: none;
-    color: white;
-    font-size: 12px;
+    padding: 8px 40px 8px 40px ;
 }
 .but-button-coll:hover {
     background-image: url(image/header/phone-icon-h.png);
     box-shadow: -1px -1px 50px 0px #4F8E23;
     text-decoration: none;
+    color: white;
 }
 .but-button-mail:hover {
     background-image: url(image/header/@-h.png);
     box-shadow: -1px -1px 50px 0px #4F8E23;
+    text-decoration: none;
+    color: white;
 }
 .back-image-1{
     background-image: url(image/header/blue-back.jpg);
