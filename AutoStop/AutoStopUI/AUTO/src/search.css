@@ -247,3 +247,7 @@ color: #2E8EEB;
     background-position: center;
     margin: 10px;
  }
+
+ .number{
+     word-wrap: break-word;
+ }

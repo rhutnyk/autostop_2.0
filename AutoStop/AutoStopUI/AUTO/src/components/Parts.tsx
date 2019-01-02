@@ -111,8 +111,6 @@ export default class Parts extends React.Component<any, any> {
     }
 
     handleScroll = () => {
-        console.log("hand");
-        
         if(!this.state.scrollLoading)
         {
         var windowPosition = window.scrollY;
@@ -191,9 +189,9 @@ export default class Parts extends React.Component<any, any> {
                             this.state.data && this.state.data.length > 0 ?
 
                                 this.state.data.map((item: any, index: number) =>
-                                    <span>
-                                        <div className="row" key={index} id={item.IsAnalog ? "" : "color-grey"}>
-                                            <div className="col-2 col-sm-2">{item.Part.Number}</div>
+                                    <span key={index}>
+                                        <div className="row" id={item.IsAnalog ? "" : "color-grey"}>
+                                            <div className="col-2 col-sm-2 number">{item.Part.Number}</div>
                                             <div className="col-3 col-sm-4">{item.Part.Description}</div>
                                             <div className="col-1 col-sm-2">{item.Part.Qty}</div>
                                             <div className="col-3 col-sm-2">{item.Part.Price} грн.</div>
@@ -209,7 +207,7 @@ export default class Parts extends React.Component<any, any> {
 
                                            </div>
                                             <Analog isLoadingAnalog={this.isLoadingAnalog.bind(this)} hideAnalogs={this.onHideAnalogs} analogId={this.state.collapseItemIddex} item={this.state.item} loading={this.state.loading}/>
-                                           </span>
+                                              </span>
                                             : null}
                                            
                                         
