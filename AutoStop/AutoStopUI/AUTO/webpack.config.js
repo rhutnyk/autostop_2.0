@@ -12,7 +12,7 @@ module.exports = {
 },
   devtool: "source-map",
   resolve: { 
-    extensions: [".ts", ".tsx", ".js", ".json", ".css"] 
+    extensions: [".ts", ".tsx", ".js", ".json"] 
   }, 
   output: { 
     filename: '[name].bundle.js',
@@ -25,11 +25,7 @@ module.exports = {
       {  
         test: /\.tsx?$/,  
         loader: "awesome-typescript-loader"  
-      },
-      // {
-      //   test:/\.css$/,
-      //           use:['style-loader','css-loader']
-      // }
+      }
     ]
    },
   plugins: [

@@ -111,6 +111,8 @@ export default class Parts extends React.Component<any, any> {
     }
 
     handleScroll = () => {
+        console.log("hand");
+        
         if(!this.state.scrollLoading)
         {
         var windowPosition = window.scrollY;
@@ -138,7 +140,11 @@ export default class Parts extends React.Component<any, any> {
             })
     }
 
-    
+
+    isLoadingAnalog(res:boolean){
+        this.setState({loading:res});
+    }
+
 
 
     render() {
@@ -198,9 +204,12 @@ export default class Parts extends React.Component<any, any> {
                                             </div>
                     </div>
                                             {this.state.collapseItemIddex == item.Part.id ?
-                                           
-                                            <Analog hideAnalogs={this.onHideAnalogs} analogId={this.state.collapseItemIddex} item={this.state.item} loading={this.state.loading}/>
-                                           
+                                            <span>
+                                           <div id={this.state.loading ? "load-scroll" : ""}>
+
+                                           </div>
+                                            <Analog isLoadingAnalog={this.isLoadingAnalog.bind(this)} hideAnalogs={this.onHideAnalogs} analogId={this.state.collapseItemIddex} item={this.state.item} loading={this.state.loading}/>
+                                           </span>
                                             : null}
                                            
                                         
