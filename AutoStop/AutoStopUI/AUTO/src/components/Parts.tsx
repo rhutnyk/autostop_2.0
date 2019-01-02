@@ -26,7 +26,7 @@ export default class Parts extends React.Component<any, any> {
     private queryDescription = "desc=";
     private skip = 0;
     private take = 0;
-    private elementWithScroll: any;
+    private elementWithScroll: Window;
 
 
     constructor(props: Part) {
@@ -111,12 +111,15 @@ export default class Parts extends React.Component<any, any> {
     }
 
     handleScroll = () => {
+        if(!this.state.scrollLoading)
+        {
         var windowPosition = window.scrollY;
         var loadPosition = this.partContainer.clientHeight;
         
-        if (windowPosition > loadPosition && this.state.data.length < this.state.count && this.state.collapseItemIddex == null) {
+        if (windowPosition >= loadPosition && this.state.data.length < this.state.count) {
+            // loadPosition = (windowPosition+1000);
             this.lazyLoadData();
-            loadPosition = windowPosition+100;
+            }
         }
     }
 
@@ -193,7 +196,7 @@ export default class Parts extends React.Component<any, any> {
                                                     <img src={`${this.state.collapseItemIddex == item.Part.id ? './image/hide analog.png' : './image/add analog.png'}`} />
                                                 </a> : null}
                                             </div>
-</div>
+                    </div>
                                             {this.state.collapseItemIddex == item.Part.id ?
                                            
                                             <Analog hideAnalogs={this.onHideAnalogs} analogId={this.state.collapseItemIddex} item={this.state.item} loading={this.state.loading}/>
