@@ -59,7 +59,7 @@ export default class Analog extends React.Component<IProps, any> {
                         <div className="col-2 col-sm-2">{item.Part.Number}</div>
                         <div className="col-3 col-sm-4">{item.Part.Description}</div>
                         <div className="col-1 col-sm-2">{item.Part.Qty}</div>
-                        <div className="col-3 col-sm-2">{item.Part.Price} грн.</div>
+                        <div className="col-3 col-sm-2">{item.Part.Price} грнy.</div>
                     </div>
                 
                     ) :null}
