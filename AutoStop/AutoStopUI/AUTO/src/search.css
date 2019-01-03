@@ -48,7 +48,7 @@ header{
 .search-label{
     text-align: center;
     font-family: 'myFont';
-   font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 /* .container{
@@ -148,6 +148,10 @@ color: #2E8EEB;
     height: 36px;
  }
 
+ .parts-content a{
+    cursor: pointer;
+ }
+
  @media screen and (max-width: 992px){
     .parts-container-header{
         font-size: 0.8em;
@@ -175,25 +179,25 @@ color: #2E8EEB;
     border: none !important;
 }
 
-.close-btn{
+/* .close-btn{
     text-align: right;
     cursor: pointer;
     margin-top: 0;
-}
+} */
 
 
-.analog-header{
+/* .analog-header{
     border:none !important;
     margin-top: 40px;
     height: 56px;
-}
+} */
 
-.analog-header p{
+/* .analog-header p{
     font-family: 'myFont';
     font-size: 1.2em;
-}
+} */
 
-.analog-header img{
+/* .analog-header img{
     height: 20px !important;
 }
 
@@ -201,7 +205,7 @@ color: #2E8EEB;
     color: #2E8EEB;
     border-bottom: 1px solid white !important;
     padding-bottom: 10px;
-}
+} */
 
 
 

@@ -74,9 +74,7 @@ export default class Parts extends React.Component<any, any> {
 
 
     showAnalogs = (item: any): void => {
-        
         const isActive = this.state.collapseItemIddex == item.Part.id ? null : item.Part.id;
-        
         this.setState({ collapseItemIddex: isActive, item: item, loading: true }, ()=>{
             window.scrollTo(0,(document.getElementById(item.Part.id).offsetTop-70))
         });
@@ -115,7 +113,7 @@ export default class Parts extends React.Component<any, any> {
     }
 
     handleScroll = () => {
-        if (!this.state.scrollLoading) {
+        if (!this.state.scrollLoading && !this.state.loading) {
             var windowPosition = window.scrollY;
             var loadPosition = this.partContainer.clientHeight;
 
