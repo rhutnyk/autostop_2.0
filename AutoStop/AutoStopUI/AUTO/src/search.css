@@ -216,13 +216,11 @@ color: #2E8EEB;
      background-size: contain;
      height: 10px;
      width: 120px;
-     /* opacity: 0;
-    transition: visibility 7s linear 800ms, opacity 900ms; */
  }
 
  #loadParts{
 
-        position: absolute;
+        /* position: absolute;
         height: 100%;
         background-image:url('./image/loadingParts.gif');
         background-repeat: no-repeat;
@@ -230,8 +228,20 @@ color: #2E8EEB;
         background-color: black;
         width: 100%;
         z-index: 23;
+        opacity: 0.3; */
+
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url('./image/loadingParts.gif');
+        background-repeat: no-repeat;   
+        background-position: center;
+        background-color: black;
         opacity: 0.3;
-        
+       
  }
 
  #color-grey{
