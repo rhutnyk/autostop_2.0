@@ -74,8 +74,12 @@ export default class Parts extends React.Component<any, any> {
 
 
     showAnalogs = (item: any): void => {
+        
         const isActive = this.state.collapseItemIddex == item.Part.id ? null : item.Part.id;
-        this.setState({ collapseItemIddex: isActive, item: item, loading: true });
+        
+        this.setState({ collapseItemIddex: isActive, item: item, loading: true }, ()=>{
+            window.scrollTo(0,(document.getElementById(item.Part.id).offsetTop-70))
+        });
     }
 
 
@@ -190,7 +194,7 @@ export default class Parts extends React.Component<any, any> {
                             this.state.data.map((item: any, index: number) =>
                                 <span>
                                     <div className="container">
-                                        <div key={index}>
+                                        <div id={item.Part.id} key={index}>
                                             <div className="row" id={item.IsAnalog ? "" : "color-grey"}>
                                                 <div className="col-2 col-sm-2 number">{item.Part.Number}</div>
                                                 <div className="col-3 col-sm-4">{item.Part.Description}</div>
