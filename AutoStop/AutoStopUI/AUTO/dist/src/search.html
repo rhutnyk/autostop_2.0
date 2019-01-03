@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./search.css">
+    <link rel="stylesheet" type="text/css" href="../src/index.css">
+    <title>Autostop</title>
+    
+</head>
+
+
+<body>
+    
+    <header>
+
+      <nav id="menu-nav" class="navbar navbar-expand-md navbar-dark fixed-top">
+        <!-- Brand -->
+        <div class="d-none d-md-block block-left"></div>
+        <a id="trans" class="navbar-brand logo-transition-l" href="#"><img class="" src="../src/image/header/logo.svg" width=""></a>
+      
+      
+        <!-- Toggler/collapsibe Button -->
+       <div class="row navbar-toggler">
+        <div class="col padding-zero"><a href="tel:+380671234567"><div class="button-phone"></div></a></div>
+        <div class="col padding-zero"><a href=""><div class="button-mail"></div></a></div>
+        <button id="show-back" onclick="togler()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <div class="col"><img src="../src/image/header/burger1.svg"></div>
+        </button>
+      </div>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav float-right">
+            <li class="nav-item">
+              <div class="border-bot"><a class="nav-link" href="/">головна</a></div>
+            </li>
+            <li class="nav-item">
+              <div class="border-bot"><a class="nav-link" href="../src/search.html">товари</a></div>
+            </li>
+            <li class="nav-item">
+              <div class="border-bot"><a class="nav-link" href="#">контакти</a></div>
+            </li> 
+          </ul>
+        </div> 
+      </nav>  
+     
+         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+           <div class="back-image-1">
+            <img class="d-block w-100" src="../src/image/header/green-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 140px 30px 20px 30px">
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+            
+          <a  class="but-button-coll d-none d-md-inline" href="tel:+380671234567">ЗАТЕЛЕФОНУВАТИ</a>
+          <a  class="but-button-mail d-none d-md-inline" href="">НАПИШІТЬ НАМ</a>
+        </div>
+          </div>
+          
+          </div>
+         
+          </div>
+        </div>
+
+
+    </header>
+    
+
+
+
+    <div class="information">
+      <div class="container">
+      <div class="row justify-content-md-center">
+      <div class="desc col-12 col-sm-12 col-md-12 col-lg-6">ДАНІ
+        ОНОВЛЮЮТЬСЯ КОЖНІ 4 ГОДИНИ.
+      </div>
+      <div class="slash d-none d-lg-block ">
+        |
+      </div>
+      <div id="currency" class="col-12 col-sm-12 col-md-12 col-lg-4">
+        
+      </div>
+      <script src="/currency.bundle.js"></script>
+    </div>
+  </div>
+    </div>
+        <span id="root"></span>
+      <script src="/search.bundle.js"></script>
+   
+  
+
+    <footer>
+  
+        <div class="footer mt-5">
+            <div class="container d-none d-md-block ">
+            <div class="row">
+                <div class="col-6"><div class="contact-map"></div></div>
+                <div class="col-3">
+                 <div class="contact-item-footer">
+                 <div class="footer-tell">
+                 <p>073-11-01-104</p>
+                 <p>073-11-01-104</p>
+                 <p>073-11-01-104</p>
+                 <p>073-11-01-104</p>
+                 <p>073-11-01-104</p>
+                 </div>
+                 <div class="footer-addres">
+                 <p>м. Львів</p>
+                 <p>вул. Наукова 96</p>
+                 <p>Пн-Пт з 9:00 до 18:00</p>
+                 <p>Сб з 9:00 до 14:00</p>
+                 </div>
+                 <div class="footer-mail">petro.dutko@gmail.com</div>
+                </div>
+                </div>
+                 <div class="col-3">
+                 <div class="geo-phone"><img src="image/footer/phone%20mark%20gray.svg"></div>
+                 <div class="geo-locat"><img src="image/footer/geo%20mark%20gray.svg"></div>
+                </div>
+             </div>
+             
+             
+             <div class="row">
+                <div class="col-6"><input id="writetous" type="text" value="   Напишіть нам"></div>
+                <div class="col-6">
+                <input id="youname" type="text" value="   Ваше ім'я"><br>
+                <input id="mail" type="text" value="  Ваш E-mail"><br>
+                <input id="send" type="button" value="відправити">
+                </div>
+             </div>
+             
+             <div class="row">
+                <div class="col-6">
+                 <img class="logo-bootom-menu" src='image/header/logo.svg'>
+                 <span class="menu-booton "><a> ГОЛОВНА </a></span>
+                 <span class="menu-booton "><a> ТОВАРИ </a></span>
+                 <span class="menu-booton "><a> КОНТАКТИ </a></span>
+                 <span class="menu-booton "><a> СТО </a></span></div>
+                 <div class="col-6">
+                 <p class="made-by">www.autostop.lviv.ua (2018)</p>
+                 </div>
+             </div>
+             </div>
+             
+             <div class="container d-md-none">
+            <div class="row">
+                <div class="col-12"><div class="contact-map-mob"></div></div>
+                <div class="col-6">
+                 <div class="contact-item-footer">
+                 <div class="footer-tell">
+                 <p>073-11-01-104</p>
+                 <p>073-11-01-104</p>
+                 <p>073-11-01-104</p>
+                 <p>073-11-01-104</p>
+                 <p>073-11-01-104</p>
+                 </div>
+                 <div class="footer-addres">
+                 <p>м. Львів</p>
+                 <p>вул. Наукова 96</p>
+                 <p>Пн-Пт з 9:00 до 18:00</p>
+                 <p>Сб з 9:00 до 14:00</p>
+                 </div>
+                 <div class="footer-mail">petro.dutko@gmail.com</div>
+                </div>
+                </div>
+                 <div class="col-6">
+                 <div class="geo-phone"><img src="image/footer/phone%20mark%20gray.svg"></div>
+                 <div class="geo-locat"><img src="image/footer/geo%20mark%20gray.svg"></div>
+                </div>
+             </div>
+             
+             
+             <div class="row">
+                <div class="col-12"><input id="writetous-mob" type="text" value="Напишіть нам"></div>
+                <div class="col-12">
+                <input id="youname-mob" type="text" value="   Ваше ім'я"><br>
+                <input id="mail-mob" type="text" value="  Ваш E-mail"><br>
+                <input id="send-mob" type="button" value="відправити">
+                </div>
+             </div>
+             
+             <div class="row">
+              <img class="logo-bootom-menu-mob" src='image/header/logo.svg'>
+                <div class="col-12">
+                <div class="center-menu-mob">
+                 <span class="menu-booton-mob"><a> ГОЛОВНА </a></span>
+                 <span class="menu-booton-mob"><a> ТОВАРИ </a></span>
+                 <span class="menu-booton-mob"><a> КОНТАКТИ </a></span>
+                 <span class="menu-booton-mob"><a> СТО </a></span></div>
+                 </div>
+                 <div class="col-12">
+                 <div class="made-by-mob">
+                 <p>www.autostop.lviv.ua (2018)</p>
+                 </div>
+                 </div>
+             </div>
+             </div>
+
+
+
+    </footer>
+
+    <script>
+      const header = document.getElementsByClassName('menu-nav');
+      window.addEventListener('scroll', () => {
+          const scrolled = (window.scrollY>0);
+          if (scrolled) {
+              document.getElementById('menu-nav').classList.add('opacity-naw');
+              document.getElementById('trans').classList.add('logo-transition-s');
+          }
+              else {
+                  document.getElementById('menu-nav').classList.remove('opacity-naw');
+                  document.getElementById('trans').classList.remove('logo-transition-s');
+              }
+      });
+      function togler() {
+        const showback = document.getElementById("show-back");
+        showback.classList.toggle('collapsed');
+        console.log('hello');
+        document.getElementById('menu-nav').classList.toggle('color-naw');
+      };
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

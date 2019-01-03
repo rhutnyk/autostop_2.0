@@ -53,16 +53,8 @@ export default class Parts extends React.Component<any, any> {
 
         this.partContainer = document.getElementById('res');
         this.elementWithScroll = window;
-        // if(window.addEventListener){
-        // window.addEventListener('scroll', this.handleScroll);
-        // }else{
-        //     window.attachEvent('onscroll', 
-        // }
         window.addEventListener('scroll', this.handleScroll);
-       
-
         this.getData(this.url);
-
     }
 
     componentWillUnmount() {
@@ -196,9 +188,9 @@ export default class Parts extends React.Component<any, any> {
                         this.state.data && this.state.data.length > 0 ?
 
                             this.state.data.map((item: any, index: number) =>
-                                <span>
+                                <span key={index}>
                                     <div className="container">
-                                        <div id={item.Part.id} key={index}>
+                                        <div id={item.Part.id}>
                                             <div className="row" id={item.IsAnalog ? "" : "color-grey"}>
                                                 <div className="col-2 col-sm-2 number">{item.Part.Number}</div>
                                                 <div className="col-3 col-sm-4">{item.Part.Description}</div>
