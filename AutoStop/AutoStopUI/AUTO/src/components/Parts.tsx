@@ -68,7 +68,7 @@ export default class Parts extends React.Component<any, any> {
         this.setState({ partsLoading: true });
         this.mainService.query(url)
             .then((res: any) => {
-                this.setState({ data: res.Items, count: res.Count, lastUrl: url, partsLoading: false }, ()=>{this.skip = 0});
+                this.setState({ data: res.Items, count: res.Count, lastUrl: url, partsLoading: false }, () => { this.skip = 0 });
             })
     }
 
@@ -111,14 +111,13 @@ export default class Parts extends React.Component<any, any> {
     }
 
     handleScroll = () => {
-        if(!this.state.scrollLoading)
-        {
-        var windowPosition = window.scrollY;
-        var loadPosition = this.partContainer.clientHeight;
-        
-        if (windowPosition >= loadPosition && this.state.data.length < this.state.count) {
-            // loadPosition = (windowPosition+1000);
-            this.lazyLoadData();
+        if (!this.state.scrollLoading) {
+            var windowPosition = window.scrollY;
+            var loadPosition = this.partContainer.clientHeight;
+
+            if (windowPosition >= loadPosition && this.state.data.length < this.state.count) {
+                // loadPosition = (windowPosition+1000);
+                this.lazyLoadData();
             }
         }
     }
@@ -127,7 +126,7 @@ export default class Parts extends React.Component<any, any> {
     lazyLoadData = () => {
         this.setState({ scrollLoading: true });
         this.skip += 20;
-        this.mainService.query(this.state.lastUrl + (this.state.word == "" && this.state.number == ""? "skip=" + this.skip: "&skip=" + this.skip))
+        this.mainService.query(this.state.lastUrl + (this.state.word == "" && this.state.number == "" ? "skip=" + this.skip : "&skip=" + this.skip))
             .then(res => {
                 if (res) {
                     this.setState((prevState: any) => {
@@ -139,8 +138,8 @@ export default class Parts extends React.Component<any, any> {
     }
 
 
-    isLoadingAnalog(res:boolean){
-        this.setState({loading:res});
+    isLoadingAnalog(res: boolean) {
+        this.setState({ loading: res });
     }
 
 
@@ -184,46 +183,50 @@ export default class Parts extends React.Component<any, any> {
                 </div>
                 <div id={this.state.partsLoading ? "loadParts" : ""}></div>
                 <div className="parts-content" id="res">
-                    <div className="container">
-                        {
-                            this.state.data && this.state.data.length > 0 ?
 
-                                this.state.data.map((item: any, index: number) =>
-                                    <span key={index}>
-                                        <div className="row" id={item.IsAnalog ? "" : "color-grey"}>
-                                            <div className="col-2 col-sm-2 number">{item.Part.Number}</div>
-                                            <div className="col-3 col-sm-4">{item.Part.Description}</div>
-                                            <div className="col-1 col-sm-2">{item.Part.Qty}</div>
-                                            <div className="col-3 col-sm-2">{item.Part.Price} грн.</div>
-                                            <div className="col-2 col-sm-2">
-                                                {item.IsAnalog ? <a onClick={() => this.showAnalogs(item)}>
-                                                    <img src={`${this.state.collapseItemIddex == item.Part.id ? './image/hide analog.png' : './image/add analog.png'}`} />
-                                                </a> : null}
+                    {
+                        this.state.data && this.state.data.length > 0 ?
+
+                            this.state.data.map((item: any, index: number) =>
+                                <span>
+                                    <div className="container">
+                                        <div key={index}>
+                                            <div className="row" id={item.IsAnalog ? "" : "color-grey"}>
+                                                <div className="col-2 col-sm-2 number">{item.Part.Number}</div>
+                                                <div className="col-3 col-sm-4">{item.Part.Description}</div>
+                                                <div className="col-1 col-sm-2">{item.Part.Qty}</div>
+                                                <div className="col-3 col-sm-2">{item.Part.Price} грн.</div>
+                                                <div className="col-2 col-sm-2">
+                                                    {item.IsAnalog ? <a onClick={() => this.showAnalogs(item)}>
+                                                        <img src={`${this.state.collapseItemIddex == item.Part.id ? './image/hide analog.png' : './image/add analog.png'}`} />
+                                                    </a> : null}
+                                                </div>
                                             </div>
-                    </div>
-                                            {this.state.collapseItemIddex == item.Part.id ?
-                                            <span>
-                                           <div id={this.state.loading ? "load-scroll" : ""}>
 
-                                           </div>
-                                            <Analog isLoadingAnalog={this.isLoadingAnalog.bind(this)} hideAnalogs={this.onHideAnalogs} analogId={this.state.collapseItemIddex} item={this.state.item} loading={this.state.loading}/>
-                                              </span>
-                                            : null}
-                                           
-                                        
-                                        
-                                    </span>
-                                )
-                                : null
+                                        </div>
+                                    </div>
 
-                        }
-                    </div>
+                                    {this.state.collapseItemIddex == item.Part.id ?
+                                        <span>
+                                            <div id={this.state.loading ? "load-scroll" : ""}>
+
+                                            </div>
+                                            <Analog isLoadingAnalog={this.isLoadingAnalog.bind(this)} hideAnalogs={this.onHideAnalogs} analogId={this.state.collapseItemIddex} item={this.state.item} loading={this.state.loading} />
+                                        </span>
+                                        : null}
+
+
+
+
+                                </span>)
+                            : null
+
+                    }
+
                     <div id={this.state.scrollLoading ? "load-scroll" : ""}>
 
                     </div>
-
                 </div>
-
             </React.Fragment>
         )
 
