@@ -218,8 +218,6 @@ export default class Parts extends React.Component<any, any> {
                                         : null}
 
 
-
-
                                 </span>)
                             : null
 

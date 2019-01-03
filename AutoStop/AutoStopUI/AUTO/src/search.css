@@ -71,6 +71,7 @@ header{
 box-shadow: 0px 0px 5px 6px rgba(46,142,235,0.15);
 border: 1px solid #2E8EEB;
 color: #2E8EEB;
+outline: none;
 }
 
 .search-btn{
