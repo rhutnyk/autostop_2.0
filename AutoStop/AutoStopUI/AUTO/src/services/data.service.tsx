@@ -1,3 +1,6 @@
+import 'whatwg-fetch';
+import {polyfill} from 'es6-promise';
+polyfill();
 
 
 export default class MainServise {

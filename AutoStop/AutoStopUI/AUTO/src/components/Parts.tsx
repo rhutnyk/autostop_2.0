@@ -53,7 +53,14 @@ export default class Parts extends React.Component<any, any> {
 
         this.partContainer = document.getElementById('res');
         this.elementWithScroll = window;
+        // if(window.addEventListener){
+        // window.addEventListener('scroll', this.handleScroll);
+        // }else{
+        //     window.attachEvent('onscroll', 
+        // }
         window.addEventListener('scroll', this.handleScroll);
+       
+
         this.getData(this.url);
 
     }
@@ -114,9 +121,8 @@ export default class Parts extends React.Component<any, any> {
 
     handleScroll = () => {
         if (!this.state.scrollLoading && !this.state.loading) {
-            var windowPosition = window.scrollY;
+            var windowPosition = window.pageYOffset;
             var loadPosition = this.partContainer.clientHeight;
-
             if (windowPosition >= loadPosition && this.state.data.length < this.state.count) {
                 // loadPosition = (windowPosition+1000);
                 this.lazyLoadData();
