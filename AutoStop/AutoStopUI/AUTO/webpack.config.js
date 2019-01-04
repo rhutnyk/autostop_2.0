@@ -48,7 +48,7 @@ module.exports = {
       },
       {
         from:'./src/fonts',
-        to: './fonts'
+        to: './src/fonts'
       }
     ])
     

@@ -104,6 +104,21 @@ outline: none;
 }
 
 
+.word_or{
+    margin: 0;
+    padding: 0;
+    color: #2E8EEB;
+    display: flex;
+    align-items: center;
+    height: 43px;
+    text-align: center;
+}
+
+.word_or span{
+    margin-top: 32px;
+    height: 100%;
+    width: 100%;
+}
 
 @media screen and (max-width: 992px) {
     .desc, #currency{

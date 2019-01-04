@@ -139,7 +139,7 @@ export default class Parts extends React.Component<any, any> {
                             <div className="col-12 col-sm-12 col-md-3">
                                 <input className="search-input" value={this.state.number} onKeyPress={e => { if (e.key === 'Enter') { this.onChangeSearchValue(e, null) } }} type="text" placeholder="за номером" onChange={(e) => this.onChangeSearchValue(e, { 'item': "number", "clear": "word" })} />
                             </div>
-                            <div>або</div>
+                            <div className="word_or col-12 col-sm-12 col-md-1"><span>або</span></div>
                             <div className="col-12 col-sm-12 col-md-5">
                                 <input className="search-input" value={this.state.word} onKeyPress={e => { if (e.key === 'Enter') { this.onChangeSearchValue(e, null) } }} type="text" placeholder="за ключовими словами" onChange={(e) => this.onChangeSearchValue(e, { 'item': "word", "clear": "number" })} />
                             </div>
