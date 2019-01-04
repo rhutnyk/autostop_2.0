@@ -45,6 +45,10 @@ module.exports = {
       {
         from:'./src/*.html',
         to: './'
+      },
+      {
+        from:'./src/fonts',
+        to: './fonts'
       }
     ])
     

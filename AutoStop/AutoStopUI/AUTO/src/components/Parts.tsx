@@ -1,43 +1,29 @@
 import * as React from 'react';
 import dataService from '../services/data.service';
 import Analog from './Analog';
-import ReactDOM = require('react-dom');
-
-interface Part {
-    id: number;
-    Number: string;
-    Description: string;
-    Qty: number;
-    Qty1: number;
-    Qty2: number;
-    Price: number;
-    Brand: string;
-}
+import URL_Service from '../services/url_service';
 
 
 
 export default class Parts extends React.Component<any, any> {
-
-    private mainService = new dataService('http://autostop.bitsorchestra.com/api/parts');
+   
+    private mainService = new dataService();
     private partContainer: HTMLElement;
-    private url = "http://autostop.bitsorchestra.com/api/parts?";
+    private url = URL_Service.part_url;
     private queryNumber = "number=";
     private queryDescription = "desc=";
     private skip = 0;
-    private take = 0;
     private elementWithScroll: Window;
     
 
-    constructor(props: Part) {
+    constructor(props: any) {
         super(props);
 
         this.state = {
             data: [],
             lastUrl: null,
             count: 0,
-            click: false,
             collapseItemIddex: null,
-            item: null,
             loading: false,
             partsLoading: false,
             scrollLoading: false,
@@ -47,9 +33,6 @@ export default class Parts extends React.Component<any, any> {
     }
 
     public componentDidMount() {
-
-      
-
         this.partContainer = document.getElementById('res');
         this.elementWithScroll = window;
         window.addEventListener('scroll', this.handleScroll);
@@ -61,20 +44,19 @@ export default class Parts extends React.Component<any, any> {
     }
 
 
-    getData = (url: string) => {
+    getData = (url:string) => {
         this.setState({ partsLoading: true });
-        // this.mainService.query(url)
-        this.mainService.Query()
+        this.mainService.query(url)
             .then((res: any) => {
                 this.setState({ data: res.Items, count: res.Count, lastUrl: url, partsLoading: false }, () => { this.skip = 0 });
             })
     }
 
 
-    showAnalogs = (item: any): void => {
-        const isActive = this.state.collapseItemIddex == item.Part.id ? null : item.Part.id;
-        this.setState({ collapseItemIddex: isActive, item: item, loading: true }, ()=>{
-            window.scrollTo(0,(document.getElementById(item.Part.id).offsetTop-70))
+    showAnalogs = (id: string): void => {
+        const isActive = this.state.collapseItemIddex == id ? null : id;
+        this.setState({ collapseItemIddex: isActive, loading: true }, ()=>{
+            window.scrollTo(0,(document.getElementById(id).offsetTop-70))
         });
     }
 
@@ -96,7 +78,6 @@ export default class Parts extends React.Component<any, any> {
 
     onChangeSearchValue = (e: any, property: { item: string, clear: string }): void => {
         if (e.key === 'Enter') {
-
             e.target.blur();
             this.searchParts();
             return;
@@ -116,7 +97,6 @@ export default class Parts extends React.Component<any, any> {
             var windowPosition = window.pageYOffset;
             var loadPosition = this.partContainer.clientHeight;
             if (windowPosition >= loadPosition && this.state.data.length < this.state.count) {
-                // loadPosition = (windowPosition+1000);
                 this.lazyLoadData();
             }
         }
@@ -126,15 +106,15 @@ export default class Parts extends React.Component<any, any> {
     lazyLoadData = () => {
         this.setState({ scrollLoading: true });
         this.skip += 20;
-        // this.mainService.query(this.state.lastUrl + (this.state.word == "" && this.state.number == "" ? "skip=" + this.skip : "&skip=" + this.skip))
-        //     .then(res => {
-        //         if (res) {
-        //             this.setState((prevState: any) => {
-        //                 prevState.data.push(...res.Items);
-        //                 return { data: prevState.data, scrollLoading: false }
-        //             })
-        //         }
-        //     })
+        this.mainService.query(this.state.lastUrl + (this.state.word == "" && this.state.number == "" ? "skip=" + this.skip : "&skip=" + this.skip))
+            .then(res => {
+                if (res) {
+                    this.setState((prevState: any) => {
+                        prevState.data.push(...res.Items);
+                        return { data: prevState.data, scrollLoading: false }
+                    })
+                }
+            })
     }
 
 
@@ -159,6 +139,7 @@ export default class Parts extends React.Component<any, any> {
                             <div className="col-12 col-sm-12 col-md-3">
                                 <input className="search-input" value={this.state.number} onKeyPress={e => { if (e.key === 'Enter') { this.onChangeSearchValue(e, null) } }} type="text" placeholder="за номером" onChange={(e) => this.onChangeSearchValue(e, { 'item': "number", "clear": "word" })} />
                             </div>
+                            <div>або</div>
                             <div className="col-12 col-sm-12 col-md-5">
                                 <input className="search-input" value={this.state.word} onKeyPress={e => { if (e.key === 'Enter') { this.onChangeSearchValue(e, null) } }} type="text" placeholder="за ключовими словами" onChange={(e) => this.onChangeSearchValue(e, { 'item': "word", "clear": "number" })} />
                             </div>
@@ -194,9 +175,9 @@ export default class Parts extends React.Component<any, any> {
                                                 <div className="col-2 col-sm-2 number">{item.Part.Number}</div>
                                                 <div className="col-3 col-sm-4">{item.Part.Description}</div>
                                                 <div className="col-1 col-sm-2">{item.Part.Qty}</div>
-                                                <div className="col-3 col-sm-2">{item.Part.Price} грн.</div>
+                                                <div className="col-3 col-sm-2">{item.Part.Price} &euro;</div>
                                                 <div className="col-2 col-sm-2">
-                                                    {item.IsAnalog ? <a onClick={() => this.showAnalogs(item)}>
+                                                    {item.IsAnalog ? <a onClick={() => this.showAnalogs(item.Part.id)}>
                                                         <img src={`${this.state.collapseItemIddex == item.Part.id ? './image/hide analog.png' : './image/add analog.png'}`} />
                                                     </a> : null}
                                                 </div>
@@ -207,7 +188,7 @@ export default class Parts extends React.Component<any, any> {
                                     {this.state.collapseItemIddex == item.Part.id ?
                                         <span>
                                             <div id={this.state.loading ? "load-scroll" : ""}></div>
-                                            <Analog isLoadingAnalog={this.isLoadingAnalog.bind(this)} hideAnalogs={this.onHideAnalogs} analogId={this.state.collapseItemIddex} item={this.state.item} loading={this.state.loading} />
+                                            <Analog isLoadingAnalog={this.isLoadingAnalog.bind(this)} hideAnalogs={this.onHideAnalogs} analogId={this.state.collapseItemIddex} loading={this.state.loading} />
                                         </span>
                                         : null}
 
