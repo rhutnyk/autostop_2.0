@@ -181,6 +181,23 @@ outline: none;
     }
  }
 
+ @media screen and (max-width: 575px){
+    .parts-content{
+        text-align: center;
+    }
+    /* .parts-container-header{
+        display: none;
+    } */
+    #analog{
+        border-bottom: 1px solid rgba(153, 149, 149, 0.376) !important;
+        border-radius: 46px;
+    }
+    .analog{
+        border-radius: 46px !important;
+        padding-bottom: 0 !important;
+    }
+ }
+
 .analog{
     border-radius: 15px;
     color: grey;

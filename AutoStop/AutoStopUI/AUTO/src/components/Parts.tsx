@@ -153,11 +153,11 @@ export default class Parts extends React.Component<any, any> {
                 <div className="parts-container-header">
                     <div className="container">
                         <div className="row justify-content-md-center">
-                            <div className="col-2 col-sm-2">Номер</div>
-                            <div className="col-3 col-sm-4">Опис</div>
-                            <div className="col-1 col-sm-2">К-сть</div>
-                            <div className="col-3 col-sm-2">Вартість</div>
-                            <div className="col-2 col-sm-2">Аналоги</div>
+                            <div className="d-none d-sm-block col-sm-2">Номер</div>
+                            <div className="d-none d-sm-block col-sm-4">Опис</div>
+                            <div className="d-none d-sm-block col-sm-2">К-сть</div>
+                            <div className="d-none d-sm-block col-sm-2">Вартість</div>
+                            <div className="d-none d-sm-block col-sm-2">Аналоги</div>
                         </div>
                     </div>
                 </div>
@@ -171,12 +171,12 @@ export default class Parts extends React.Component<any, any> {
                                 <span key={index}>
                                     <div className="container">
                                         <div id={item.Part.id}>
-                                            <div className="row" id={item.IsAnalog ? "" : "color-grey"}>
-                                                <div className="col-2 col-sm-2 number">{item.Part.Number}</div>
-                                                <div className="col-3 col-sm-4">{item.Part.Description}</div>
-                                                <div className="col-1 col-sm-2">{item.Part.Qty}</div>
-                                                <div className="col-3 col-sm-2">{item.Part.Price} &euro;</div>
-                                                <div className="col-2 col-sm-2">
+                                            <div className="row justify-content-md-center" id={item.IsAnalog ? "" : "color-grey"}>
+                                                <div className="col-12 col-sm-2 number">{item.Part.Number}</div>
+                                                <div className="col-12 col-sm-4">{item.Part.Description}</div>
+                                                <div className="col-12 col-sm-2">{item.Part.Qty}</div>
+                                                <div className="col-12 col-sm-2">{item.Part.Price} &euro;</div>
+                                                <div className="col-12 col-sm-2">
                                                     {item.IsAnalog ? <a onClick={() => this.showAnalogs(item.Part.id)}>
                                                         <img src={`${this.state.collapseItemIddex == item.Part.id ? './image/hide analog.png' : './image/add analog.png'}`} />
                                                     </a> : null}
