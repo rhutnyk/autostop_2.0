@@ -6,7 +6,7 @@ import dataService from '../services/data.service';
 
 export default class CurrencyRate extends React.Component<any, any>{
 
-    private mainService = new dataService();
+    private mainService = new dataService('hh');
     private url = "http://autostop.bitsorchestra.com/api/parts?rate";
 
     constructor(props: any) {

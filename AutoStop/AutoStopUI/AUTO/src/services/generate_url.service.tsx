@@ -17,15 +17,19 @@ export default class DataS {
 
 
     private GetData(url: string): Promise<any> {
+
         return fetch(url)
             .then((res: any) => res.json())
-            .then(res => { return res });
+            .then(res => { return res })
+            .catch(error => console.error('Error:', error));
     }
 
 
     public Query(filter?: string, skip?: number, take?: number ) {
+
         var isFirst = false;
         this._url = this._URL;
+
         if (filter != null || skip != null || take != null) {
 
             if (filter != null) {

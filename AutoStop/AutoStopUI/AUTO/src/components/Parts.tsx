@@ -1,7 +1,6 @@
 import * as React from 'react';
 import dataService from '../services/data.service';
 import Analog from './Analog';
-import DataS from '../services/generate_url.service';
 import ReactDOM = require('react-dom');
 
 interface Part {
@@ -19,7 +18,7 @@ interface Part {
 
 export default class Parts extends React.Component<any, any> {
 
-    private mainService = new dataService();
+    private mainService = new dataService('http://autostop.bitsorchestra.com/api/parts');
     private partContainer: HTMLElement;
     private url = "http://autostop.bitsorchestra.com/api/parts?";
     private queryNumber = "number=";
@@ -27,7 +26,7 @@ export default class Parts extends React.Component<any, any> {
     private skip = 0;
     private take = 0;
     private elementWithScroll: Window;
-    private TakeData:DataS;
+    
 
     constructor(props: Part) {
         super(props);
@@ -49,7 +48,7 @@ export default class Parts extends React.Component<any, any> {
 
     public componentDidMount() {
 
-       this.TakeData = new DataS(this.url);
+      
 
         this.partContainer = document.getElementById('res');
         this.elementWithScroll = window;
@@ -65,7 +64,7 @@ export default class Parts extends React.Component<any, any> {
     getData = (url: string) => {
         this.setState({ partsLoading: true });
         // this.mainService.query(url)
-        this.TakeData.Query()
+        this.mainService.Query()
             .then((res: any) => {
                 this.setState({ data: res.Items, count: res.Count, lastUrl: url, partsLoading: false }, () => { this.skip = 0 });
             })
@@ -127,15 +126,15 @@ export default class Parts extends React.Component<any, any> {
     lazyLoadData = () => {
         this.setState({ scrollLoading: true });
         this.skip += 20;
-        this.mainService.query(this.state.lastUrl + (this.state.word == "" && this.state.number == "" ? "skip=" + this.skip : "&skip=" + this.skip))
-            .then(res => {
-                if (res) {
-                    this.setState((prevState: any) => {
-                        prevState.data.push(...res.Items);
-                        return { data: prevState.data, scrollLoading: false }
-                    })
-                }
-            })
+        // this.mainService.query(this.state.lastUrl + (this.state.word == "" && this.state.number == "" ? "skip=" + this.skip : "&skip=" + this.skip))
+        //     .then(res => {
+        //         if (res) {
+        //             this.setState((prevState: any) => {
+        //                 prevState.data.push(...res.Items);
+        //                 return { data: prevState.data, scrollLoading: false }
+        //             })
+        //         }
+        //     })
     }
 
 

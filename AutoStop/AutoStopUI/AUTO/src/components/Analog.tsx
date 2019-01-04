@@ -12,7 +12,7 @@ class IProps {
 
 export default class Analog extends React.Component<IProps, any> {
 
-    private mainService = new dataService();
+    private mainService = new dataService('fg');
     
     private url = 'http://autostop.bitsorchestra.com/api/parts?analog=';
     private query = 0;
