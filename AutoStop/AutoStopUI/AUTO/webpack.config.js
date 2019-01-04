@@ -1,7 +1,8 @@
-const path = require("path") 
+const path = require("path");
 
 // Require the new plugin
-const HtmlWebpackPlugin = require("html-webpack-plugin") 
+const HtmlWebpackPlugin = require("html-webpack-plugin"); 
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = { 
   entry:{
@@ -12,7 +13,7 @@ module.exports = {
 },
   devtool: "source-map",
   resolve: { 
-    extensions: [".ts", ".tsx", ".js", ".json", ".css"] 
+    extensions: [".ts", ".tsx", ".js", ".json"] 
   }, 
   output: { 
     filename: '[name].bundle.js',
@@ -25,10 +26,6 @@ module.exports = {
       {  
         test: /\.tsx?$/,  
         loader: "awesome-typescript-loader"  
-      },
-      {
-        test:/\.css$/,
-                use:['style-loader','css-loader']
       }
     ]
    },
@@ -36,7 +33,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       inject:false 
-    })
+    }),
+    new CopyWebpackPlugin([{
+      from: './src/image',
+      to: './src/image',
+      
+      }
+    ])
     
   ]
 }
