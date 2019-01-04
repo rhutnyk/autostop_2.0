@@ -1,5 +1,3 @@
-import { number, string, any } from "prop-types";
-
 
 
 
@@ -9,43 +7,42 @@ export default class DataS {
 
 
     private _url: string;
-    private _filter: string;
-    private _take: string;
-    private _skip: string;
+    private _URL:string;
 
 
-    private _URL = 'http://www.dood.com';
+    constructor(url:string){
+        this._URL = url;
+    }
 
 
 
-
-    public query(url: string): Promise<any> {
+    private GetData(url: string): Promise<any> {
         return fetch(url)
             .then((res: any) => res.json())
             .then(res => { return res });
     }
 
 
-    GenerateUrl(setting: { filter?: string, skip?: number, take?: number }) {
-        var first = false;
+    public Query(filter?: string, skip?: number, take?: number ) {
+        var isFirst = false;
+        this._url = this._URL;
+        if (filter != null || skip != null || take != null) {
 
-        if (setting.filter != null || setting.skip != null || setting.take != null) {
-
-            this._url = this._URL;
-
-            if (setting.filter != null) {
-                this._url += first ? '&' + setting.filter : '?' + setting.filter;
-                first = true;
+            if (filter != null) {
+                this._url += isFirst ? '&' + filter : '?' + filter;
+                isFirst = true;
             }
-            if (setting.skip != null) {
-                this._url += first ? '&skip=' + setting.skip : '?skip=' + setting.skip;
-                first = true;
+            if (skip != null) {
+                this._url += isFirst ? '&skip=' + skip : '?skip=' + skip;
+                isFirst = true;
             }
-            if (setting.take != null) {
-                this._url += first ? '&take=' + setting.take : '?take=' + setting.take;
-                first = true;
+            if (take != null) {
+                this._url += isFirst ? '&take=' + take : '?take=' + take;
+                isFirst = true;
             }
 
         }
+
+      return  this.GetData(this._url);
     }
 }

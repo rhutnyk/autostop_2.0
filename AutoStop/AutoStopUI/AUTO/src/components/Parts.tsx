@@ -27,7 +27,7 @@ export default class Parts extends React.Component<any, any> {
     private skip = 0;
     private take = 0;
     private elementWithScroll: Window;
-
+    private TakeData:DataS;
 
     constructor(props: Part) {
         super(props);
@@ -49,7 +49,7 @@ export default class Parts extends React.Component<any, any> {
 
     public componentDidMount() {
 
-        // var datas = new DataS();
+       this.TakeData = new DataS(this.url);
 
         this.partContainer = document.getElementById('res');
         this.elementWithScroll = window;
@@ -62,10 +62,10 @@ export default class Parts extends React.Component<any, any> {
     }
 
 
-
     getData = (url: string) => {
         this.setState({ partsLoading: true });
-        this.mainService.query(url)
+        // this.mainService.query(url)
+        this.TakeData.Query()
             .then((res: any) => {
                 this.setState({ data: res.Items, count: res.Count, lastUrl: url, partsLoading: false }, () => { this.skip = 0 });
             })
@@ -110,6 +110,7 @@ export default class Parts extends React.Component<any, any> {
             }
         });
     }
+
 
     handleScroll = () => {
         if (!this.state.scrollLoading && !this.state.loading) {
@@ -169,7 +170,6 @@ export default class Parts extends React.Component<any, any> {
                     </div>
                 </div>
 
-
                 <div className="parts-container-header">
                     <div className="container">
                         <div className="row justify-content-md-center">
@@ -202,28 +202,22 @@ export default class Parts extends React.Component<any, any> {
                                                     </a> : null}
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
 
                                     {this.state.collapseItemIddex == item.Part.id ?
                                         <span>
-                                            <div id={this.state.loading ? "load-scroll" : ""}>
-
-                                            </div>
+                                            <div id={this.state.loading ? "load-scroll" : ""}></div>
                                             <Analog isLoadingAnalog={this.isLoadingAnalog.bind(this)} hideAnalogs={this.onHideAnalogs} analogId={this.state.collapseItemIddex} item={this.state.item} loading={this.state.loading} />
                                         </span>
                                         : null}
-
 
                                 </span>)
                             : null
 
                     }
 
-                    <div id={this.state.scrollLoading ? "load-scroll" : ""}>
-
-                    </div>
+                    <div id={this.state.scrollLoading ? "load-scroll" : ""}></div>
                 </div>
             </React.Fragment>
         )
