@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 #menu-nav{
     background-color: rgba(43, 30, 143, 0);
     /* opacity: .0; */
@@ -147,7 +150,12 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+/* content */
+.flag {
+    width: 100%;
+}
 
+/* content */
 .footer {
     background-color: #484848;
     height: 100%;
@@ -188,6 +196,10 @@
     border: none;
     box-shadow: -1px -1px 100px 10px #000000;
     margin: 20px 0 0 0;
+    padding: 10px 20px 10px;
+}
+#writetous:hover{
+    background-color: white;
 }
 #youname {
     width: 100%;
@@ -197,6 +209,10 @@
     border: none;
     box-shadow: -1px -1px 40px 1px #000000;
     margin: 20px 0 0 0;
+    padding-left: 20px;
+}
+#youname:hover{
+    background-color: white;
 }
 #mail{
     width: 100%;
@@ -206,6 +222,10 @@
     border: none;
     box-shadow: -1px -1px 40px 1px #000000;
     margin: 20px 0 0 0;
+    padding-left: 20px;
+}
+#mail:hover{
+    background-color: white;
 }
 #send{
     width: 50%;
@@ -251,6 +271,11 @@
     border: none;
     box-shadow: -1px -1px 40px 1px #000000;
     margin: 20px 0 0 0;
+    padding-left: 20px;
+    padding: 10px 20px 10px;
+}
+#writetous-mob:hover{
+    background-color: white;
 }
 #youname-mob {
     width: 100%;
@@ -260,6 +285,10 @@
     border: none;
     box-shadow: -1px -1px 40px 1px #000000;
     margin: 20px 0 0 0;
+    padding-left: 20px;
+}
+#youname-mob:hover{
+    background-color: white;
 }
 #mail-mob{
     width: 100%;
@@ -269,6 +298,10 @@
     border: none;
     box-shadow: -1px -1px 40px 1px #000000;
     margin: 20px 0 0 0;
+    padding-left: 20px;
+}
+#mail-mob:hover{
+    background-color: white;
 }
 #send-mob{
     width: 50%;
@@ -305,3 +338,38 @@
 .text-me-bo {
     font-size: 10px;
 }
+
+input:focus {
+    outline:none;
+    background-color: white;
+ }
+ textarea:focus {
+    outline:none;
+ }
+ /* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    opacity: 0.5; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4F8E23; 
+  }
+  a {
+      color: #e3e3e3;
+  }
+  a:hover{
+      color: #4F8E23;
+      text-decoration: none;
+  }
