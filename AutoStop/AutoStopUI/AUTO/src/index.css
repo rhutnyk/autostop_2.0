@@ -1,51 +1,65 @@
 html {
     scroll-behavior: smooth;
 }
-#menu-nav{
+
+#menu-nav {
     background-color: rgba(43, 30, 143, 0);
     /* opacity: .0; */
     /* transition: .1s; */
 }
-.opacity-naw{
+
+.opacity-naw {
     transition: .2s;
     background-color: rgb(30, 36, 143) !important;
 }
+
 .color-naw {
     background-color: #FF0000 !important;
 }
+
 .block-left {
     width: 30%;
 }
-.navbar-toggler{
+
+.navbar-toggler {
     border: none;
-    padding:  0 10px 0 0;
+    padding: 0 10px 0 0;
     font-size: none;
 }
-.logo-transition-l{
+
+.logo-transition-l {
     width: 120px;
-    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
-    transition: width .2s; 
+    -webkit-transition: width 2s;
+    /* For Safari 3.1 to 6.0 */
+    transition: width .2s;
     /* height 1s; */
 }
-.logo-transition-s{
+
+.logo-transition-s {
     width: 50px;
-    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
-    transition: width .5s; 
+    -webkit-transition: width 2s;
+    /* For Safari 3.1 to 6.0 */
+    transition: width .5s;
     /* height 1s; */
 }
-.padding-zero{
+
+.padding-zero {
     padding: 7px;
 }
-.button:focus{
-    outline:none;
+
+.button:focus {
+    outline: none;
 }
+
 .border-bot {
     border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
+
 .border-bot:hover {
     border-bottom: 1px solid rgb(184, 210, 240);
 }
-.phone-b{
+
+.phone-b {
     height: 34px;
     width: 34px;
     background-image: url('../src/image/header/phone-icon.png');
@@ -53,19 +67,22 @@ html {
     float: left;
     padding-right: 10px;
 }
-.mail-b{
+
+.mail-b {
     height: 34px;
     width: 34px;
     background-image: url('../src/image/header/@.png');
     background-repeat: no-repeat;
     float: left;
 }
+
 .burger-b {
     height: 34px;
     width: 34px;
     background-image: url('../src/image/header/burger.svg');
     background-repeat: no-repeat;
 }
+
 .button-phone {
     background-image: url('../src/image/header/phone-icon.png');
     background-repeat: no-repeat;
@@ -73,24 +90,28 @@ html {
     width: 35px;
     padding: 0;
 }
+
 .button-mail {
     background-image: url('../src/image/header/@.png');
     background-repeat: no-repeat;
     height: 35px;
     width: 35px;
-    }
+}
+
 .button-phone:hover {
-   background-image: url('../src/image/header/phone-icon-h.png');
-   background-repeat: no-repeat;
-   height: 35px;
-   width: 35px;
-   }
+    background-image: url('../src/image/header/phone-icon-h.png');
+    background-repeat: no-repeat;
+    height: 35px;
+    width: 35px;
+}
+
 .button-mail:hover {
     background-image: url('../src/image/header/@-h.png');
     background-repeat: no-repeat;
     height: 35px;
     width: 35px;
 }
+
 .but-button-coll {
     background-image: url('../src/image/header/phone-icon.png');
     background-repeat: no-repeat;
@@ -105,8 +126,9 @@ html {
     text-decoration: none;
     color: white;
     font-size: 12px;
-    padding: 8px 40px 8px 40px ;
+    padding: 8px 40px 8px 40px;
 }
+
 .but-button-mail {
     background-image: url('../src/image/header/@.png');
     background-repeat: no-repeat;
@@ -121,35 +143,41 @@ html {
     text-decoration: none;
     color: white;
     font-size: 12px;
-    padding: 8px 40px 8px 40px ;
+    padding: 8px 40px 8px 40px;
 }
+
 .but-button-coll:hover {
     background-image: url('../src/image/header/phone-icon-h.png');
     box-shadow: -1px -1px 50px 0px #4F8E23;
     text-decoration: none;
     color: white;
 }
+
 .but-button-mail:hover {
     background-image: url('../src/image/header/@-h.png');
     box-shadow: -1px -1px 50px 0px #4F8E23;
     text-decoration: none;
     color: white;
 }
-.back-image-1{
+
+.back-image-1 {
     background-image: url('../src/image/header/blue-back.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
-.back-image-2{
+
+.back-image-2 {
     background-image: url('../src/image/header/green-back.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
-.back-image-3{
+
+.back-image-3 {
     background-image: url('../src/image/header/red-back.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 /* content */
 .flag {
     width: 100%;
@@ -161,6 +189,7 @@ html {
     height: 100%;
     width: 100%;
 }
+
 .contact-map {
     margin-top: 40px;
     background-image: url('../src/image/footer/Map-gogle-black.jpg');
@@ -170,24 +199,29 @@ html {
     width: 100%;
     height: 300px;
 }
-.geo-phone{
+
+.geo-phone {
     padding-top: 40px;
     max-width: 100px;
     margin: auto;
 }
-.geo-locat{
+
+.geo-locat {
     padding-top: 80px;
     max-width: 100px;
     margin: auto;
 }
+
 .contact-item-footer {
     margin-top: 40px;
     color: #b5b5b5;
     line-height: 1.0;
 }
+
 .footer-mail {
     color: white
 }
+
 #writetous {
     width: 100%;
     height: 130px;
@@ -198,9 +232,11 @@ html {
     margin: 20px 0 0 0;
     padding: 10px 20px 10px;
 }
-#writetous:hover{
+
+#writetous:hover {
     background-color: white;
 }
+
 #youname {
     width: 100%;
     height: 30px;
@@ -211,10 +247,12 @@ html {
     margin: 20px 0 0 0;
     padding-left: 20px;
 }
-#youname:hover{
+
+#youname:hover {
     background-color: white;
 }
-#mail{
+
+#mail {
     width: 100%;
     height: 30px;
     border-radius: 15px;
@@ -224,10 +262,12 @@ html {
     margin: 20px 0 0 0;
     padding-left: 20px;
 }
-#mail:hover{
+
+#mail:hover {
     background-color: white;
 }
-#send{
+
+#send {
     width: 50%;
     height: 30px;
     border-radius: 15px;
@@ -237,23 +277,28 @@ html {
     margin: 20px 0 20px 0;
     color: white;
 }
-#send:hover{
+
+#send:hover {
     box-shadow: -1px -1px 50px 0px #4F8E23;
 }
+
 .menu-booton {
     color: white;
     font-size: 10px;
     margin: 0 20px 0 0;
 }
-.logo-bootom-menu{
+
+.logo-bootom-menu {
     margin: 0;
     width: 40px;
 }
+
 .made-by {
     color: rgb(134, 134, 134);
     margin: 15px 0 0 0;
     font-size: 10px
 }
+
 .contact-map-mob {
     margin-top: 40px;
     background-image: url('../src/image/footer/Map-gogle-black.jpg');
@@ -263,6 +308,7 @@ html {
     width: 100%;
     height: 300px;
 }
+
 #writetous-mob {
     width: 100%;
     height: 100px;
@@ -274,9 +320,11 @@ html {
     padding-left: 20px;
     padding: 10px 20px 10px;
 }
-#writetous-mob:hover{
+
+#writetous-mob:hover {
     background-color: white;
 }
+
 #youname-mob {
     width: 100%;
     height: 30px;
@@ -287,10 +335,12 @@ html {
     margin: 20px 0 0 0;
     padding-left: 20px;
 }
-#youname-mob:hover{
+
+#youname-mob:hover {
     background-color: white;
 }
-#mail-mob{
+
+#mail-mob {
     width: 100%;
     height: 30px;
     border-radius: 15px;
@@ -300,10 +350,12 @@ html {
     margin: 20px 0 0 0;
     padding-left: 20px;
 }
-#mail-mob:hover{
+
+#mail-mob:hover {
     background-color: white;
 }
-#send-mob{
+
+#send-mob {
     width: 50%;
     height: 30px;
     border-radius: 15px;
@@ -311,65 +363,75 @@ html {
     border: none;
     box-shadow: -1px -1px 50px 10px #000000;
     margin: 20px 25% 20px 25%;
-    color:white;
+    color: white;
 }
-#send-mob:hover{
+
+#send-mob:hover {
     box-shadow: -1px -1px 50px 0px #4F8E23;
 }
-.center-menu-mob{
+
+.center-menu-mob {
     width: 230px;
     margin: 0 auto 20px auto;
 }
+
 .logo-bootom-menu-mob {
     width: 100px;
     border: none;
     margin: auto;
 }
+
 .menu-booton-mob {
     color: white;
     font-size: 10px;
     margin: 0 5px 0 0;
 }
-.made-by-mob{
+
+.made-by-mob {
     color: #7c7c7c;
     font-size: 10px;
     margin-top: 20px;
 }
+
 .text-me-bo {
     font-size: 10px;
 }
 
 input:focus {
-    outline:none;
+    outline: none;
     background-color: white;
- }
- textarea:focus {
-    outline:none;
- }
- /* width */
+}
+
+textarea:focus {
+    outline: none;
+}
+
+/* width */
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    opacity: 0.5; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    opacity: 0.5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 5px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #4F8E23; 
-  }
-  a {
-      color: #e3e3e3;
-  }
-  a:hover{
-      color: #4F8E23;
-      text-decoration: none;
-  }
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #4F8E23;
+}
+
+a {
+    color: #e3e3e3;
+}
+
+a:hover {
+    color: #4F8E23;
+    text-decoration: none;
+}
