@@ -31,7 +31,7 @@ namespace AutoStop.Controllers
         {
             try
             {
-                var result = data.GetAnalog(analog, skip, take);
+                var result = data.GetAnalog(analog, skip, 100);
 
                 return Ok(result);
             }
