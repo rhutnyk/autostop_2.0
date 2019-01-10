@@ -8,7 +8,8 @@ module.exports = {
   entry:{
     "index": "./src/index.tsx",
     "search": "./src/search.tsx",
-    "currency" : "./src/currency.tsx" 
+    "currency" : "./src/currency.tsx",
+    "contact" : "./src/contact.tsx" 
 
 },
   devtool: "source-map",
