@@ -8,8 +8,8 @@ export const URL = {
 
     part_url : url+"/api/parts?",
     analog_url : url+"/api/parts?analog=",
-    currency_url : url+"/api/parts?rate"
-
+    currency_url : url+"/api/parts?rate",
+    contact_url: url + "/api/contact"
 };
 
 export default URL;
