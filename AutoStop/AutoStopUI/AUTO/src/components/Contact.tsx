@@ -69,7 +69,6 @@ export default class Contact extends React.Component<any, any>{
         .catch(err=>{
             console.error(err);
         })
-        
     }
 
 
