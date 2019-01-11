@@ -1,367 +1,548 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../src/index.css">
     <title>AUTOSTOP</title>
 </head>
+
 <body>
-   <nav id="menu-nav" class="navbar navbar-expand-md navbar-dark fixed-top">
-  <!-- Brand -->
-  <div class="d-none d-md-block block-left"></div>
-  <a id="trans" class="navbar-brand logo-transition-l" href="#"><img class="" src="../src/image/header/logo.svg" width=""></a>
+    <nav id="menu-nav" class="navbar navbar-expand-md navbar-dark fixed-top">
+        <!-- Brand -->
+        <div class="d-none d-md-block block-left"></div>
+        <a id="trans" class="navbar-brand logo-transition-l" href="#"><img class="" src="../src/image/header/logo.svg"
+                width=""></a>
 
 
-  <!-- Toggler/collapsibe Button -->
- <div class="row navbar-toggler">
-  <div class="col padding-zero"><a href="tel:+380671234567"><div class="button-phone"></div></a></div>
-  <div class="col padding-zero"><a href=""><div class="button-mail"></div></a></div>
-  <button id="show-back" onclick="togler()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <div class="col"><img src="../src/image/header/burger1.svg"></div>
-  </button>
-</div>
-  <!-- Navbar links -->
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav float-right">
-      <li class="nav-item">
-        <div class="border-bot"><a class="nav-link" href="#">головна</a></div>
-      </li>
-      <li class="nav-item">
-        <div class="border-bot"><a class="nav-link" href="../src/search.html">товари</a></div>
-      </li>
-      <li class="nav-item">
-        <div class="border-bot"><a class="nav-link" href="#">контакти</a></div>
-      </li> 
-    </ul>
-  </div> 
-</nav>  
-<!--  Carousel -->
-   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-     <div class="back-image-1">
-      <img class="d-block w-100" src="../src/image/header/blue-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 140px 30px 20px 30px">
-      </div>
-      <div class="carousel-caption d-none d-md-block">
-      <img src="../src/image/header/gears.svg" style="width: 15%;">
-    <p>ОРИГІНАЛЬНІ АВТОЗАПЧАСТИНИ ДО <br> ФРАНЦУСЬКИХ АВТОМОБІЛІВ</p>
-    <a  class="but-button-coll d-none d-md-inline" href="tel:+380671234567">ЗАТЕЛЕФОНУВАТИ</a>
-    <a  class="but-button-mail d-none d-md-inline" href="">НАПИШІТЬ НАМ</a>
-  </div>
-    </div>
-    <div class="carousel-item">
-      <div class="back-image-2">
-      <img class="d-block w-100" src="../src/image/header/green-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 140px 30px 20px 30px">
-      </div>
-      <div class="carousel-caption d-none d-md-block">
-      <img src="../src/image/header/gears.svg" style="width: 15%;">
-    <p>ОРИГІНАЛЬНІ АВТОЗАПЧАСТИНИ ДО <br> ФРАНЦУСЬКИХ АВТОМОБІЛІВ</p>
-    <a  class="but-button-coll d-none d-md-inline" href="tel:+380671234567">ЗАТЕЛЕФОНУВАТИ</a>
-    <a  class="but-button-mail d-none d-md-inline" href="">НАПИШІТЬ НАМ</a>
-  </div>
-    </div>
-    <div class="carousel-item">
-      <div class="back-image-3">
-      <img class="d-block w-100" src="../src/image/header/red-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 140px 30px 20px 30px">
-      </div>
-      <div class="carousel-caption d-none d-md-block">
-      <img src="../src/image/header/gears.svg" style="width: 15%;">
-    <p>ОРИГІНАЛЬНІ АВТОЗАПЧАСТИНИ ДО <br> ФРАНЦУСЬКИХ АВТОМОБІЛІВ</p>
-    <a  class="but-button-coll d-none d-md-inline" href="tel:+380671234567">ЗАТЕЛЕФОНУВАТИ</a>
-    <a  class="but-button-mail d-none d-md-inline" href="">НАПИШІТЬ НАМ</a>
-  </div>
-    </div>
-  </div>
-  <!--Content-->
-
-<div class="container">
-  <div class="text-center">
-   <div class="row"></div>
-   <div class="col-sm"></div>
-   <div class="text-center">
-    <h3 class="mt-5" >ПРО НАС</h3>
-    <p class="text-justify mt-4 ml-1 mr-1">У 2009 році з напливом француських автомобілів на Український ринок нами було прийнято рішеня про створення автоамагазину для комфортного обслуговування клієнтів якісними автозапчастинами, до француських авто. На той час ми були оді з перших автомагазинів по француських авто у Львові. Ця подія дала змогу нашим клієнтам в стислі терміни отримувати замовлення, та головне те що клієнти могли вибрати серед значної кількості брендів дорогих чи бюджетних. На сьогодні Автостоп налічує 10000 постійних клієнтів та понад 30000 товарів в наявності. Завітавши до нас, ви можете придбати оригінальні автозапчастини до французьких автомобілів та іх замінники, а також моторні, трансмісійні мастила та авто хімію. Крім того до ваших послуг стіл замовлень до корейських та японських автомобілів. Продаж гуртом та в роздріб. Широкий асортимент. Гнучкі ціни. Постійним клієнтам знижки. Найкоротші терміни замовлень. Доставка по місту. Запрошуємо до співпраці автосервіси, автомагазини. Будемо роді бачити вас в числі наших клієнтів. З повагою колектив АВТОСТОП.
-</p>
-</div>
-</div>
-
-<div class="row">
-   <div class="col"></div>
-    <div class="col d-none d-md-block" style="min-width: 50px"><img src="../src/image/content/Fiat-logo.jpg" style="width: 100%"></div>
-    <div class="col d-none d-md-block" style="min-width: 50px"><img src="../src/image/content/citroen_PNG88.jpg" style="width: 100%"></div>
-    <div class="col d-none d-md-block" style="min-width: 50px"><img src="../src/image/content/renault_PNG39.jpg" style="width: 100%"></div>
-    <div class="col d-none d-md-block" style="min-width: 50px"><img src="../src/image/content/car_logo_PNG1660.jpg" style="width: 100%"></div>
-    <div class="col d-none d-md-block" style="min-width:50px"><img src="../src/image/content/dacialogo.jpg" style="width: 100%"></div>
-    <div class="col"></div>
-</div>
-
-<div class="row">
-    <div class="col d-md-none d-lg-none d-xl-none" style="min-width: 50px"><img src="../src/image/content/Fiat-logo.jpg" style="width: 100%"></div>
-    <div class="col d-md-none d-lg-none d-xl-none" style="min-width: 50px"><img src="../src/image/content/citroen_PNG88.jpg" style="width: 100%"></div>
-    <div class="col d-md-none d-lg-none d-xl-none" style="min-width: 50px"><img src="../src/image/content/renault_PNG39.jpg" style="width: 100%"></div>
-    <div class="col d-md-none d-lg-none d-xl-none" style="min-width: 50px"><img src="../src/image/content/car_logo_PNG1660.jpg" style="width: 100%"></div>
-    <div class="col d-md-none d-lg-none d-xl-none" style="min-width:50px"><img src="../src/image/content/dacialogo.jpg" style="width: 100%"></div>
-</div>
-</div>
-</div>
-<hr class="mt-5">
-   <div class="container">
-    <h3 class=" text-center mt-5">ДО ВАШИХ ПОСЛУГ</h3>
-    <div class="row  text-center mt-5">
-        <div class="col d-md-none d-lg-none d-xl-none"><div><img src="../src/image/content/details%20to%20korean%20cars.png"><p>Деталі до корейських та японських автомобілів</p></div></div>
-        <div class="col d-md-none d-lg-none d-xl-none"><div><img src="../src/image/content/sales%20herd.png"><p>Продаж гуртом та в роздріб</p></div></div>
-    </div>
-    
-    <div class="row  text-center">
-        <div class="col d-md-none d-lg-none d-xl-none"><div><img src="../src/image/content/discounts.png"><p>Знижки для постійних клієнтів</p></div></div>
-        <div class="col d-md-none d-lg-none d-xl-none"><div><img src="../src/image/content/details%20to%20korean%20cars.png"><p>Найкородші терміни замовлень</p></div></div>
-    </div>
-    
-    <div class="row  text-center">
-        <div class="col d-md-none d-lg-none d-xl-none"><div><img src="../src/image/content/wide%20range.png"><p>Широкий асортимент та гнучкі ціни</p></div></div>
-        <div class="col d-md-none d-lg-none d-xl-none"><div><img src="../src/image/content/city%20delivery.png"><p>Доставка по всьому місту</p></div></div>
-    </div>
-    
-    <div class="row text-center">
-        <div class="col d-none d-md-block"><div><img src="../src/image/content/details%20to%20korean%20cars.png"><p>Деталі до корейських та японських автомобілів</p></div></div>
-        <div class="col d-none d-md-block"><div><img src="../src/image/content/discounts.png"><p>Знижки для постійних клієнтів</p></div></div>
-        <div class="col d-none d-md-block"><div><img src="../src/image/content/discounts.png"><p>Знижки для постійних клієнтів</p></div></div>
-    </div>
-    
-    <div class="row text-center">
-        <div class="col d-none d-md-block"><div><img src="../src/image/content/details%20to%20korean%20cars.png"><p>Найкородші терміни замовлень</p></div></div>
-        <div class="col d-none d-md-block"><div><img src="../src/image/content/wide%20range.png"><p>Широкий асортимент та гнучкі ціни</p></div></div>
-        <div class="col d-none d-md-block"><div><img src="../src/image/content/city%20delivery.png"><p>Доставка по всьому місту</p></div></div>
-    </div>
-    </div>
-    
-        <div class="mt-5" style="background-color: red; height: 100px; width: 100%;">
-        <div><p class="text-center" style="color: white; max-width: 1000px; margin: auto">Кваліфіковані продавці-консультанти допоможуть Вам не розгубитися серед великої кількості автозапчастин та підберуть вашому авто те, що потрібно</p></div>
+        <!-- Toggler/collapsibe Button -->
+        <div class="row navbar-toggler">
+            <div class="col padding-zero"><a href="#footer">
+                    <div class="button-phone"></div>
+                </a></div>
+            <div class="col padding-zero"><a href="#writetous-mob">
+                    <div class="button-mail"></div>
+                </a></div>
+            <button id="show-back" onclick="togler()" class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavbar">
+                <div class="col"><img src="../src/image/header/burger1.svg"></div>
+            </button>
         </div>
-
-<div class="container ">
-   <div class="row mt-5">
-    
-    <div class="col-md text-center"><div><div><p>ОЛИВА МОТОРНА</p><p class="text-justify">В залежності від призначення їх поділяють на оливи для дизельних двигунів, оливи для бензинових двигунів та універсальні моторні оливи, що призначені для змащування двигунів обох типів. Всі сучасні моторні оливи складаються з базових олив і присадок для покращення властивостей.</p></div><img src="../src/image/content/oil.png" style="width: 100%"></div></div>
-    <div class="col-md text-center"><div><div><p>ПОВІТРЯНИЙ ФІЛЬТР</p><p class="text-justify">В залежності від призначення їх поділяють на оливи для дизельних двигунів, оливи для бензинових двигунів та універсальні моторні оливи, що призначені для змащування двигунів обох типів. Всі сучасні моторні оливи складаються з базових олив і присадок для покращення властивостей.</p></div><img src="../src/image/content/air%20filter.png" style="width: 100%"></div></div>
-    
-</div>
-   <div class="row mt-5">
-    
-    <div class="col-md text-center"><div><div><p>ПАЛИВНИЙ ФІЛЬТР</p><p class="text-justify">В залежності від призначення їх поділяють на оливи для дизельних двигунів, оливи для бензинових двигунів та універсальні моторні оливи, що призначені для змащування двигунів обох типів. Всі сучасні моторні оливи складаються з базових олив і присадок для покращення властивостей.</p></div><img src="../src/image/content/fuel%20filter.png" style="width: 100%"></div></div>
-    <div class="col-md text-center"><div><div><p>МАСЛЯНИЙ ФІЛЬТР</p><p class="text-justify">В залежності від призначення їх поділяють на оливи для дизельних двигунів, оливи для бензинових двигунів та універсальні моторні оливи, що призначені для змащування двигунів обох типів. Всі сучасні моторні оливи складаються з базових олив і присадок для покращення властивостей.</p></div><img src="../src/image/content/oil%20filter.png" style="width: 100%"></div></div>
-    
-</div>
-</div>
-
-
-<hr class="mt-5 mb-5">
-<div class="container">
-<div class="row">
-    <div class="col text-center d-none d-md-block"></div>
-    <div class="col text-center"><div><img src="../src/image/content/snr.png" style="width: 100%"></div></div>
-    <div class="col text-center"><div><img src="../src/image/content/denso.png" style="width: 100%"></div></div>
-    <div class="col text-center"><div><img src="../src/image/content/perflux.png" style="width: 100%"></div></div>
-    <div class="col text-center"><div><img src="../src/image/content/knecht.png" style="width: 100%"></div></div>
-    <div class="col text-center d-none d-md-block"></div>
-</div>
-<div class="row">
-    <div class="col text-center d-none d-md-block"></div>
-    <div class="col text-center"><div><img src="../src/image/content/nissens.jpg" style="width: 100%"></div></div>
-    <div class="col text-center"><div><img src="../src/image/content/pierburg.png" style="width: 100%"></div></div>
-    <div class="col text-center"><div><img src="../src/image/content/airtex.png" style="width: 100%"></div></div>
-    <div class="col text-center"><div><img src="../src/image/content/abs.jpg" style="width: 100%"></div></div>
-    <div class="col text-center d-none d-md-block"></div>
-</div>
-<div class="row">
-    <div class="col text-center d-none d-md-block"></div>
-    <div class="col text-center"><div><img src="../src/image/content/sachs.png" style="width: 100%"></div></div>
-    <div class="col text-center"><div><img src="../src/image/content/asmetal.png" style="width: 100%"></div></div>
-    <div class="col text-center"><div><img src="../src/image/content/luk.png" style="width: 100%"></div></div>
-    <div class="col text-center"><div><img src="../src/image/content/ina.png" style="width: 100%"></div></div>
-    <div class="col text-center d-none d-md-block"></div>
-</div>
-<div class="row">
-    <div class="col text-center d-none d-md-block"></div>
-    <div class="col text-center"><div><img src="../src/image/content/monro.jpg" style="width: 100%"></div></div>
-    <div class="col text-center"><div><img src="../src/image/content/valeo.png" style="width: 100%"></div></div>
-    <div class="col text-center"><div><img src="../src/image/content/nrf.jpg" style="width: 100%"></div></div>
-    <div class="col text-center"><div><img src="../src/image/content/kyb.jpg" style="width: 100%"></div></div>
-    <div class="col text-center d-none d-md-block"></div>
-</div>
-    </div>
-
-<!--Content-->
-<!--Footer-->
-          <div class="footer mt-5">
-          <div class="container d-none d-md-block ">
-          <div class="row">
-              <div class="col-6">
-                  <!-- <div class="contact-map"></div> -->
-                  <a href="https://www.google.com/maps/place/%D0%90%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%BF%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%BD%D0%B8+%D0%90%D0%B2%D1%82%D0%BE%D1%81%D1%82%D0%BE%D0%BF/@49.805215,23.9893268,720m/data=!3m1!1e3!4m5!3m4!1s0x473ae7a475c7a58d:0x4bbcf56742c5a1ab!8m2!3d49.805408!4d23.989116" target="_blank">
-                        <div class="contact-map"></div>
-                  </a>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav float-right">
+                <li class="nav-item">
+                    <div class="border-bot"><a class="nav-link" href="/">головна</a></div>
+                </li>
+                <li class="nav-item">
+                    <div class="border-bot"><a class="nav-link" href="../src/search.html">товари</a></div>
+                </li>
+                <li class="nav-item">
+                    <div class="border-bot"><a class="nav-link" href="../src/contact.html">контакти</a></div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--  Carousel -->
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="back-image-1">
+                    <img class="d-block w-100" src="../src/image/header/blue-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 140px 30px 20px 30px">
                 </div>
-              <div class="col-3">
-               <div class="contact-item-footer">
-               <div class="footer-tell">
-                    <p>073-11-01-104</p>
-                    <p>067-67-57-544</p>
-                    <p>067-67-57-543</p>
-                    <p>032 263-00-33</p>
-                    <p>032 264-23-00</p>
-               </div>
-               <div class="footer-addres">
-               <p>м. Львів</p>
-               <p>вул. Наукова 96</p>
-               <p>Пн-Пт з 9:00 до 18:00</p>
-               <p>Сб з 9:00 до 14:00</p>
-               </div>
-               <div class="footer-mail">petro.dutko@gmail.com</div>
-              </div>
-              </div>
-               <div class="col-3">
-               <div class="geo-phone"><img src="../src/image/footer/phone%20mark%20gray.svg"></div>
-               <div class="geo-locat"><img src="../src/image/footer/geo%20mark%20gray.svg"></div>
-              </div>
-           </div>
-           
-           
-           <div class="row">
-              <div class="col-6"><input id="writetous" type="text" value="   Напишіть нам"></div>
-              <div class="col-6">
-              <input id="youname" type="text" value="   Ваше ім'я"><br>
-              <input id="mail" type="text" value="  Ваш E-mail"><br>
-              <input id="send" type="button" value="відправити">
-              </div>
-           </div>
-           
-           <div class="row">
-              <div class="col-6">
-                    
-               <ul class="nav">
-                    <li class="nav-item">
-                    <div class="border-bot"><a class="nav-link text-white text-me-bo" href="#"><div class="logo-bootom-menu"><img src='../src/image/header/logo.svg'></div></a></div>
-                     </li>
-                    <li class="nav-item">
-                      <div class="border-bot pt-2"><a class="nav-link text-white text-me-bo" href="#">головна</a></div>
-                    </li>
-                    <li class="nav-item">
-                        <div class="border-bot pt-2"><a class="nav-link text-white text-me-bo" href="#">товари</a></div>
-                    </li>
-                    <li class="nav-item">
-                        <div class="border-bot pt-2"><a class="nav-link text-white text-me-bo" href="#">контакти</a></div>
-                    </li>
-                    <li class="nav-item">
-                        <div class="border-bot pt-2"><a class="nav-link text-white text-me-bo" href="#">СТО</a></div>
-                    </li>
-                  </ul></div>
-               <div class="col-6">
-               <p class="made-by">www.autostop.lviv.ua (2018)</p>
-               </div>
-           </div>
-           </div>
-           
-           <div class="container d-md-none">
-          <div class="row">
-              <div class="col-12">
-              <a href="https://www.google.com/maps/place/%D0%90%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%BF%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%BD%D0%B8+%D0%90%D0%B2%D1%82%D0%BE%D1%81%D1%82%D0%BE%D0%BF/@49.805215,23.9893268,720m/data=!3m1!1e3!4m5!3m4!1s0x473ae7a475c7a58d:0x4bbcf56742c5a1ab!8m2!3d49.805408!4d23.989116" target="_blank">
-                <div class="contact-map-mob" ></div>
-          </a>
+                <div class="carousel-caption d-none d-md-block">
+                    <img src="../src/image/header/gears.svg" style="width: 15%;">
+                    <p>ОРИГІНАЛЬНІ АВТОЗАПЧАСТИНИ ДО <br> ФРАНЦУСЬКИХ АВТОМОБІЛІВ</p>
+                    <a class="but-button-coll d-none d-md-inline" href="#footer">ЗАТЕЛЕФОНУВАТИ</a>
+                    <a class="but-button-mail d-none d-md-inline" href="#writetous">НАПИШІТЬ НАМ</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="back-image-2">
+                    <img class="d-block w-100" src="../src/image/header/green-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 140px 30px 20px 30px">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <img src="../src/image/header/gears.svg" style="width: 15%;">
+                    <p>ОРИГІНАЛЬНІ АВТОЗАПЧАСТИНИ ДО <br> ФРАНЦУСЬКИХ АВТОМОБІЛІВ</p>
+                    <a class="but-button-coll d-none d-md-inline" href="#footer">ЗАТЕЛЕФОНУВАТИ</a>
+                    <a class="but-button-mail d-none d-md-inline" href="#writetous">НАПИШІТЬ НАМ</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="back-image-3">
+                    <img class="d-block w-100" src="../src/image/header/red-car.png" alt="First slide" style="max-width: 1200px; margin: auto; padding: 140px 30px 20px 30px">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <img src="../src/image/header/gears.svg" style="width: 15%;">
+                    <p>ОРИГІНАЛЬНІ АВТОЗАПЧАСТИНИ ДО <br> ФРАНЦУСЬКИХ АВТОМОБІЛІВ</p>
+                    <a class="but-button-coll d-none d-md-inline" href="#footer">ЗАТЕЛЕФОНУВАТИ</a>
+                    <a class="but-button-mail d-none d-md-inline" href="#writetous">НАПИШІТЬ НАМ</a>
+                </div>
+            </div>
         </div>
-              <div class="col-6">
-               <div class="contact-item-footer">
-               <div class="footer-tell">
-               <p>073-11-01-104</p>
-               <p>067-67-57-544</p>
-               <p>067-67-57-543</p>
-               <p>032 263-00-33</p>
-               <p>032 264-23-00</p>
-               </div>
-               <div class="footer-addres">
-               <p>м. Львів</p>
-               <p>вул. Наукова 96</p>
-               <p>Пн-Пт з 9:00 до 18:00</p>
-               <p>Сб з 9:00 до 14:00</p>
-               </div>
-               <div class="footer-mail">petro.dutko@gmail.com</div>
-              </div>
-              </div>
-               <div class="col-6">
-              </div>
-           </div>
-           
-           
-           <div class="row mt-3">
-              <div class="col-12"><input id="writetous-mob" type="text" value="Напишіть нам"></div>
-              <div class="col-12">
-              <input id="youname-mob" type="text" value="   Ваше ім'я"><br>
-              <input id="mail-mob" type="text" value="  Ваш E-mail"><br>
-              <input id="send-mob" type="button" value="відправити">
-              </div>
-           </div>
-           
-           <div class="row">
-            <img class="logo-bootom-menu-mob" src='../src/image/header/logo.svg'>
-              <div class="col-12">
-              
-               <ul class="nav justify-content-center">
-                <li class="nav-item">
-                  <div class="border-bot"><a class="nav-link text-white text-me-bo" href="#">головна</a></div>
-                </li>
-                <li class="nav-item">
-                    <div class="border-bot"><a class="nav-link text-white text-me-bo" href="#">товари</a></div>
-                </li>
-                <li class="nav-item">
-                    <div class="border-bot"><a class="nav-link text-white text-me-bo" href="#">контакти</a></div>
-                </li>
-                <li class="nav-item">
-                    <div class="border-bot"><a class="nav-link text-white text-me-bo" href="#">СТО</a></div>
-                </li>
-              </ul>
+        <!--Content-->
+
+        <div class="container">
+            <div class="text-center">
+                <div class="row"></div>
+                <div class="col-sm"></div>
+                <div class="text-center">
+                    <h3 class="mt-5">ПРО НАС</h3>
+                    <p class="text-justify mt-4 ml-1 mr-1">У 2009 році з напливом француських автомобілів на
+                        Український ринок нами було прийнято рішеня про створення автоамагазину для комфортного
+                        обслуговування клієнтів якісними автозапчастинами, до француських авто. На той час ми були оді
+                        з перших автомагазинів по француських авто у Львові. Ця подія дала змогу нашим клієнтам в
+                        стислі терміни отримувати замовлення, та головне те що клієнти могли вибрати серед значної
+                        кількості брендів дорогих чи бюджетних. На сьогодні Автостоп налічує 10000 постійних клієнтів
+                        та понад 30000 товарів в наявності. Завітавши до нас, ви можете придбати оригінальні
+                        автозапчастини до французьких автомобілів та їх замінники, а також моторні, трансмісійні
+                        мастила та авто хімію. Крім того до ваших послуг стіл замовлень до корейських та японських
+                        автомобілів. Продаж гуртом та в роздріб. Широкий асортимент. Гнучкі ціни. Постійним клієнтам
+                        знижки. Найкоротші терміни замовлень. Доставка по місту. Запрошуємо до співпраці автосервіси,
+                        автомагазини. Будемо роді бачити вас в числі наших клієнтів. З повагою колектив АВТОСТОП.
+                    </p>
+                </div>
             </div>
-             
-               <div class="col-12">
-                   <div class="text-center">
-               <p class="made-by-mob">www.autostop.lviv.ua (2018)</p>
+
+            <div class="row">
+                <div class="col"></div>
+                <div class="col d-none d-md-block" style="min-width: 50px"><img src="../src/image/content/Fiat-logo.jpg"
+                        style="width: 100%"></div>
+                <div class="col d-none d-md-block" style="min-width: 50px"><img src="../src/image/content/citroen_PNG88.jpg"
+                        style="width: 100%"></div>
+                <div class="col d-none d-md-block" style="min-width: 50px"><img src="../src/image/content/renault_PNG39.jpg"
+                        style="width: 100%"></div>
+                <div class="col d-none d-md-block" style="min-width: 50px"><img src="../src/image/content/car_logo_PNG1660.jpg"
+                        style="width: 100%"></div>
+                <div class="col d-none d-md-block" style="min-width:50px"><img src="../src/image/content/dacialogo.jpg"
+                        style="width: 100%"></div>
+                <div class="col"></div>
             </div>
+
+            <div class="row">
+                <div class="col d-md-none d-lg-none d-xl-none" style="min-width: 50px"><img src="../src/image/content/Fiat-logo.jpg"
+                        style="width: 100%"></div>
+                <div class="col d-md-none d-lg-none d-xl-none" style="min-width: 50px"><img src="../src/image/content/citroen_PNG88.jpg"
+                        style="width: 100%"></div>
+                <div class="col d-md-none d-lg-none d-xl-none" style="min-width: 50px"><img src="../src/image/content/renault_PNG39.jpg"
+                        style="width: 100%"></div>
+                <div class="col d-md-none d-lg-none d-xl-none" style="min-width: 50px"><img src="../src/image/content/car_logo_PNG1660.jpg"
+                        style="width: 100%"></div>
+                <div class="col d-md-none d-lg-none d-xl-none" style="min-width:50px"><img src="../src/image/content/dacialogo.jpg"
+                        style="width: 100%"></div>
             </div>
-            
-           </div>
-           
-           
-           
-          </div>
-         </div> 
+        </div>
+    </div>
+    <hr class="mt-5">
+    <div class="container">
+        <h3 class=" text-center mt-5">ДО ВАШИХ ПОСЛУГ</h3>
+        <div class="row  text-center mt-5">
+            <div class="col d-md-none d-lg-none d-xl-none">
+                <div><img src="../src/image/content/details%20to%20korean%20cars.png">
+                    <p>Деталі до корейських та японських автомобілів</p>
+                </div>
+            </div>
+            <div class="col d-md-none d-lg-none d-xl-none">
+                <div><img src="../src/image/content/sales herd.png">
+                    <p>Продаж гуртом та в роздріб</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row  text-center">
+            <div class="col d-md-none d-lg-none d-xl-none">
+                <div><img src="../src/image/content/wide%20range.png">
+                    <p>Широкий асортимент та гнучкі ціни</p>
+                </div>
+            </div>
+            <div class="col d-md-none d-lg-none d-xl-none">
+                <div><img src="../src/image/content/discounts.png">
+                    <p>Знижки для постійних клієнтів</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row  text-center">
+            <div class="col d-md-none d-lg-none d-xl-none">
+                <div><img src="../src/image/content/termin.png">
+                    <p>Найкородші терміни замовлення</p>
+                </div>
+            </div>
+            <div class="col d-md-none d-lg-none d-xl-none">
+                <div><img src="../src/image/content/city%20delivery.png">
+                    <p>Доставка по всьому місту</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <div class="col d-none d-md-block">
+                <div><img src="../src/image/content/details%20to%20korean%20cars.png">
+                    <p>Деталі до корейських та японських автомобілів</p>
+                </div>
+            </div>
+            <div class="col d-none d-md-block">
+                <div><img src="../src/image/content/sales herd.png">
+                    <p>Продаж гуртом та в роздріб</p>
+                </div>
+            </div>
+            <div class="col d-none d-md-block">
+                <div><img src="../src/image/content/wide%20range.png">
+                    <p>Широкий асортимент та гнучкі ціни</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <div class="col d-none d-md-block">
+                <div><img src="../src/image/content/discounts.png">
+                    <p>Знижки для постійних клієнтів</p>
+                </div>
+            </div>
+            <div class="col d-none d-md-block">
+                <div><img src="../src/image/content/termin.png">
+                    <p>Найкородші терміни замовлення</p>
+                </div>
+            </div>
+            <div class="col d-none d-md-block">
+                <div><img src="../src/image/content/city%20delivery.png">
+                    <p>Доставка по всьому місту</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col d-none d-md-block mt-5"><img src="../src/image/content/red-line.png" class="flag"></div>
+        </div>
+    </div>
+
+    <div class="d-md-none d-lg-none d-xl-none" style="background-color:#F10B0B; color:white;">
+        <p class="text-center pt-4 pb-4">Кваліфіковані продавці-консультанти допоможуть Вам не розгубитися серед
+            великої кількості автозапчастин та підберуть вашому авто те, що потрібно</p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="container ">
+        <div class="row mt-5">
+
+            <div class="col-md text-center">
+                <div>
+                    <div>
+                        <p>ОЛИВА МОТОРНА</p>
+                        <p class="text-justify">В залежності від призначення їх поділяють на оливи для дизельних
+                            двигунів, оливи для бензинових двигунів та універсальні моторні оливи, що призначені для
+                            змащування двигунів обох типів. Всі сучасні моторні оливи складаються з базових олив і
+                            присадок для покращення властивостей.</p>
+                    </div><img src="../src/image/content/oil.png" style="width: 100%">
+                </div>
+            </div>
+            <div class="col-md text-center">
+                <div>
+                    <div>
+                        <p>ПОВІТРЯНИЙ ФІЛЬТР</p>
+                        <p class="text-justify">Повітряний фільтр — фільтр для очищення повітря від завислих частинок в
+                            побуті та на виробництві. Фільтри, які
+                            застосовуються для очистки газів, класифікують за різними ознаками: за формою
+                            фільтрувальних елементів, способом
+                            підводу запилених газів, формою корпусу, призначенню та ін.</p>
+                    </div><img src="../src/image/content/air%20filter.png" style="width: 100%">
+                </div>
+            </div>
+
+        </div>
+        <div class="row mt-5">
+
+            <div class="col-md text-center">
+                <div>
+                    <div>
+                        <p>ПАЛИВНИЙ ФІЛЬТР</p>
+                        <p class="text-justify">Паливний фільтр — елемент конструкції паливної системи, що містить
+                            фільтрувальний елемент, розташований у паливній
+                            магістралі, призначений для затримання твердих часток у паливі, яке надходить до двигуна
+                            внутрішнього згоряння.</p>
+                    </div><img src="../src/image/content/fuel%20filter.png" style="width: 100%">
+                </div>
+            </div>
+            <div class="col-md text-center">
+                <div>
+                    <div>
+                        <p>МАСЛЯНИЙ ФІЛЬТР</p>
+                        <p class="text-justify">Масляний фільтр — фільтр, що призначений для видалення забруднень з
+                            моторних і трансмісійних олив, мастил або робочих
+                            рідин гідроприводів.</p>
+                    </div><img src="../src/image/content/oil%20filter.png" style="width: 100%">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <hr class="mt-5 mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center d-none d-md-block"></div>
+            <div class="col text-center">
+                <div><img src="../src/image/content/snr.png" style="width: 100%"></div>
+            </div>
+            <div class="col text-center">
+                <div><img src="../src/image/content/denso.png" style="width: 100%"></div>
+            </div>
+            <div class="col text-center">
+                <div><img src="../src/image/content/perflux.png" style="width: 100%"></div>
+            </div>
+            <div class="col text-center">
+                <div><img src="../src/image/content/knecht.png" style="width: 100%"></div>
+            </div>
+            <div class="col text-center d-none d-md-block"></div>
+        </div>
+        <div class="row">
+            <div class="col text-center d-none d-md-block"></div>
+            <div class="col text-center">
+                <div><img src="../src/image/content/nissens.jpg" style="width: 100%"></div>
+            </div>
+            <div class="col text-center">
+                <div><img src="../src/image/content/pierburg.png" style="width: 100%"></div>
+            </div>
+            <div class="col text-center">
+                <div><img src="../src/image/content/airtex.png" style="width: 100%"></div>
+            </div>
+            <div class="col text-center">
+                <div><img src="../src/image/content/abs.jpg" style="width: 100%"></div>
+            </div>
+            <div class="col text-center d-none d-md-block"></div>
+        </div>
+        <div class="row">
+            <div class="col text-center d-none d-md-block"></div>
+            <div class="col text-center">
+                <div><img src="../src/image/content/sachs.png" style="width: 100%"></div>
+            </div>
+            <div class="col text-center">
+                <div><img src="../src/image/content/asmetal.png" style="width: 100%"></div>
+            </div>
+            <div class="col text-center">
+                <div><img src="../src/image/content/luk.png" style="width: 100%"></div>
+            </div>
+            <div class="col text-center">
+                <div><img src="../src/image/content/ina.png" style="width: 100%"></div>
+            </div>
+            <div class="col text-center d-none d-md-block"></div>
+        </div>
+        <div class="row">
+            <div class="col text-center d-none d-md-block"></div>
+            <div class="col text-center">
+                <div><img src="../src/image/content/monro.jpg" style="width: 100%"></div>
+            </div>
+            <div class="col text-center">
+                <div><img src="../src/image/content/valeo.png" style="width: 100%"></div>
+            </div>
+            <div class="col text-center">
+                <div><img src="../src/image/content/nrf.jpg" style="width: 100%"></div>
+            </div>
+            <div class="col text-center">
+                <div><img src="../src/image/content/kyb.jpg" style="width: 100%"></div>
+            </div>
+            <div class="col text-center d-none d-md-block"></div>
+        </div>
+    </div>
+
+    <!--Content-->
+    <!--Footer-->
+    <div class="footer mt-5" id="footer">
+        <div class="container d-none d-md-block ">
+            <div class="row">
+                <div class="col-6">
+                    <!-- <div class="contact-map"></div> -->
+                    <a href="https://www.google.com/maps/place/%D0%90%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%BF%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%BD%D0%B8+%D0%90%D0%B2%D1%82%D0%BE%D1%81%D1%82%D0%BE%D0%BF/@49.805215,23.9893268,720m/data=!3m1!1e3!4m5!3m4!1s0x473ae7a475c7a58d:0x4bbcf56742c5a1ab!8m2!3d49.805408!4d23.989116"
+                        target="_blank">
+                        <div class="contact-map"></div>
+                    </a>
+                </div>
+                <div class="col-3">
+                    <div class="contact-item-footer">
+                        <div class="footer-tell">
+                            <p><a href="tel:073-11-01-104">073-11-01-104</a></p>
+                            <p><a href="tel:067-67-57-544">067-67-57-544</a></p>
+                            <p><a href="tel:067-67-57-543">067-67-57-543</a></p>
+                            <p><a href="tel:032 263-00-33">032 263-00-33</a></p>
+                            <p><a href="tel:032 264-23-00">032 264-23-00</a></p>
+                        </div>
+                        <div class="footer-addres">
+                            <p>м. Львів</p>
+                            <p>вул. Наукова 96</p>
+                            <p>Пн-Пт з 9:00 до 18:00</p>
+                            <p>Сб з 9:00 до 14:00</p>
+                        </div>
+                        <div class="footer-mail"><a href="mailto:petro.dutko@gmail.com">petro.dutko@gmail.com</a></div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="geo-phone"><img src="../src/image/footer/phone%20mark%20gray.svg"></div>
+                    <div class="geo-locat"><img src="../src/image/footer/geo%20mark%20gray.svg"></div>
+                </div>
+            </div>
+
+            <form action="/action_page.php">
+                <div class="row">
+                    <div class="col-6"><textarea id="writetous" type="text" placeholder="Напишіть нам"></textarea></div>
+                    <div class="col-6">
+                        <input id="youname" type="text" placeholder="Ваше ім'я"><br>
+                        <input id="mail" type="text" placeholder="Ваш E-mail"><br>
+                        <input id="send" type="submit" value="відправити">
+                    </div>
+                </div>
+            </form>
+
+            <div class="row">
+                <div class="col-6">
+
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <div><a class="nav-link text-white text-me-bo" href="#">
+                                    <div class="logo-bootom-menu"><img src='../src/image/header/logo.svg'></div>
+                                </a></div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="border-bot pt-2"><a class="nav-link text-white text-me-bo" href="#">головна</a></div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="border-bot pt-2"><a class="nav-link text-white text-me-bo" href="../src/search.html">товари</a></div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="border-bot pt-2"><a class="nav-link text-white text-me-bo" href="../src/contact.html">контакти</a></div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="border-bot pt-2"><a class="nav-link text-white text-me-bo" href="">СТО</a></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <p class="made-by float-right">www.autostop.lviv.ua (2018)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container d-md-none">
+            <div class="row">
+                <div class="col-12">
+                    <a href="https://www.google.com/maps/place/%D0%90%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%BF%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%BD%D0%B8+%D0%90%D0%B2%D1%82%D0%BE%D1%81%D1%82%D0%BE%D0%BF/@49.805215,23.9893268,720m/data=!3m1!1e3!4m5!3m4!1s0x473ae7a475c7a58d:0x4bbcf56742c5a1ab!8m2!3d49.805408!4d23.989116"
+                        target="_blank">
+                        <div class="contact-map-mob"></div>
+                    </a>
+                </div>
+                <div class="col-6">
+                    <div class="contact-item-footer">
+                        <div class="footer-tell">
+                            <p><a href="tel:073-11-01-104">073-11-01-104</a></p>
+                            <p><a href="tel:067-67-57-544">067-67-57-544</a></p>
+                            <p><a href="tel:067-67-57-543">067-67-57-543</a></p>
+                            <p><a href="tel:032 263-00-33">032 263-00-33</a></p>
+                            <p><a href="tel:032 264-23-00">032 264-23-00</a></p>
+                        </div>
+                        <div class="footer-addres">
+                            <p>м. Львів</p>
+                            <p>вул. Наукова 96</p>
+                            <p>Пн-Пт з 9:00 до 18:00</p>
+                            <p>Сб з 9:00 до 14:00</p>
+                        </div>
+                        <div class="footer-mail"><a href="mailto:petro.dutko@gmail.com">petro.dutko@gmail.com</a></div>
+                    </div>
+                </div>
+                <div class="col-6">
+                </div>
+            </div>
+
+            <div id="contact-footer"></div>
+            <script src="/contact_footer.bundle.js"></script>
+
+            <!-- <form action="/action_page.php">
+                <div class="row mt-3">
+                    <div class="col-12"><textarea id="writetous-mob" type="text" placeholder="Напишіть нам"></textarea></div>
+                    <div class="col-12">
+                        <input id="youname-mob" type="text" placeholder="Ваше ім'я"><br>
+                        <input id="mail-mob" type="text" placeholder="Ваш E-mail"><br>
+                        <input id="send-mob" type="submit" value="відправити">
+                    </div>
+                </div>
+            </form> -->
+
+            <div class="row">
+                <img class="logo-bootom-menu-mob" src='../src/image/header/logo.svg'>
+                <div class="col-12">
+
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item">
+                            <div class="border-bot"><a class="nav-link text-white text-me-bo" href="#">головна</a></div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="border-bot"><a class="nav-link text-white text-me-bo" href="../src/search.html">товари</a></div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="border-bot"><a class="nav-link text-white text-me-bo" href="../src/contact.html">контакти</a></div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="border-bot"><a class="nav-link text-white text-me-bo" href="">СТО</a></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-12">
+                    <div class="text-center">
+                        <p class="made-by-mob">www.autostop.lviv.ua (2018)</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
     <script>
         const header = document.getElementsByClassName('menu-nav');
         window.addEventListener('scroll', () => {
-            const scrolled = (window.scrollY>0);
+            const scrolled = (window.scrollY > 0);
             if (scrolled) {
                 document.getElementById('menu-nav').classList.add('opacity-naw');
                 document.getElementById('trans').classList.add('logo-transition-s');
+            } else {
+                document.getElementById('menu-nav').classList.remove('opacity-naw');
+                document.getElementById('trans').classList.remove('logo-transition-s');
             }
-                else {
-                    document.getElementById('menu-nav').classList.remove('opacity-naw');
-                    document.getElementById('trans').classList.remove('logo-transition-s');
-                }
         });
+
         function togler() {
-          const showback = document.getElementById("show-back");
-          showback.classList.toggle('collapsed');
-          console.log('hello');
-          document.getElementById('menu-nav').classList.toggle('color-naw');
+            const showback = document.getElementById("show-back");
+            showback.classList.toggle('collapsed');
+            console.log('hello');
+            document.getElementById('menu-nav').classList.toggle('color-naw');
         };
     </script>
 </body>
+
 </html>
