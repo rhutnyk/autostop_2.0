@@ -421,23 +421,3 @@ textarea:focus {
 ::-webkit-scrollbar-thumb:hover {
     background: #4F8E23;
 }
-
-
-.error{
-    border: 1px solid #e52311 !important;
-}
-
-.errorLabel{
-    display: block;
-    color: #e52311;
-    opacity: 0.6;
-    margin-left: 20px;
-    width: 190px;
-}
-
-.text-after-send{
-    color: #e7a111;
-    text-align: center;
-    margin: 20px;
-    font-size: larger;
-}

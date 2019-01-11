@@ -9,7 +9,9 @@ module.exports = {
     "index": "./src/index.tsx",
     "search": "./src/search.tsx",
     "currency" : "./src/currency.tsx",
-    "contact" : "./src/contact.tsx" 
+    // "contact" : "./src/contact.tsx" 
+    "contact_page" : "./src/contact_page.tsx",
+    "contact_footer" : "./src/contact_footer.tsx"
 
 },
   devtool: "source-map",
