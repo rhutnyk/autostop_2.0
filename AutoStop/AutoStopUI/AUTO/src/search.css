@@ -218,6 +218,18 @@ header {
     border: none !important;
 }
 
+#analog label{
+    color: #2E8EEB;
+    margin-right: 3px;
+    opacity: 0.5;
+}
+
+.part-label-mobile{
+    color: grey;
+    margin-right: 3px;
+    opacity: 0.4;
+}
+
 /* .close-btn{
     text-align: right;
     cursor: pointer;

@@ -1,9 +1,9 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+// import * as React from "react";
+// import * as ReactDOM from "react-dom";
 
-import Contact from "./components/Contact";
+// import Contact from "./components/Contact";
 
-ReactDOM.render(
-    <Contact  />,
-    document.getElementById("contact")
-);
+// ReactDOM.render(
+//     <Contact  />,
+//     document.getElementById("contact")
+// );

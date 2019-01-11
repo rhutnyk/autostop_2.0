@@ -54,10 +54,10 @@ export default class Analog extends React.Component<IProps, any> {
                             this.state.data.map((item: any, index: number) =>
 
                                 <div className="row" id="analog" key={index}>
-                                    <div className="col-12 col-sm-2 number">{item.Part.Number}</div>
-                                    <div className="col-12 col-sm-4">{item.Part.Description}</div>
-                                    <div className="col-12 col-sm-2">{item.Part.Qty}</div>
-                                    <div className="col-12 col-sm-2">{item.Part.Price} &euro;</div>
+                                    <div className="col-12 col-sm-2 number"><label className="d-sm-none">№</label>{item.Part.Number}</div>
+                                    <div className="col-12 col-sm-4"><label className="d-sm-none">Опис: </label>{item.Part.Description}</div>
+                                    <div className="col-12 col-sm-2"><label className="d-sm-none">К-сть: </label>{item.Part.Qty}</div>
+                                    <div className="col-12 col-sm-2"><label className="d-sm-none">Ціна: </label>{item.Part.Price} &euro;</div>
                                 </div>
 
                             ) : null}

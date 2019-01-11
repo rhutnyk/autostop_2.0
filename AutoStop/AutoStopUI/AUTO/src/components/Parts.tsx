@@ -172,10 +172,10 @@ export default class Parts extends React.Component<any, any> {
                                     <div className="container">
                                         <div id={item.Part.id}>
                                             <div className="row justify-content-md-center" id={item.IsAnalog ? "" : "color-grey"}>
-                                                <div className="col-12 col-sm-2 number">{item.Part.Number}</div>
-                                                <div className="col-12 col-sm-4">{item.Part.Description}</div>
-                                                <div className="col-12 col-sm-2">{item.Part.Qty}</div>
-                                                <div className="col-12 col-sm-2">{item.Part.Price} &euro;</div>
+                                                <div className="col-12 col-sm-2 number"><label className="d-sm-none part-label-mobile">№</label>{item.Part.Number}</div>
+                                                <div className="col-12 col-sm-4"><label className="d-sm-none part-label-mobile">Опис:</label>{item.Part.Description}</div>
+                                                <div className="col-12 col-sm-2"><label className="d-sm-none part-label-mobile">К-сть:</label>{item.Part.Qty}</div>
+                                                <div className="col-12 col-sm-2"><label className="d-sm-none part-label-mobile">Ціна:</label>{item.Part.Price} &euro;</div>
                                                 <div className="col-12 col-sm-2">
                                                     {item.IsAnalog ? <a onClick={() => this.showAnalogs(item.Part.id)}>
                                                         <img src={`${this.state.collapseItemIddex == item.Part.id ? './image/hide analog.png' : './image/add analog.png'}`} />
