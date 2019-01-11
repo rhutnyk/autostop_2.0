@@ -2,7 +2,7 @@ import * as React from 'react';
 import dataService from '../services/data.service';
 import Analog from './Analog';
 import URL_Service from '../services/url_service';
-
+import PartModel from '../services/part_model';
 
 
 export default class Parts extends React.Component<any, any> {
@@ -21,6 +21,7 @@ export default class Parts extends React.Component<any, any> {
 
         this.state = {
             data: [],
+            data2: PartModel,
             lastUrl: null,
             count: 0,
             collapseItemIddex: null,
@@ -48,7 +49,7 @@ export default class Parts extends React.Component<any, any> {
         this.setState({ partsLoading: true });
         this.mainService.query(url)
             .then((res: any) => {
-                this.setState({ data: res.Items, count: res.Count, lastUrl: url, partsLoading: false }, () => { this.skip = 0 });
+                this.setState({data2:res, data: res.Items, count: res.Count, lastUrl: url, partsLoading: false }, () => { this.skip = 0 });
             })
     }
 
@@ -161,6 +162,7 @@ export default class Parts extends React.Component<any, any> {
                         </div>
                     </div>
                 </div>
+                
                 <div id={this.state.partsLoading ? "loadParts" : ""}></div>
                 <div className="parts-content" id="res">
 

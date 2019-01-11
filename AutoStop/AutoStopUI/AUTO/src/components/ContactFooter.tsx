@@ -33,6 +33,4 @@ export default class ContactFooter extends Contact {
         )
     }
 
-
-
 }
