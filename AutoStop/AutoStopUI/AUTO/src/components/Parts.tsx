@@ -13,15 +13,14 @@ export default class Parts extends React.Component<any, any> {
     private queryNumber = "number=";
     private queryDescription = "desc=";
     private skip = 0;
-    private elementWithScroll: Window;
+    
     
 
     constructor(props: any) {
         super(props);
 
         this.state = {
-            data: [],
-            data2: PartModel,
+            data: PartModel,
             lastUrl: null,
             count: 0,
             collapseItemIddex: null,
@@ -35,10 +34,10 @@ export default class Parts extends React.Component<any, any> {
 
     public componentDidMount() {
         this.partContainer = document.getElementById('res');
-        this.elementWithScroll = window;
         window.addEventListener('scroll', this.handleScroll);
         this.getData(this.url);
     }
+
 
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
@@ -49,7 +48,7 @@ export default class Parts extends React.Component<any, any> {
         this.setState({ partsLoading: true });
         this.mainService.query(url)
             .then((res: any) => {
-                this.setState({data2:res, data: res.Items, count: res.Count, lastUrl: url, partsLoading: false }, () => { this.skip = 0 });
+                this.setState({data: res.Items, count: res.Count, lastUrl: url, partsLoading: false }, () => { this.skip = 0;});
             })
     }
 
@@ -172,6 +171,7 @@ export default class Parts extends React.Component<any, any> {
                             this.state.data.map((item: any, index: number) =>
                                 <span key={index}>
                                     <div className="container">
+                                    
                                         <div id={item.Part.id}>
                                             <div className="row justify-content-md-center" id={item.IsAnalog ? "" : "color-grey"}>
                                                 <div className="col-12 col-sm-2 number"><label className="d-sm-none part-label-mobile">№</label>{item.Part.Number}</div>

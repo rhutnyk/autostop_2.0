@@ -7,7 +7,7 @@ export default class PartModel{
 
 
 class Part{
-    public id:string;
+    // public id:string;
     public Number:string;
     public Description: string;
     public Qty:number;
