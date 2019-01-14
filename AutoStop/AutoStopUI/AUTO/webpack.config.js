@@ -15,6 +15,19 @@ module.exports = {
 
 },
   devtool: "source-map",
+
+  devServer: {
+    
+    
+    proxy : {
+      '/api': {
+         target: 'http://localhost:8080',
+         rewritePath: {'^/api' : ''}
+      }
+    }
+    
+},
+
   resolve: { 
     extensions: [".ts", ".tsx", ".js", ".json"] 
   }, 
