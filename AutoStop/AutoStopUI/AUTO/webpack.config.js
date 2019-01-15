@@ -9,25 +9,11 @@ module.exports = {
     "index": "./src/index.tsx",
     "search": "./src/search.tsx",
     "currency" : "./src/currency.tsx",
-    // "contact" : "./src/contact.tsx" 
     "contact_page" : "./src/contact_page.tsx",
     "contact_footer" : "./src/contact_footer.tsx"
 
 },
   devtool: "source-map",
-
-  devServer: {
-    
-    
-    proxy : {
-      '/api': {
-         target: 'http://localhost:8080',
-         rewritePath: {'^/api' : ''}
-      }
-    }
-    
-},
-
   resolve: { 
     extensions: [".ts", ".tsx", ".js", ".json"] 
   }, 

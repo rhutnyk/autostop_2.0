@@ -435,3 +435,29 @@ a:hover {
     color: #4F8E23;
     text-decoration: none;
 }
+
+.nav-link-footer{
+    display: inline-flex;
+    text-align: left;
+}
+
+@media screen and (max-width: 755px){
+    .contact-form{
+        text-align: center;
+    }
+    .nav-link{
+        display: inline-table;
+    }
+    .logo-footer{
+        text-align: center;
+    }
+    .nav-link-footer{
+        text-align: center !important;
+        flex: auto !important;
+        display: grid;
+    }
+    .float-right{
+        float: none !important;
+        text-align: center;
+    }
+}

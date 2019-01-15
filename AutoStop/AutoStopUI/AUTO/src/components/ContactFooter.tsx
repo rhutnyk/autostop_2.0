@@ -19,7 +19,7 @@ export default class ContactFooter extends Contact {
                             <small hidden={this.state.textValid} className="errorLabel">напишіть нам</small>
                         </div>
 
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-6 contact-form">
                             <input className={this.state.nameValid ? "" : "error"} id="youname" type="text" placeholder="Ваше ім'я" value={this.state.name} onChange={(e) => { this.onChangeValue(e, { item: "name" }) }} /><br />
                             <small hidden={this.state.nameValid} className="errorLabel">введіть ваше ім'я</small>
                             <input className={this.state.emailValid ? "" : "error"} id="mail" type="email" placeholder="Ваш E-mail" value={this.state.email} onChange={(e) => { this.onChangeValue(e, { item: "email" }) }} /><br />
