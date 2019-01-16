@@ -246,6 +246,7 @@ html {
     box-shadow: -1px -1px 40px 1px #000000;
     margin: 20px 0 0 0;
     padding-left: 20px;
+    text-align: left;
 }
 
 #youname:hover {
@@ -261,6 +262,7 @@ html {
     box-shadow: -1px -1px 40px 1px #000000;
     margin: 20px 0 0 0;
     padding-left: 20px;
+    text-align: left;
 }
 
 #mail:hover {
@@ -457,14 +459,15 @@ a:hover {
         flex: auto !important;
         display: grid;
     }
-    .float-right{
+    /* .float-right{
         float: none !important;
         text-align: center;
-    }
+    } */
 
     .logo-bootom-menu-mob {
         width: 100px;
         border: none;
         margin: auto;
+        height: auto;
     }
 }
