@@ -324,3 +324,9 @@ header {
     background-size: cover;
     height: 200px;
 }
+
+
+.logo-bootom-menu-mob{
+    width: 40px;
+    margin-left: 20px;
+}

@@ -376,9 +376,10 @@ html {
 }
 
 .logo-bootom-menu-mob {
-    width: 100px;
+    width: 40px;
     border: none;
-    margin: auto;
+    margin: 12px;
+    margin-top: 0;
 }
 
 .menu-booton-mob {
@@ -459,5 +460,11 @@ a:hover {
     .float-right{
         float: none !important;
         text-align: center;
+    }
+
+    .logo-bootom-menu-mob {
+        width: 100px;
+        border: none;
+        margin: auto;
     }
 }
