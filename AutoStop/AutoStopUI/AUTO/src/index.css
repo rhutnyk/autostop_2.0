@@ -2,6 +2,12 @@ html {
     scroll-behavior: smooth;
 }
 
+
+body{
+    min-width: 325px;
+}
+
+
 #menu-nav {
     background-color: rgba(43, 30, 143, 0);
     /* opacity: .0; */
@@ -28,7 +34,7 @@ html {
 }
 
 .logo-transition-l {
-    width: 120px;
+    width: 100px;
     -webkit-transition: width 2s;
     /* For Safari 3.1 to 6.0 */
     transition: width .2s;
