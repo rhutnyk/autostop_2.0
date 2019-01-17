@@ -34,7 +34,7 @@ html {
 }
 
 .logo-transition-s {
-    width: 50px;
+    width: 50px !important;
     -webkit-transition: width 2s;
     /* For Safari 3.1 to 6.0 */
     transition: width .5s;
@@ -294,6 +294,9 @@ html {
     }
     .logo-transition-l {
         width: 70px;
+    }
+    #send-mob{
+        float: none !important;
     }
 }
 

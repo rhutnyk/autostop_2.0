@@ -24,7 +24,7 @@ export default class ContactPage extends Contact{
                     </div>
 
                     <div className="row justify-content-center">
-                        <div className="col-11 col-md-8 col-lg-6">
+                        <div className="col-11 col-md-8 col-lg-6 text-center">
                             <textarea className={this.state.textValid ? "" : "error"} id="writetous" itemType="text" placeholder="Напишіть нам" value={this.state.text} onChange={(e) => { this.onChangeValue(e, { item: "text" }) }}></textarea>
                             <small hidden={this.state.textValid} className="errorLabel">напишіть нам</small>
                             <input id="send-mob" type="submit" value="відправити" onClick={this.onSend} />
