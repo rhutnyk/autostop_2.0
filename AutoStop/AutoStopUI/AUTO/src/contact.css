@@ -26,7 +26,7 @@ html {
 }
 
 .logo-transition-l {
-    width: 120px;
+    width: 100px;
     -webkit-transition: width 2s;
     /* For Safari 3.1 to 6.0 */
     transition: width .2s;
