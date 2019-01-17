@@ -445,3 +445,7 @@ textarea:focus {
 .nav-link{
     color: rgba(228, 228, 228, 0.815) !important;
 }
+
+.active-link{
+    border-bottom: 1px solid white;
+}

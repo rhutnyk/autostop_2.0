@@ -452,6 +452,7 @@ a:hover {
     text-decoration: none;
 }
 
+
 .nav-link{
     color: rgba(228, 228, 228, 0.876) !important;
 }
@@ -483,4 +484,9 @@ a:hover {
         margin: auto;
         height: auto;
     }
+}
+
+
+.active-link{
+    border-bottom: 1px solid white;
 }
