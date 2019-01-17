@@ -136,8 +136,6 @@ header {
 }
 
 
-
-
 .parts-container-header {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -322,12 +320,12 @@ header {
 
 /* marko */
 .back-image-search img{
-    /* background-image: url('../src/image/header\ goods.jpg');
+     /* background-image: url('../src/image/header\ goods.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
-    height: 256px; */
+    /* height: 256px;
     width: 110%;
-    min-height: 180px;
+    min-height: 180px; */
 }
 
 
