@@ -288,6 +288,12 @@ html {
     width: 40px;
 }
 
+@media screen and (max-width: 768px) {
+    .logo-bootom-menu {
+        width: 80px;
+    }
+}
+
 .made-by {
     color: rgb(134, 134, 134);
     margin: 15px 0 0 0;
