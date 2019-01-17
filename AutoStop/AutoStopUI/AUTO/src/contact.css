@@ -441,3 +441,7 @@ textarea:focus {
     margin-left: 0;
     margin-right: 0;
 }
+
+.nav-link{
+    color: rgba(228, 228, 228, 0.815) !important;
+}
