@@ -319,11 +319,13 @@ header {
 }
 
 /* marko */
-.back-image-search {
-    background-image: url('../src/image/header\ goods.jpg');
+.back-image-search img{
+    /* background-image: url('../src/image/header\ goods.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 256px;
+    height: 256px; */
+    width: 110%;
+    min-height: 180px;
 }
 
 
