@@ -423,6 +423,8 @@ textarea:focus {
     background: #4F8E23;
 }
 
+
+/*Remove horizontal scroll*/
 .row{
     margin-left: 0;
     margin-right: 0;
