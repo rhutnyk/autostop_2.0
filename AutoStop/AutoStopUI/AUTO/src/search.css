@@ -296,7 +296,8 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     background-color: black;
-    opacity: 0.3;
+    background-size: 40px;
+    opacity: 0.4;
 
 }
 
