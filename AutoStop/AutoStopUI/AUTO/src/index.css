@@ -41,6 +41,12 @@ body{
     /* height 1s; */
 }
 
+@media screen and (max-width: 768px) {
+    .logo-transition-l {
+        width: 70px;
+    }
+}
+
 .logo-transition-s {
     width: 50px;
     -webkit-transition: width 2s;
