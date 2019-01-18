@@ -457,4 +457,6 @@ textarea:focus {
 /*Remove border for mobile menu*/
 #show-back{
     outline: none;
+    padding: 0;
+    width: 55px;
 }
