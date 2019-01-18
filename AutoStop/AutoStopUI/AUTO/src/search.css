@@ -190,9 +190,6 @@ header {
     .parts-content{
         text-align: center;
     }
-    /* .parts-container-header{
-        display: none;
-    } */
     #analog{
         border-bottom: 1px solid rgba(153, 149, 149, 0.376) !important;
         border-radius: 46px;
@@ -200,6 +197,9 @@ header {
     .analog{
         border-radius: 46px !important;
         padding-bottom: 0 !important;
+    }
+    .back-image-search img{
+        width: 185% !important;
     }
  }
 
@@ -324,6 +324,7 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+    min-height: 178px;
 }
 
 
