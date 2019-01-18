@@ -496,3 +496,7 @@ a:hover {
 #show-back{
     outline: none;
 }
+
+.float-right li{
+    margin-left: 15px;
+}

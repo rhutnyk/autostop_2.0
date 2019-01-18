@@ -460,3 +460,7 @@ textarea:focus {
     padding: 0;
     width: 55px;
 }
+
+.float-right li{
+    margin-left: 15px;
+}
