@@ -302,8 +302,8 @@
             </div>
 
             <div class="col-12">
-              <div class="text-center">
-                <p class="made-by-mob">www.autostop.lviv.ua (2018)</p>
+              <div class="text-center" id="year">
+                
               </div>
             </div>
 
@@ -315,6 +315,8 @@
     </footer>
 
     <script>
+      var year = new Date().getFullYear();
+      document.getElementById("year").innerHTML = '<p class="made-by">www.autostop.lviv.ua ('+year+')</p>';
       const header = document.getElementsByClassName('menu-nav');
       window.addEventListener('scroll', () => {
         const scrolled = (window.scrollY > 0);
