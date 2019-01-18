@@ -62,7 +62,7 @@
                     <img src="../src/image/header/gears.svg" style="width: 15%;">
                     <p>ОРИГІНАЛЬНІ АВТОЗАПЧАСТИНИ ДО <br> ФРАНЦУЗЬКИХ АВТОМОБІЛІВ</p>
                     <a class="but-button-coll d-none d-md-inline" href="#footer">ЗАТЕЛЕФОНУВАТИ</a>
-                    <a class="but-button-mail d-none d-md-inline" href="#writetous">НАПИШІТЬ НАМ</a>
+                    <a class="but-button-mail d-none d-md-inline" href="#writeto"  onclick="ActiveWrite()">НАПИШІТЬ НАМ</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -73,7 +73,7 @@
                     <img src="../src/image/header/gears.svg" style="width: 15%;">
                     <p>ОРИГІНАЛЬНІ АВТОЗАПЧАСТИНИ ДО <br> ФРАНЦУЗЬКИХ АВТОМОБІЛІВ</p>
                     <a class="but-button-coll d-none d-md-inline" href="#footer">ЗАТЕЛЕФОНУВАТИ</a>
-                    <a class="but-button-mail d-none d-md-inline" href="#writetous">НАПИШІТЬ НАМ</a>
+                    <a class="but-button-mail d-none d-md-inline"  href="#writeto"  onclick="ActiveWrite()">НАПИШІТЬ НАМ</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -84,7 +84,7 @@
                     <img src="../src/image/header/gears.svg" style="width: 15%;">
                     <p>ОРИГІНАЛЬНІ АВТОЗАПЧАСТИНИ ДО <br> ФРАНЦУЗЬКИХ АВТОМОБІЛІВ</p>
                     <a class="but-button-coll d-none d-md-inline" href="#footer">ЗАТЕЛЕФОНУВАТИ</a>
-                    <a class="but-button-mail d-none d-md-inline" href="#writetous">НАПИШІТЬ НАМ</a>
+                    <a class="but-button-mail d-none d-md-inline"  href="#writeto"  onclick="ActiveWrite()">НАПИШІТЬ НАМ</a>
                 </div>
             </div>
         </div>
@@ -587,6 +587,13 @@
             console.log('hello');
             document.getElementById('menu-nav').classList.toggle('color-naw');
         };
+
+        function ActiveWrite(){
+             var el = document.getElementById("writetous");
+             el.focus({preventScroll:false});
+            console.log("element "+el);
+        };
+
     </script>
 </body>
 
