@@ -333,4 +333,6 @@ header {
     margin-left: 20px;
 }
 
-
+.line-analog{
+    background-color: red;
+}

@@ -191,6 +191,9 @@ export default class Parts extends React.Component<any, any> {
                                         <span>
                                             <div id={this.state.loading ? "load-scroll" : ""}></div>
                                             <Analog isLoadingAnalog={this.isLoadingAnalog.bind(this)} hideAnalogs={this.onHideAnalogs} analogId={this.state.collapseItemIddex} loading={this.state.loading} />
+                                            <div className="container">
+                    <hr className="row line-analog"></hr>
+                    </div>
                                         </span>
                                         : null}
 

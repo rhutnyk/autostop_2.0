@@ -63,6 +63,9 @@ export default class Analog extends React.Component<IProps, any> {
 
                             ) : null}
                     </div>
+                    {/* <div className="container">
+                    <hr className="line-analog"></hr>
+                    </div> */}
                 </span>
                 : null
         )
