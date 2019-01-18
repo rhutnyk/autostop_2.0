@@ -452,3 +452,8 @@ textarea:focus {
 .active-link{
     border-bottom: 1px solid white;
 }
+
+/*Remove border for mobile menu*/
+#show-back{
+    outline: none;
+}
