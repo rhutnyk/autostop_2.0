@@ -68,7 +68,8 @@ body{
 }
 
 .border-bot:hover {
-    border-bottom: 1px solid rgb(184, 210, 240);
+    /* border-bottom: 1px solid rgb(184, 210, 240); */
+    opacity: 0.5;
 }
 
 .phone-b {
