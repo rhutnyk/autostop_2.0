@@ -97,6 +97,8 @@ export default class Parts extends React.Component<any, any> {
             var windowPosition = window.pageYOffset;
             var loadPosition = this.partContainer.clientHeight;
             if (windowPosition >= loadPosition && this.state.data.length < this.state.count) {
+                console.log(this.state.data);
+                
                 this.lazyLoadData();
             }
         }
@@ -110,7 +112,11 @@ export default class Parts extends React.Component<any, any> {
             .then(res => {
                 if (res) {
                     this.setState((prevState: any) => {
+                        console.log("Lazy: ");
+                        
                         prevState.data.push(...res.Items);
+                        console.log(this.state.data);
+                        
                         return { data: prevState.data, scrollLoading: false }
                     })
                 }
