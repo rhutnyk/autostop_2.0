@@ -56,7 +56,7 @@ export default class Parts extends React.Component<any, any> {
     showAnalogs = (id: string): void => {
         const isActive = this.state.collapseItemIddex == id ? null : id;
         this.setState({ collapseItemIddex: isActive, loading: true }, ()=>{
-            window.scrollTo(0,(document.getElementById(id).offsetTop-70))
+            window.scrollTo(0,(document.getElementById(id).offsetTop-70));
         });
     }
 
@@ -173,7 +173,7 @@ export default class Parts extends React.Component<any, any> {
                                     <div className="container">
                                     
                                         <div id={item.Part.id}>
-                                            <div className="row justify-content-md-center" id={item.IsAnalog ? "" : "color-grey"}>
+                                            <div className={"row justify-content-md-center "+(item.Part.id == this.state.collapseItemIddex? "border-0":"")} id={item.IsAnalog ? "" : "color-grey"}>
                                                 <div className="col-12 col-sm-2 number"><label className="d-sm-none part-label-mobile">№</label>{item.Part.Number}</div>
                                                 <div className="col-12 col-sm-4"><label className="d-sm-none part-label-mobile">Опис:</label>{item.Part.Description}</div>
                                                 <div className="col-12 col-sm-2"><label className="d-sm-none part-label-mobile">К-сть:</label>{item.Part.Qty}</div>
