@@ -9,7 +9,7 @@ export default class ContactPage extends Contact {
     private textInput:HTMLTextAreaElement;
 
     public componentDidMount() {
-        this.textInput.focus();
+        this.textInput.select();
         window.scrollTo(0, (this.textInput.offsetTop+290))
     }
 
