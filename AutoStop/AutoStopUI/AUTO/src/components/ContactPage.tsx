@@ -11,6 +11,7 @@ export default class ContactPage extends Contact {
     public componentDidMount() {
         this.textInput.select();
         window.scrollTo(0, (this.textInput.offsetTop+290))
+        this.setState({text:","})
     }
 
     public focusItem(){
