@@ -201,15 +201,9 @@
       }
     });
 
-    // console.log(window.pageYOffset);
-    // if (window.pageYOffset > 100) {
-    //   ActiveWrite();
-    // };
-
-    window.onload = ()=>{ var el = document.getElementById("youname");
-     el.focus({preventScroll:true});
-    }
-
+    if (window.pageYOffset > 100) {
+      ActiveWrite();
+    };
 
     function togler() {
       const showback = document.getElementById("show-back");
@@ -218,11 +212,10 @@
     };
 
 
-    // function ActiveWrite() {
-    //   var el = document.getElementById("writetous");
-    //   el.focus({preventScroll:false});
-    //  console.log("method");
-    // };
+    function ActiveWrite() {
+      var el = document.getElementById("youname");
+      el.focus({preventScroll:false});
+    };
 
   </script>
 </body>
