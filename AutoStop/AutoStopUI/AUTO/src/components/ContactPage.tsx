@@ -14,7 +14,7 @@ export default class ContactPage extends Contact {
     }
 
     public focusItem(){
-        this.textInput.focus();
+        this.textInput.select();
         window.scrollTo(0, (this.textInput.offsetTop+290))
     }
 
