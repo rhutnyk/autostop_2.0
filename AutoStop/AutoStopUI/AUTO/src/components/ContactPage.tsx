@@ -10,6 +10,7 @@ export default class ContactPage extends Contact {
 
     public componentDidMount() {
         this.textInput.focus({preventScroll:false});
+        window.scrollTo(0, (this.textInput.offsetTop+290))
     }
 
     render() {
