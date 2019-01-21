@@ -89,7 +89,7 @@ namespace AutoStop.Models
         private PartsResponse CreatePartsResponse(IQueryable<Part> parts, int skip, int take)
         {
             var count = parts.Count();
-            var tRes = parts.OrderByDescending(a => a.Qty).Skip(skip).Take(take);
+            var tRes = parts.OrderByDescending(a => a.Qty).ThenBy(a=>a.Number).Skip(skip).Take(take);
             var result = LeftJoinTable(tRes);
             return new PartsResponse { Count = count, Items = result };
         }
