@@ -46,7 +46,7 @@ export default class Contact extends React.Component<any, any>{
             })
     }
 
-
+   
     onChangeValue = (e: any, property: { item: string }) => {
         e.persist();
         this.setState({ [property.item]: e.target.value, emailValid: true, nameValid: true, textValid: true })

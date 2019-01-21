@@ -141,7 +141,7 @@
         </ul>
 
         <div class="col-12 text-center" id="year">
-         
+
         </div>
       </div>
     </div>
@@ -188,7 +188,7 @@
     crossorigin="anonymous"></script>
   <script>
     var year = new Date().getFullYear();
-    document.getElementById("year").innerHTML = '<p class="made-by">www.autostop.lviv.ua ('+year+')</p>';
+    document.getElementById("year").innerHTML = '<p class="made-by">www.autostop.lviv.ua (' + year + ')</p>';
     const header = document.getElementsByClassName('menu-nav');
     window.addEventListener('scroll', () => {
       const scrolled = (window.scrollY > 0);
@@ -201,12 +201,25 @@
       }
     });
 
+
+    if (window.pageYOffset > 100) {
+      ActiveWrite();
+    };
+
+
     function togler() {
       const showback = document.getElementById("show-back");
       showback.classList.toggle('collapsed');
-      console.log('hello');
       document.getElementById('menu-nav').classList.toggle('color-naw');
     };
+
+
+    function ActiveWrite() {
+      var el = document.getElementById("writetous");
+      el.focus();
+      el.focus({ preventScroll: false });
+    };
+
   </script>
 </body>
 

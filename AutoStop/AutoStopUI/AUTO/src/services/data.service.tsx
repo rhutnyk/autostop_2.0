@@ -7,7 +7,6 @@ import ContactForm from './contact_model';
 export default class MainServise {
 
     public query(url: string): Promise<any> {
-        console.log("Fetch "+url);
           return fetch(url)
           .then((res: any) => res.json())
           .then(res => {return res})

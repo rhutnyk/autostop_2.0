@@ -3,7 +3,9 @@ import Contact from './Contact';
 
 
 
-export default class ContactPage extends Contact{
+export default class ContactPage extends Contact {
+
+   
 
     render() {
 
@@ -18,7 +20,8 @@ export default class ContactPage extends Contact{
                             <small hidden={this.state.nameValid} className="errorLabel">введіть ваше ім'я</small>
                         </div>
 
-                        <div className="col-11 col-md-4 col-lg-3"><input className={this.state.emailValid ? "" : "error"} id="mail" type="email" placeholder="Ваш E-mail" value={this.state.email} onChange={(e) => { this.onChangeValue(e, { item: "email" }) }} /><br />
+                        <div className="col-11 col-md-4 col-lg-3">
+                            <input className={this.state.emailValid ? "" : "error"} id="mail" type="email" placeholder="Ваш E-mail" value={this.state.email} onChange={(e) => { this.onChangeValue(e, { item: "email" }) }} /><br />
                             <small hidden={this.state.emailValid} className="errorLabel">введіть коректну пошту</small>
                         </div>
                     </div>

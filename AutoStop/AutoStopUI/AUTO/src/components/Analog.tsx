@@ -38,7 +38,7 @@ export default class Analog extends React.Component<IProps, any> {
         if (this.state.id >= 0) {
             this.mainService.query(this.url + this.props.analogId)
                 .then((res: any) => {
-                    this.setState({ data: res.Items }, () => { this.props.isLoadingAnalog(false) });
+                    this.setState({ data: res.Items }, () => { this.props.isLoadingAnalog(false); });
                 })
         }
     }
