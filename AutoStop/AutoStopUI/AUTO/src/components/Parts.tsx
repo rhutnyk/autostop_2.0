@@ -55,15 +55,17 @@ export default class Parts extends React.Component<any, any> {
 
     showAnalogs = (id: string): void => {
         const isActive = this.state.collapseItemIddex == id ? null : id;
-        this.setState({ collapseItemIddex: isActive, loading: true }, ()=>{
+        this.setState({ collapseItemIddex: isActive, loading: isActive != null? true:false }, ()=>{
             window.scrollTo(0,(document.getElementById(id).offsetTop-70));
         });
     }
 
 
-    onHideAnalogs = () => {
-        this.setState({ collapseItemIddex: null })
-    }
+    // onHideAnalogs = () => {
+    //     console.log(this.state.loading);
+        
+    //     this.setState({ collapseItemIddex: null, loading:false })
+    // }
 
 
     searchParts = () => {
@@ -190,7 +192,7 @@ export default class Parts extends React.Component<any, any> {
                                     {this.state.collapseItemIddex == item.Part.id ?
                                         <span>
                                             <div id={this.state.loading ? "load-scroll" : ""}></div>
-                                            <Analog isLoadingAnalog={this.isLoadingAnalog.bind(this)} hideAnalogs={this.onHideAnalogs} analogId={this.state.collapseItemIddex} loading={this.state.loading} />
+                                            <Analog isLoadingAnalog={this.isLoadingAnalog.bind(this)}  analogId={this.state.collapseItemIddex} loading={this.state.loading} />
                                             <div className="container">
                     <hr className="row line-analog"></hr>
                     </div>

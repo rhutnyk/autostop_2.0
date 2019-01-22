@@ -5,7 +5,6 @@ import PartModel from '../services/part_model';
 
 
 class IProps {
-    hideAnalogs: () => void;
     isLoadingAnalog: (res: boolean) => void;
     analogId: number;
     loading: boolean
@@ -34,7 +33,6 @@ export default class Analog extends React.Component<IProps, any> {
 
 
     getData = () => {
-
         if (this.state.id >= 0) {
             this.mainService.query(this.url + this.props.analogId)
                 .then((res: any) => {
