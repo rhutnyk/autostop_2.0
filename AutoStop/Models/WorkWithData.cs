@@ -105,6 +105,7 @@ namespace AutoStop.Models
                 email._name_user = contact.Name;
                 email._email_user = contact.Email;
                 email._body = contact.Message;
+                email._subject = "Autostop";
                 email._to = "ihor.moskvita@bitsorchestra.com";
                 email.SendEmail();
 

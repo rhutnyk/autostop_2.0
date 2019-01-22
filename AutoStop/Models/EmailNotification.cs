@@ -24,7 +24,7 @@ namespace AutoStop.Models
                 mail.To.Add(_to);
                 mail.From = new MailAddress("valen@gmail.com");
                 mail.Subject = _subject;
-                mail.Body = "<h3>Повідомлення надіслано сайтом <a>http://autostop.bitsorchestra.com</a></h3>" +
+                mail.Body = "<h3>Повідомлення надіслано сайтом <a href='http://autostop.bitsorchestra.com'>autostop.bitsorchestra.com</a></h3>" +
                     "</hr>" +
                     "<p>Імя: " + _name_user + "</p>" +
                     "<p>Ел.пошта: " + _email_user + "</p>" +
