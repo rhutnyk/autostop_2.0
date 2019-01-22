@@ -6,15 +6,15 @@ import PartModel from '../services/part_model';
 
 
 export default class Parts extends React.Component<any, any> {
-   
+
     private mainService = new dataService();
     private partContainer: HTMLElement;
     private url = URL_Service.part_url;
     private queryNumber = "number=";
     private queryDescription = "desc=";
     private skip = 0;
-    
-    
+
+
 
     constructor(props: any) {
         super(props);
@@ -44,26 +44,28 @@ export default class Parts extends React.Component<any, any> {
     }
 
 
-    getData = (url:string) => {
+    getData = (url: string) => {
         this.setState({ partsLoading: true });
         this.mainService.query(url)
             .then((res: any) => {
-                this.setState({data: res.Items, count: res.Count, lastUrl: url, partsLoading: false }, () => { this.skip = 0;});
+                this.setState({ data: res.Items, count: res.Count, lastUrl: url, partsLoading: false }, () => { this.skip = 0; });
             })
     }
 
 
     showAnalogs = (id: string): void => {
         const isActive = this.state.collapseItemIddex == id ? null : id;
-        this.setState({ collapseItemIddex: isActive, loading: true }, ()=>{
-            window.scrollTo(0,(document.getElementById(id).offsetTop-70));
+        this.setState({ collapseItemIddex: isActive, loading: isActive != null ? true : false }, () => {
+            window.scrollTo(0, (document.getElementById(id).offsetTop - 70));
         });
     }
 
 
-    onHideAnalogs = () => {
-        this.setState({ collapseItemIddex: null })
-    }
+    // onHideAnalogs = () => {
+    //     console.log(this.state.loading);
+
+    //     this.setState({ collapseItemIddex: null, loading:false })
+    // }
 
 
     searchParts = () => {
@@ -161,7 +163,7 @@ export default class Parts extends React.Component<any, any> {
                         </div>
                     </div>
                 </div>
-                
+
                 <div id={this.state.partsLoading ? "loadParts" : ""}></div>
                 <div className="parts-content" id="res">
 
@@ -171,9 +173,9 @@ export default class Parts extends React.Component<any, any> {
                             this.state.data.map((item: any, index: number) =>
                                 <span key={index}>
                                     <div className="container">
-                                    
+
                                         <div id={item.Part.id}>
-                                            <div className={"row justify-content-md-center "+(item.Part.id == this.state.collapseItemIddex? "border-0":"")} id={item.IsAnalog ? "" : "color-grey"}>
+                                            <div className={"row justify-content-md-center " + (item.Part.id == this.state.collapseItemIddex ? "border-0" : "")} id={item.IsAnalog ? "" : "color-grey"}>
                                                 <div className="col-12 col-sm-2 number"><label className="d-sm-none part-label-mobile">№</label>{item.Part.Number}</div>
                                                 <div className="col-12 col-sm-4"><label className="d-sm-none part-label-mobile">Опис:</label>{item.Part.Description}</div>
                                                 <div className="col-12 col-sm-2"><label className="d-sm-none part-label-mobile">К-сть:</label>{item.Part.Qty}</div>
@@ -190,10 +192,7 @@ export default class Parts extends React.Component<any, any> {
                                     {this.state.collapseItemIddex == item.Part.id ?
                                         <span>
                                             <div id={this.state.loading ? "load-scroll" : ""}></div>
-                                            <Analog isLoadingAnalog={this.isLoadingAnalog.bind(this)} hideAnalogs={this.onHideAnalogs} analogId={this.state.collapseItemIddex} loading={this.state.loading} />
-                                            <div className="container">
-                    <hr className="row line-analog"></hr>
-                    </div>
+                                            <Analog isLoadingAnalog={this.isLoadingAnalog.bind(this)} analogId={this.state.collapseItemIddex} loading={this.state.loading} />
                                         </span>
                                         : null}
 
