@@ -27,7 +27,7 @@ export default class Contact extends React.Component<any, any>{
         return new Promise(resolve => {
             this.setState({
                 emailValid: this.state.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i),
-                nameValid: this.state.name != "",
+                nameValid: this.state.name.trim() != "",
                 textValid: this.state.text != "",
             }, () => {
                 resolve(this.state.emailValid && this.state.nameValid && this.state.textValid);
@@ -55,7 +55,7 @@ export default class Contact extends React.Component<any, any>{
 
     sendData = () => {
         var contact = new ContactForm();
-        contact.Name = this.state.name;
+        contact.Name = this.state.name.trim();
         contact.Email = this.state.email;
         contact.Message = this.state.text;
 
