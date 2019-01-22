@@ -33,7 +33,6 @@ namespace AutoStop.Controllers
         }
 
 
-        [EnableQuery(PageSize = 10)]
         public IHttpActionResult Get()
         {
             try

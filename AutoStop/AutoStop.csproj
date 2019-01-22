@@ -206,6 +206,7 @@
     <Compile Include="Models\Analog.cs" />
     <Compile Include="Models\ANet.cs" />
     <Compile Include="Models\ContactUs.cs" />
+    <Compile Include="Models\EmailNotification.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Model1.cs" />
     <Compile Include="Models\ParseXml.cs" />

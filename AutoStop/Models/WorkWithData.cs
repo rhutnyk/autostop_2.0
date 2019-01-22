@@ -55,7 +55,7 @@ namespace AutoStop.Models
 
         public List<Log> GetLogs()
         {
-            return db.Logs.ToList();
+            return db.Logs.OrderByDescending(a=>a.id).ToList();
         }
                
 
@@ -91,6 +91,7 @@ namespace AutoStop.Models
             var count = parts.Count();
             var tRes = parts.OrderByDescending(a => a.Qty).ThenBy(a=>a.Number).Skip(skip).Take(take);
             var result = LeftJoinTable(tRes);
+
             return new PartsResponse { Count = count, Items = result };
         }
 
@@ -100,6 +101,13 @@ namespace AutoStop.Models
         {
             if (contact != null)
             {
+                EmailNotification email = new EmailNotification();
+                email._name_user = contact.Name;
+                email._email_user = contact.Email;
+                email._body = contact.Message;
+                email._to = "ihor.moskvita@bitsorchestra.com";
+                email.SendEmail();
+
                 contact.Date = DateTime.Now;
                 db.Contact.Add(contact);
                 db.SaveChanges();

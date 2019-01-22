@@ -17,7 +17,7 @@ namespace AutoStop.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            
+
             modelBuilder.Entity<Log>()
                 .Property(e => e.Message)
                 .IsUnicode(false);
