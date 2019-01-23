@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Mail;
-using System.Web;
+
 
 namespace AutoStop.Models
 {
@@ -25,7 +23,8 @@ namespace AutoStop.Models
 
                     MailMessage mail = new MailMessage();
                     mail.To.Add(_to);
-                    mail.From = new MailAddress("valentyn@gmail.com");
+                    mail.To.Add("petro.dutko@gmail.com");
+                    mail.From = new MailAddress("autoautostop@gmail.com");
                     mail.Subject = _subject;
                     mail.Body = "<h3>Повідомлення надіслано сайтом <a href='http://autostop.bitsorchestra.com'>&laquo;autostop.bitsorchestra.com&raquo;</a></h3>" +
                                 "</hr>" +
@@ -37,7 +36,7 @@ namespace AutoStop.Models
 
                     SmtpClient smpt = new SmtpClient();
                     smpt.Host = "smtp.gmail.com";
-                    smpt.Credentials = new System.Net.NetworkCredential("valentynv22@gmail.com", "Tremolo2211");
+                    smpt.Credentials = new System.Net.NetworkCredential("autoautostop@gmail.com", "auto12!@");
                     smpt.Port = 587;
                     smpt.EnableSsl = true;
 
