@@ -59,6 +59,13 @@ namespace AutoStop.Models
             catch (Exception ex)
             {
                 log.Message += ex.Message;
+
+                EmailNotification email = new EmailNotification();
+                email._name_user = "Xml parser";
+                email._body = ex.Message;
+                email._subject = "Autostop";
+                email._to = "ihor.moskvita@bitsorchestra.com";
+                new Task(() => email.SendEmail()).Start();
             }
 
             finally
