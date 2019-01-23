@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Threading.Tasks;
 
 namespace AutoStop.Models
 {
@@ -107,7 +107,7 @@ namespace AutoStop.Models
                 email._body = contact.Message;
                 email._subject = "Autostop";
                 email._to = "ihor.moskvita@bitsorchestra.com";
-                email.SendEmail();
+                new Task(()=>email.SendEmail()).Start();
 
                 contact.Date = DateTime.Now;
                 db.Contact.Add(contact);
