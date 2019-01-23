@@ -6,7 +6,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = { 
   entry:{
-    "index": "./src/index.tsx",
     "search": "./src/search.tsx",
     "currency" : "./src/currency.tsx",
     "contact_page" : "./src/contact_page.tsx",
