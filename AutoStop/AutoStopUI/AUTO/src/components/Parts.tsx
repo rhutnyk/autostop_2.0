@@ -60,14 +60,7 @@ export default class Parts extends React.Component<any, any> {
         });
     }
 
-
-    // onHideAnalogs = () => {
-    //     console.log(this.state.loading);
-
-    //     this.setState({ collapseItemIddex: null, loading:false })
-    // }
-
-
+   
     searchParts = () => {
         if (this.state.word != "") {
             this.getData(this.url + this.queryDescription + this.state.word);

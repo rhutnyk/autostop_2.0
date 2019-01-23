@@ -53,9 +53,6 @@ header {
     font-size: 1.5em;
 }
 
-/* .container{
-    text-align: center;
-} */
 
 .row input {
     text-align: center;
@@ -230,39 +227,9 @@ header {
     opacity: 0.6;
 }
 
-/* .close-btn{
-    text-align: right;
-    cursor: pointer;
-    margin-top: 0;
-} */
 
 
-/* .analog-header{
-    border:none !important;
-    margin-top: 40px;
-    height: 56px;
-} */
-
-/* .analog-header p{
-    font-family: 'myFont';
-    font-size: 1.2em;
-} */
-
-/* .analog-header img{
-    height: 20px !important;
-}
-
-#analog-first-item{
-    color: #2E8EEB;
-    border-bottom: 1px solid white !important;
-    padding-bottom: 10px;
-} */
-
-
-
-/* footer{
-    
- } */
+/* footer */
 
 #load {
     background-image: url("./image/copper-loader.gif");
@@ -274,17 +241,6 @@ header {
 }
 
 #loadParts {
-
-    /* position: absolute;
-        height: 100%;
-        background-image:url('./image/loadingParts.gif');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-color: black;
-        width: 100%;
-        z-index: 23;
-        opacity: 0.3; */
-
     position: fixed;
     left: 0px;
     top: 0px;
@@ -297,7 +253,6 @@ header {
     background-color: black;
     background-size: 40px;
     opacity: 0.4;
-
 }
 
 #color-grey {
@@ -318,9 +273,8 @@ header {
     word-wrap: break-word;
 }
 
-/* marko */
+
 .back-image-search img{
-     /* background-image: url('../src/image/header\ goods.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;

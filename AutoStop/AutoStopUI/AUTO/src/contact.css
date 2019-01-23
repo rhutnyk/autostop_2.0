@@ -54,7 +54,6 @@ html {
 }
 
 .border-bot:hover {
-    /* border-bottom: 1px solid rgb(184, 210, 240); */
     opacity: 0.5;
 }
 
@@ -226,7 +225,6 @@ html {
 }
 
 #writetous:hover {
-    /* background-color: white; */
     box-shadow: 0px 0px 20px 0px #6173ad;
 }
 
@@ -242,7 +240,6 @@ html {
 }
 
 #youname:hover {
-    /* background-color: white; */
     box-shadow: 0px 0px 20px 0px #6173ad;
 }
 
@@ -258,7 +255,6 @@ html {
 }
 
 #mail:hover {
-    /* background-color: white; */
     box-shadow: 0px 0px 20px 0px #6173ad;
 }
 

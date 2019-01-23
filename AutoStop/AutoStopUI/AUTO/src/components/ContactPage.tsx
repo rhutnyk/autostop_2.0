@@ -6,18 +6,6 @@ import Contact from './Contact';
 export default class ContactPage extends Contact {
 
 
-    // private textInput:HTMLTextAreaElement;
-
-    // public componentDidMount() {
-    //     this.textInput.select();
-    //     window.scrollTo(0, (this.textInput.offsetTop+290))
-    //     this.setState({text:","})
-    // }
-
-    // public focusItem(){
-    //     this.textInput.select();
-    //     window.scrollTo(0, (this.textInput.offsetTop+290))
-    // }
 
     render() {
 
