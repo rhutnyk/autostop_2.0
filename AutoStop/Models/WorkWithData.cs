@@ -44,8 +44,8 @@ namespace AutoStop.Models
 
         public PartsResponse GetByNumber(string number, int skip, int take)
         {
-            var num = number.Replace(".", "").Replace("-", "").Replace(",", "").Replace(" ", "");
-            var filtered = db.Parts.Where(a => a.Number.Replace("-", "").Replace(".", "").Replace(" ", "").IndexOf(num) > -1);
+            var num = number.Replace(".", "").Replace("-", "").Replace(",", "").Replace(" ", "").Replace("/","");
+            var filtered = db.Parts.Where(a => a.Number.Replace("-", "").Replace(".", "").Replace(" ", "").Replace("/", "").IndexOf(num) > -1);
             var response = CreatePartsResponse(filtered, skip, take);
 
             return response;
