@@ -63,7 +63,7 @@ namespace AutoStop.Models
                 EmailNotification email = new EmailNotification();
                 email._name_user = "Xml parser";
                 email._body = ex.Message;
-                email._subject = "Autostop";
+                email._subject = "Автостоп";
                 email._to = "ihor.moskvita@bitsorchestra.com";
                 new Task(() => email.SendEmail()).Start();
             }
