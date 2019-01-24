@@ -79,7 +79,7 @@ header {
     height: 40px;
     border-radius: 25px;
     border: 1px solid #2E8EEB !important;
-    background-color: #2E8EEB;
+    background-color: #2E8EEB !important;
     color: white;
     font-size: 1.2em;
     cursor: pointer;
