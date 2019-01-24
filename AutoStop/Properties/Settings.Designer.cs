@@ -44,5 +44,16 @@ namespace AutoStop.Properties {
                 return ((string)(this["Setting1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=mssql2.wh.hosting.ua;Initial Catalog=rhutnyk_autostop2;User ID=rhutny" +
+            "k_autostop;Password=3195223890")]
+        public string Setting2 {
+            get {
+                return ((string)(this["Setting2"]));
+            }
+        }
     }
 }
