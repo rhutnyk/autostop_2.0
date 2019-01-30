@@ -1,6 +1,6 @@
 
 
-const url = "http://autostop.bitsorchestra.com";
+const url = "";
 
 export const URL = {
 
