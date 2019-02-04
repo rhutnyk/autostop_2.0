@@ -13,20 +13,23 @@ namespace AutoStop.Models
 
         public PartsResponse GetParts(int skip, int take)
         {
-            var response = CreatePartsResponse(db.Parts, skip, take);
+            var response = db.Parts.OrderByDescending(a => a.Qty).ThenBy(a => a.Number).Skip(skip).Take(take);
+            var res = CreatePartsResponse(response, db.Parts.Count());
 
-            return response;
+            return res;
         }
 
         
         public PartsResponse GetAnalog(int id, int skip, int take)
         {
             var res = from p in db.Parts
-                      join a in db.Analogs on p.id equals a.analogId
-                      where a.partId == id
-                      select p;
+                       join a in db.Analogs on p.id equals a.analogId
+                       where a.partId == id
+                       orderby p.Qty descending
+                       select p;
 
-            var result = CreatePartsResponse(res, skip, take);
+
+            var result = CreatePartsResponse(res, res.Count());
 
             return result;
         }
@@ -35,8 +38,9 @@ namespace AutoStop.Models
         public PartsResponse GetByDescription(string str, int skip, int take)
         {
             var desc = str.Replace(".", "").Replace("-", "").Replace(",", "").Replace(" ", "");
-            var filtered = db.Parts.Where(a => a.Description.IndexOf(desc) > -1);
-            var response = CreatePartsResponse(filtered, skip, take);
+            var count = db.Parts.Where(a => a.Description.IndexOf(desc) > -1).Count();
+            var filtered = db.Parts.Where(a => a.Description.IndexOf(desc) > -1).OrderByDescending(a => a.Qty).ThenBy(a => a.Number).Skip(skip).Take(take);
+            var response = CreatePartsResponse(filtered, count);
 
             return response;
         }
@@ -45,8 +49,9 @@ namespace AutoStop.Models
         public PartsResponse GetByNumber(string number, int skip, int take)
         {
             var num = number.Replace(".", "").Replace("-", "").Replace(",", "").Replace(" ", "").Replace("/","");
-            var filtered = db.Parts.Where(a => a.Number.Replace("-", "").Replace(".", "").Replace(" ", "").Replace("/", "").IndexOf(num) > -1);
-            var response = CreatePartsResponse(filtered, skip, take);
+            var count = db.Parts.Where(a => a.Number.Replace("-", "").Replace(".", "").Replace(" ", "").Replace("/", "").IndexOf(num) > -1).Count();
+            var filtered = db.Parts.Where(a => a.Number.Replace("-", "").Replace(".", "").Replace(" ", "").Replace("/", "").IndexOf(num) > -1).OrderByDescending(a => a.Qty).ThenBy(a=>a.Number).Skip(skip).Take(take);
+            var response = CreatePartsResponse(filtered, count);
 
             return response;
         }
@@ -78,19 +83,30 @@ namespace AutoStop.Models
 
         public IEnumerable<PartIsAnalog> LeftJoinTable (IEnumerable<Part> leftTable)
         {
-            var result = leftTable.GroupJoin(db.Analogs, lang => lang.id, pers => pers.partId,
-               (lang, ps) => new PartIsAnalog { Part = lang, IsAnalog = ps.FirstOrDefault() == null ? false : true });
+            List<PartIsAnalog> list = new List<PartIsAnalog>();
+            
+            var analogs = db.Analogs;
+            var parts = leftTable.ToList();
 
-            return result;
+            foreach (var i in parts)
+            {
+                list.Add(new PartIsAnalog()
+                {
+                    Part = i,
+                    IsAnalog = analogs.Where(a => a.partId == i.id).FirstOrDefault() != null
+                });
+            }
+
+            return list;
         }
 
 
         //create parts with count and isAnalog
-        private PartsResponse CreatePartsResponse(IQueryable<Part> parts, int skip, int take)
+        private PartsResponse CreatePartsResponse(IQueryable<Part> parts, int count)
         {
-            var count = parts.Count();
-            var tRes = parts.OrderByDescending(a => a.Qty).ThenBy(a=>a.Number).Skip(skip).Take(take);
-            var result = LeftJoinTable(tRes);
+            
+            
+            var result = LeftJoinTable(parts);
 
             return new PartsResponse { Count = count, Items = result };
         }

@@ -319,87 +319,11 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="wwwroot\favicon.ico" />
-    <Content Include="wwwroot\fotorama%402x.png" />
-    <Content Include="wwwroot\fotorama.css" />
-    <Content Include="wwwroot\fotorama.js" />
-    <Content Include="wwwroot\fotorama.png" />
-    <Content Include="wwwroot\image1\1200px-ElringKlinger-Logo.svg.png" />
-    <Content Include="wwwroot\image1\20142431112429_kyb.png" />
-    <Content Include="wwwroot\image1\2016-02-02-11-59-zf_cropped_80.png" />
-    <Content Include="wwwroot\image1\21WdhIKqgNL.jpg" />
-    <Content Include="wwwroot\image1\42_logo.png" />
-    <Content Include="wwwroot\image1\512.jpg" />
-    <Content Include="wwwroot\image1\876979948_w640_h640_cid2154539_pid571361181-0a94e0f5.png" />
-    <Content Include="wwwroot\image1\a93264cs-960.gif" />
-    <Content Include="wwwroot\image1\banner_contiTech_select.png" />
-    <Content Include="wwwroot\image1\Bosch-logo.png" />
-    <Content Include="wwwroot\image1\brembo %281%29.png" />
-    <Content Include="wwwroot\image1\Brembo.png" />
-    <Content Include="wwwroot\image1\Brembo_logo_symbol_red.png" />
-    <Content Include="wwwroot\image1\champion.jpg" />
-    <Content Include="wwwroot\image1\continental-ag-png-continental-ag-logo-png-2000.png" />
-    <Content Include="wwwroot\image1\corteco-logo.png" />
-    <Content Include="wwwroot\image1\delphi-logo.png" />
-    <Content Include="wwwroot\image1\delphi_Logo-500x500.png" />
-    <Content Include="wwwroot\image1\elring-logo.png" />
-    <Content Include="wwwroot\image1\Elring.png" />
-    <Content Include="wwwroot\image1\febi-bilstein_logo_PNG.png" />
-    <Content Include="wwwroot\image1\Filtron.png" />
-    <Content Include="wwwroot\image1\iDenso.png" />
-    <Content Include="wwwroot\image1\INA_logo.svg_.png" />
-    <Content Include="wwwroot\image1\Komatsu-company-logo.jpg" />
-    <Content Include="wwwroot\image1\KYB_Corporation_company_logo.svg.png" />
-    <Content Include="wwwroot\image1\logo-elring.png" />
-    <Content Include="wwwroot\image1\logo-schmitz.png" />
-    <Content Include="wwwroot\image1\logo.png" />
-    <Content Include="wwwroot\image1\Magneti_Marelli_logo.png" />
-    <Content Include="wwwroot\image1\Mahle.svg.png" />
-    <Content Include="wwwroot\image1\mercato di riferimento.png" />
-    <Content Include="wwwroot\image1\mesh_points_background_silver_18524_2048x1152.jpg" />
-    <Content Include="wwwroot\image1\Motul.jpg" />
-    <Content Include="wwwroot\image1\NEW_LOGO_NGK_3.5_No-R.png" />
-    <Content Include="wwwroot\image1\Pirelli-Tires-Aftermarket-Performance-Vinyl-Decal-by-Sticker-Whale-Black.png" />
-    <Content Include="wwwroot\image1\renault %281%29.png" />
-    <Content Include="wwwroot\image1\rs-logo.png" />
-    <Content Include="wwwroot\image1\site-icon-1.png" />
-    <Content Include="wwwroot\image1\SKF-Logo.svg.png" />
-    <Content Include="wwwroot\image1\TRW_Auto.svg.png" />
-    <Content Include="wwwroot\image1\Valeo_Logo.svg.png" />
-    <Content Include="wwwroot\image1\wix-logo-vector-400x400.png" />
-    <Content Include="wwwroot\image1\WP_Suspension_logo.svg.png" />
-    <Content Include="wwwroot\image1\zaphasti.png" />
-    <Content Include="wwwroot\image1\ZF SACHS.png" />
-    <Content Include="wwwroot\image\1487692852.jpg" />
-    <Content Include="wwwroot\image\1487698404.jpg" />
-    <Content Include="wwwroot\image\bgimg1.jpg" />
-    <Content Include="wwwroot\image\bgimg2.jpg" />
-    <Content Include="wwwroot\image\images 3.jpg" />
-    <Content Include="wwwroot\image\images 4.jpg" />
-    <Content Include="wwwroot\image\images 5.jpg" />
-    <Content Include="wwwroot\image\kolinval.jpg" />
-    <Content Include="wwwroot\image\LOGO.svg" />
-    <Content Include="wwwroot\image\logoBits.png" />
-    <Content Include="wwwroot\image\oil.png" />
-    <Content Include="wwwroot\image\воздушный-фильтр-ситроен-с4.png" />
-    <Content Include="wwwroot\image\завантаження.jpg" />
-    <Content Include="wwwroot\image\масляные фильтра 300x300 %281%29.png" />
-    <Content Include="wwwroot\image\салону.png" />
-    <Content Include="wwwroot\image\фильтр-топливный.png" />
-    <Content Include="wwwroot\index.html" />
-    <Content Include="wwwroot\jquery.js" />
-    <Content Include="wwwroot\main.js" />
-    <Content Include="wwwroot\service-worker.js" />
-    <Content Include="wwwroot\static\css\main.2bc8db45.css" />
-    <Content Include="wwwroot\static\js\main.345345bf.js" />
-    <Content Include="wwwroot\style.css" />
-    <Content Include="wwwroot\text.txt" />
-    <Content Include="wwwroot\w3.css" />
-    <Content Include="wwwroot\w3.js" />
     <Content Include="AutoStopUI\package-lock.json" />
     <Content Include="AutoStopUI\package.json" />
     <Content Include="AutoStopUI\public\manifest.json" />
     <Content Include="AutoStopUI\README.md" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -413,10 +337,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="wwwroot\asset-manifest.json" />
-    <Content Include="wwwroot\manifest.json" />
-    <Content Include="wwwroot\static\css\main.2bc8db45.css.map" />
-    <Content Include="wwwroot\static\js\main.345345bf.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
