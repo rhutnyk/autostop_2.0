@@ -8,14 +8,14 @@ namespace AutoStop.Models
     public class WorkWithData
     {
         Model1 db = new Model1();
-
-
+        static List<LocalPartData> allParts = null;
+        static bool isLoad = false;
 
         public PartsResponse GetParts(int skip, int take)
         {
             var response = db.Parts.OrderByDescending(a => a.Qty).ThenBy(a => a.Number).Skip(skip).Take(take);
             var res = CreatePartsResponse(response, db.Parts.Count());
-
+            new Task(() => GetLocalAllData()).Start();
             return res;
         }
 
@@ -37,10 +37,9 @@ namespace AutoStop.Models
 
         public PartsResponse GetByDescription(string str, int skip, int take)
         {
-            var desc = str.Replace(".", "").Replace("-", "").Replace(",", "").Replace(" ", "");
-            var count = db.Parts.Where(a => a.Description.IndexOf(desc) > -1).Count();
-            var filtered = db.Parts.Where(a => a.Description.IndexOf(desc) > -1).OrderByDescending(a => a.Qty).ThenBy(a => a.Number).Skip(skip).Take(take);
-            var response = CreatePartsResponse(filtered, count);
+            var desc = str.Replace(".", "").Replace("-", "").Replace(",", "").Replace(" ", "").ToLower();
+            var filtered = db.Parts.Where(a => a.Description.IndexOf(desc) > -1).OrderByDescending(a => a.Qty).ThenBy(a => a.Number);
+            var response = CreatePartsResponse(filtered.Skip(skip).Take(take), filtered.Count());
 
             return response;
         }
@@ -48,10 +47,15 @@ namespace AutoStop.Models
 
         public PartsResponse GetByNumber(string number, int skip, int take)
         {
-            var num = number.Replace(".", "").Replace("-", "").Replace(",", "").Replace(" ", "").Replace("/","");
-            var count = db.Parts.Where(a => a.Number.Replace("-", "").Replace(".", "").Replace(" ", "").Replace("/", "").IndexOf(num) > -1).Count();
-            var filtered = db.Parts.Where(a => a.Number.Replace("-", "").Replace(".", "").Replace(" ", "").Replace("/", "").IndexOf(num) > -1).OrderByDescending(a => a.Qty).ThenBy(a=>a.Number).Skip(skip).Take(take);
-            var response = CreatePartsResponse(filtered, count);
+            var num = (number.Replace(".", "").Replace("-", "").Replace(",", "").Replace(" ", "").Replace("/","")).ToLower();
+            if(allParts == null)
+            {
+                GetLocalAllData();
+            }
+            var filtered = allParts.Where(a => a.SearchNumber.Contains(num)).Select(a => a.Item).ToList();
+            var skipData = filtered.Skip(skip).Take(take);
+            var result = LeftJoinTable(skipData);
+            var response = new PartsResponse { Count = filtered.Count(), Items = result };
 
             return response;
         }
@@ -83,9 +87,12 @@ namespace AutoStop.Models
 
         public IEnumerable<PartIsAnalog> LeftJoinTable (IEnumerable<Part> leftTable)
         {
+            //db.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
             List<PartIsAnalog> list = new List<PartIsAnalog>();
+
+            var query = (from r in db.Analogs
+                         select r.partId).Distinct().ToList();
             
-            var analogs = db.Analogs;
             var parts = leftTable.ToList();
 
             foreach (var i in parts)
@@ -93,7 +100,7 @@ namespace AutoStop.Models
                 list.Add(new PartIsAnalog()
                 {
                     Part = i,
-                    IsAnalog = analogs.Where(a => a.partId == i.id).FirstOrDefault() != null
+                    IsAnalog = query.IndexOf(i.id)>-1
                 });
             }
 
@@ -104,10 +111,8 @@ namespace AutoStop.Models
         //create parts with count and isAnalog
         private PartsResponse CreatePartsResponse(IQueryable<Part> parts, int count)
         {
-            
-            
             var result = LeftJoinTable(parts);
-
+            
             return new PartsResponse { Count = count, Items = result };
         }
 
@@ -145,6 +150,21 @@ namespace AutoStop.Models
             var contact = db.Contact.Where(a => a.Id == id).SingleOrDefault();
 
             return contact;
+        }
+
+
+        private void GetLocalAllData()
+        {
+            if (!isLoad)
+            {
+                allParts = db.Parts.OrderByDescending(a=>a.Qty).ThenBy(a=>a.Number).Select(a=> new LocalPartData {Item =  a, SearchNumber = a.Number
+                    .Replace("-", string.Empty).Replace(".", string.Empty).Replace("/", string.Empty).Replace(" ", string.Empty).Replace(",", string.Empty)
+                    .ToLower()})
+                    .ToList();
+
+                isLoad = true;
+            }
+           
         }
     }
 }
