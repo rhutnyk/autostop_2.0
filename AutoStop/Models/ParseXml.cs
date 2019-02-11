@@ -103,8 +103,8 @@ namespace AutoStop.Models
                         Qty = int.Parse(xe.Element(ns + "Qty").Value),
                         id = _id,
                         NumberSearch = (xe.Element(ns + "Number").Value.Replace(".", "").Replace("-", "").Replace(",", "").Replace(" ", "").Replace("/", "")).ToLower(),
-                        hasAnalog = false
-                });
+                        hasAnalog = listAnalog.FindIndex(a => a.partId == _id) > -1
+                    });
                 }
 
                 return listParts;
