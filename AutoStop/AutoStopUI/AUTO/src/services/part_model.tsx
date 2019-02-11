@@ -12,12 +12,12 @@ class Part{
     public Description: string;
     public Qty:number;
     public Price:number;
-    public Qty1:number;
-    public Qty2:number;
     public Brand:string;
+    public NumberSearch:string;
+    public hasAnalog:boolean;
 }
 
 class Item{
     public Part:Part;
-    public IsAnalog:boolean;
+    //public IsAnalog:boolean;
 }

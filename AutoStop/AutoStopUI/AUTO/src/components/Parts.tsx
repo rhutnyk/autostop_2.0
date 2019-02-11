@@ -167,22 +167,22 @@ export default class Parts extends React.Component<any, any> {
                                 <span key={index}>
                                     <div className="container">
 
-                                        <div id={item.Part.id}>
-                                            <div className={"row justify-content-md-center " + (item.Part.id == this.state.collapseItemIddex ? "border-0" : "")} id={item.IsAnalog ? "" : "color-grey"}>
-                                                <div className="col-12 col-sm-2 number"><label className="d-sm-none part-label-mobile">№</label>{item.Part.Number}</div>
-                                                <div className="col-12 col-sm-4"><label className="d-sm-none part-label-mobile">Опис:</label>{item.Part.Description}</div>
-                                                <div className="col-12 col-sm-2"><label className="d-sm-none part-label-mobile">К-сть:</label>{item.Part.Qty}</div>
-                                                <div className="col-12 col-sm-2"><label className="d-sm-none part-label-mobile">Ціна:</label>{item.Part.Price} &euro;</div>
+                                        <div id={item.id}>
+                                            <div className={"row justify-content-md-center " + (item.id == this.state.collapseItemIddex ? "border-0" : "")} id={item.hasAnalog ? "" : "color-grey"}>
+                                                <div className="col-12 col-sm-2 number"><label className="d-sm-none part-label-mobile">№</label>{item.Number}</div>
+                                                <div className="col-12 col-sm-4"><label className="d-sm-none part-label-mobile">Опис:</label>{item.Description}</div>
+                                                <div className="col-12 col-sm-2"><label className="d-sm-none part-label-mobile">К-сть:</label>{item.Qty}</div>
+                                                <div className="col-12 col-sm-2"><label className="d-sm-none part-label-mobile">Ціна:</label>{item.Price} &euro;</div>
                                                 <div className="col-12 col-sm-2">
-                                                    {item.IsAnalog ? <a onClick={() => this.showAnalogs(item.Part.id)}>
-                                                        <img src={`${this.state.collapseItemIddex == item.Part.id ? './image/hide analog.png' : './image/add analog.png'}`} />
+                                                    {item.hasAnalog ? <a onClick={() => this.showAnalogs(item.id)}>
+                                                        <img src={`${this.state.collapseItemIddex == item.id ? './image/hide analog.png' : './image/add analog.png'}`} />
                                                     </a> : null}
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    {this.state.collapseItemIddex == item.Part.id ?
+                                    {this.state.collapseItemIddex == item.id ?
                                         <span>
                                             <div id={this.state.loading ? "load-scroll" : ""}></div>
                                             <Analog isLoadingAnalog={this.isLoadingAnalog.bind(this)} analogId={this.state.collapseItemIddex} loading={this.state.loading} />
