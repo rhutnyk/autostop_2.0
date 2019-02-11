@@ -207,12 +207,10 @@
     <Compile Include="Models\ANet.cs" />
     <Compile Include="Models\ContactUs.cs" />
     <Compile Include="Models\EmailNotification.cs" />
-    <Compile Include="Models\LocalPartData.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Model1.cs" />
     <Compile Include="Models\ParseXml.cs" />
     <Compile Include="Models\Part.cs" />
-    <Compile Include="Models\PartIsAnalog.cs" />
     <Compile Include="Models\PartsResponse.cs" />
     <Compile Include="Models\WorkWithData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

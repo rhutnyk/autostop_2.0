@@ -115,13 +115,13 @@ namespace AutoStop.Models
                 dt.Columns.Add("Description");
                 dt.Columns.Add("Qty");
                 dt.Columns.Add("Price");
-                dt.Columns.Add("Qty1");
-                dt.Columns.Add("Qty2");
                 dt.Columns.Add("Brand");
+                dt.Columns.Add("NumberSearch");
+                dt.Columns.Add("hasAnalog");
 
                 foreach (var item in parts)
                 {
-                    dt.Rows.Add(item.id, item.Number, item.Description, item.Qty, item.Price, item.Qty1, item.Qty2, item.Brand);
+                    dt.Rows.Add(item.id, item.Number, item.Description, item.Qty, item.Price, item.Brand, item.NumberSearch, item.hasAnalog);
                 }
             }
             catch (Exception ex) { throw ex; }

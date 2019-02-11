@@ -17,7 +17,7 @@ namespace AutoStop.Models
         static readonly string fileExchange = HostingEnvironment.MapPath(@"~/Misc_Data.xml");
         static XElement xEmp;
         static XNamespace ns;
-
+        static List<Analog> listAnalog;
 
         public static string Start()
         {
@@ -49,12 +49,12 @@ namespace AutoStop.Models
 
                 log.FileName += " (Size:" + new FileInfo(file).Length / 1024 + "KB)";
 
-                var parts = ANet.InsertPartToDb(GetPartsFromXml());
-                log.Message = parts;
                 var analogs = ANet.InsertAnalogToDb(GetAnalogFromXml());
-                log.Message += analogs;
+                log.Message = analogs;
+                var parts = ANet.InsertPartToDb(GetPartsFromXml());
+                log.Message += parts;
 
-                GetExchangeRateFromXml();
+                //GetExchangeRateFromXml();
             }
             catch (Exception ex)
             {
@@ -93,17 +93,18 @@ namespace AutoStop.Models
 
                 foreach (XElement xe in parts)
                 {
+                    var _id = int.Parse(xe.Element(ns + "id").Value);
                     listParts.Add(new Part()
                     {
                         Number = xe.Element(ns + "Number").Value,
                         Price = Decimal.Parse(xe.Element(ns + "Price").Value),
                         Description = xe.Element(ns + "Description").Value,
                         Brand = xe.Element(ns + "Brand").Value,
-                        Qty1 = int.Parse(xe.Element(ns + "Qty1").Value),
-                        Qty2 = int.Parse(xe.Element(ns + "Qty2").Value),
                         Qty = int.Parse(xe.Element(ns + "Qty").Value),
-                        id = int.Parse(xe.Element(ns + "id").Value)
-                    });
+                        id = _id,
+                        NumberSearch = (xe.Element(ns + "Number").Value.Replace(".", "").Replace("-", "").Replace(",", "").Replace(" ", "").Replace("/", "")).ToLower(),
+                        hasAnalog = false
+                });
                 }
 
                 return listParts;
@@ -119,7 +120,7 @@ namespace AutoStop.Models
         {
             try
             {
-                List<Analog> listAnalog = new List<Analog>();
+                listAnalog = new List<Analog>();
 
                 var analogs = from emps in xEmp.Elements(ns + "Analog")
                             select emps;

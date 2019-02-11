@@ -19,12 +19,13 @@ namespace AutoStop.Models
         public int? Qty { get; set; }
 
         public decimal? Price { get; set; }
-
-        public int? Qty1 { get; set; }
-
-        public int? Qty2 { get; set; }
-
+                   
         [StringLength(50)]
         public string Brand { get; set; }
+
+        [StringLength(250)]
+        public string NumberSearch { get; set; }
+        
+        public bool hasAnalog { get; set; }
     }
 }

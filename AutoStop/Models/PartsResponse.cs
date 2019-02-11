@@ -6,6 +6,6 @@ namespace AutoStop.Models
     public class PartsResponse
     {
         public int Count { get; set; }
-        public IEnumerable<PartIsAnalog> Items { get; set; }
+        public IEnumerable<Part> Items { get; set; }
     }
 }
