@@ -25,7 +25,7 @@ header {
 .desc{
     float: left; 
     width: 65%; 
-    text-align: center;
+    text-align: right;
     margin: 0;
     color: white;
     font-size: 1.2em;
