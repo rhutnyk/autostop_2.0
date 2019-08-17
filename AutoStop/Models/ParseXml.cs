@@ -18,6 +18,7 @@ namespace AutoStop.Models
         static XElement xEmp;
         static XNamespace ns;
         static List<Analog> listAnalog;
+        
 
         public static string Start()
         {
@@ -51,10 +52,11 @@ namespace AutoStop.Models
 
                 var analogs = ANet.InsertAnalogToDb(GetAnalogFromXml());
                 log.Message = analogs;
+
                 var parts = ANet.InsertPartToDb(GetPartsFromXml());
                 log.Message += parts;
 
-                //GetExchangeRateFromXml();
+                GetExchangeRateFromXml();
             }
             catch (Exception ex)
             {
@@ -64,7 +66,7 @@ namespace AutoStop.Models
                 email._name_user = "Xml parser";
                 email._body = ex.Message;
                 email._subject = "Автостоп";
-                email._to = "ihor.moskvita@bitsorchestra.com";
+                
                 new Task(() => email.SendEmail()).Start();
             }
 
@@ -87,7 +89,7 @@ namespace AutoStop.Models
             try
             {
                 var listParts = new List<Part>();
-                
+
                 var parts = from emps in xEmp.Elements(ns + "Part")
                             select emps;
 
@@ -103,7 +105,7 @@ namespace AutoStop.Models
                         Qty = int.Parse(xe.Element(ns + "Qty").Value),
                         id = _id,
                         NumberSearch = (xe.Element(ns + "Number").Value.Replace(".", "").Replace("-", "").Replace(",", "").Replace(" ", "").Replace("/", "")).ToLower(),
-                        hasAnalog = listAnalog.FindIndex(a => a.partId == _id) > -1
+                        hasAnalog = false
                     });
                 }
 
@@ -159,6 +161,5 @@ namespace AutoStop.Models
             }
             return ExchangeRate;
         }
-
     }
 }

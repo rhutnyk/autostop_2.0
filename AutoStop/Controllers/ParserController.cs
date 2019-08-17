@@ -36,7 +36,8 @@ namespace AutoStop.Controllers
         public IHttpActionResult Get()
         {
             try
-            {   data = new WorkWithData();
+            {
+                data = new WorkWithData();
                 return Ok(data.GetLogs());
             }
             catch(Exception ex)

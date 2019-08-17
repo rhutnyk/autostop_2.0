@@ -8,7 +8,7 @@ namespace AutoStop.Models
 {
     public static class ANet
     {
-        readonly static string connectionString = @"Data Source=mssql2.wh.hosting.ua;Initial Catalog=rhutnyk_autostop2;User ID=rhutnyk_autostop;Password=3195223890";
+        readonly static string connectionString = @"Data Source=localhost;Initial Catalog=autostop_autostop2;User ID=rhutnyk_autostop;Password=Q6wts5!8";
 
 
         public static string InsertPartToDb (List<Part> list)

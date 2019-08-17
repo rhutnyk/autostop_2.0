@@ -23,10 +23,10 @@ namespace AutoStop.Models
 
                     MailMessage mail = new MailMessage();
                     mail.To.Add(_to);
-                    //mail.To.Add("petro.dutko@gmail.com");
+                    mail.To.Add("petro.dutko@gmail.com");
                     mail.From = new MailAddress("contact-us@autostop.lviv.ua");
                     mail.Subject = _subject;
-                    mail.Body = "<h3>Повідомлення надіслано сайтом <a href='http://autostop.bitsorchestra.com'>&laquo;autostop.bitsorchestra.com&raquo;</a></h3>" +
+                    mail.Body = "<h3>Повідомлення надіслано сайтом <a href='http://autostop.lviv.ua'>&laquo;autostop.lviv.ua&raquo;</a></h3>" +
                                 "</hr>" +
                                 "<p>Імя: " + _name_user + "</p>" +
                                 "<p>Ел.пошта: " + _email_user + "</p>" +

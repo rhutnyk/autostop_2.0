@@ -15,7 +15,9 @@ namespace AutoStop.Models
             var count = db.Parts.Count();
             var response = db.Parts.OrderByDescending(a => a.Qty).ThenBy(a => a.Number).Skip(skip).Take(take);
 
-            return new PartsResponse { Count = count, Items = response };
+            var resWithAnalog = hasAnalog(response.ToList());
+            
+            return new PartsResponse { Count = count, Items = resWithAnalog };
         }
 
         
@@ -35,8 +37,10 @@ namespace AutoStop.Models
         {
             var desc = str.Replace(".", "").Replace("-", "").Replace(",", "").Replace(" ", "").ToLower();
             var filtered = db.Parts.Where(a => a.Description.IndexOf(desc) > -1).OrderByDescending(a => a.Qty).ThenBy(a => a.Number);
+            var skipData = filtered.Skip(skip).Take(take);
 
-            return new PartsResponse { Count = filtered.Count(), Items = filtered.Skip(skip).Take(take) };
+
+            return new PartsResponse { Count = filtered.Count(), Items = hasAnalog(skipData.ToList()) };
         }
         
 
@@ -45,7 +49,7 @@ namespace AutoStop.Models
             var num = (number.Replace(".", "").Replace("-", "").Replace(",", "").Replace(" ", "").Replace("/","")).ToLower();
             var filtered = db.Parts.Where(a => a.NumberSearch.Contains(num)).OrderByDescending(a => a.Qty).ThenBy(a => a.NumberSearch);
             var skipData = filtered.Skip(skip).Take(take);
-            var response = new PartsResponse { Count = filtered.Count(), Items = skipData };
+            var response = new PartsResponse { Count = filtered.Count(), Items = hasAnalog(skipData.ToList()) };
 
             return response;
         }
@@ -75,6 +79,7 @@ namespace AutoStop.Models
         }
 
 
+
         public void AddContactMessage (ContactUs contact)
         {
             if (contact != null)
@@ -84,7 +89,7 @@ namespace AutoStop.Models
                 email._email_user = contact.Email;
                 email._body = contact.Message;
                 email._subject = "Автостоп";
-                email._to = "ihor.moskvita@bitsorchestra.com";
+                
                 new Task(()=>email.SendEmail()).Start();
 
                 contact.Date = DateTime.Now;
@@ -108,6 +113,19 @@ namespace AutoStop.Models
 
             return contact;
         }
-                
+
+
+        private IEnumerable<Part> hasAnalog (IEnumerable<Part> list)
+        {
+            var analogs = db.Analogs;
+
+            foreach (var i in list)
+            {
+                i.hasAnalog = analogs.Where(a=>a.partId == i.id).FirstOrDefault() != null;
+            }
+
+            return list;
+        }
+
     }
 }

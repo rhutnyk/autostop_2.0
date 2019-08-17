@@ -82,6 +82,7 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Security" />
     <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
@@ -211,6 +212,7 @@
     <Compile Include="Models\Model1.cs" />
     <Compile Include="Models\ParseXml.cs" />
     <Compile Include="Models\Part.cs" />
+    <Compile Include="Models\PartIsAnalog.cs" />
     <Compile Include="Models\PartsResponse.cs" />
     <Compile Include="Models\WorkWithData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -227,101 +229,93 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AutoStopUI\.gitignore" />
-    <Content Include="AutoStopUI\public\favicon.ico" />
-    <Content Include="AutoStopUI\public\fotorama%402x.png" />
-    <Content Include="AutoStopUI\public\fotorama.css" />
-    <Content Include="AutoStopUI\public\fotorama.js" />
-    <Content Include="AutoStopUI\public\fotorama.png" />
-    <Content Include="AutoStopUI\public\image1\1200px-ElringKlinger-Logo.svg.png" />
-    <Content Include="AutoStopUI\public\image1\20142431112429_kyb.png" />
-    <Content Include="AutoStopUI\public\image1\2016-02-02-11-59-zf_cropped_80.png" />
-    <Content Include="AutoStopUI\public\image1\21WdhIKqgNL.jpg" />
-    <Content Include="AutoStopUI\public\image1\42_logo.png" />
-    <Content Include="AutoStopUI\public\image1\512.jpg" />
-    <Content Include="AutoStopUI\public\image1\876979948_w640_h640_cid2154539_pid571361181-0a94e0f5.png" />
-    <Content Include="AutoStopUI\public\image1\a93264cs-960.gif" />
-    <Content Include="AutoStopUI\public\image1\banner_contiTech_select.png" />
-    <Content Include="AutoStopUI\public\image1\Bosch-logo.png" />
-    <Content Include="AutoStopUI\public\image1\brembo %281%29.png" />
-    <Content Include="AutoStopUI\public\image1\Brembo.png" />
-    <Content Include="AutoStopUI\public\image1\Brembo_logo_symbol_red.png" />
-    <Content Include="AutoStopUI\public\image1\champion.jpg" />
-    <Content Include="AutoStopUI\public\image1\continental-ag-png-continental-ag-logo-png-2000.png" />
-    <Content Include="AutoStopUI\public\image1\corteco-logo.png" />
-    <Content Include="AutoStopUI\public\image1\delphi-logo.png" />
-    <Content Include="AutoStopUI\public\image1\delphi_Logo-500x500.png" />
-    <Content Include="AutoStopUI\public\image1\elring-logo.png" />
-    <Content Include="AutoStopUI\public\image1\Elring.png" />
-    <Content Include="AutoStopUI\public\image1\febi-bilstein_logo_PNG.png" />
-    <Content Include="AutoStopUI\public\image1\Filtron.png" />
-    <Content Include="AutoStopUI\public\image1\iDenso.png" />
-    <Content Include="AutoStopUI\public\image1\INA_logo.svg_.png" />
-    <Content Include="AutoStopUI\public\image1\Komatsu-company-logo.jpg" />
-    <Content Include="AutoStopUI\public\image1\KYB_Corporation_company_logo.svg.png" />
-    <Content Include="AutoStopUI\public\image1\logo-elring.png" />
-    <Content Include="AutoStopUI\public\image1\logo-schmitz.png" />
-    <Content Include="AutoStopUI\public\image1\logo.png" />
-    <Content Include="AutoStopUI\public\image1\Magneti_Marelli_logo.png" />
-    <Content Include="AutoStopUI\public\image1\Mahle.svg.png" />
-    <Content Include="AutoStopUI\public\image1\mercato di riferimento.png" />
-    <Content Include="AutoStopUI\public\image1\mesh_points_background_silver_18524_2048x1152.jpg" />
-    <Content Include="AutoStopUI\public\image1\Motul.jpg" />
-    <Content Include="AutoStopUI\public\image1\NEW_LOGO_NGK_3.5_No-R.png" />
-    <Content Include="AutoStopUI\public\image1\Pirelli-Tires-Aftermarket-Performance-Vinyl-Decal-by-Sticker-Whale-Black.png" />
-    <Content Include="AutoStopUI\public\image1\renault %281%29.png" />
-    <Content Include="AutoStopUI\public\image1\rs-logo.png" />
-    <Content Include="AutoStopUI\public\image1\site-icon-1.png" />
-    <Content Include="AutoStopUI\public\image1\SKF-Logo.svg.png" />
-    <Content Include="AutoStopUI\public\image1\TRW_Auto.svg.png" />
-    <Content Include="AutoStopUI\public\image1\Valeo_Logo.svg.png" />
-    <Content Include="AutoStopUI\public\image1\wix-logo-vector-400x400.png" />
-    <Content Include="AutoStopUI\public\image1\WP_Suspension_logo.svg.png" />
-    <Content Include="AutoStopUI\public\image1\zaphasti.png" />
-    <Content Include="AutoStopUI\public\image1\ZF SACHS.png" />
-    <Content Include="AutoStopUI\public\image\1487692852.jpg" />
-    <Content Include="AutoStopUI\public\image\1487698404.jpg" />
-    <Content Include="AutoStopUI\public\image\bgimg1.jpg" />
-    <Content Include="AutoStopUI\public\image\bgimg2.jpg" />
-    <Content Include="AutoStopUI\public\image\images 3.jpg" />
-    <Content Include="AutoStopUI\public\image\images 4.jpg" />
-    <Content Include="AutoStopUI\public\image\images 5.jpg" />
-    <Content Include="AutoStopUI\public\image\kolinval.jpg" />
-    <Content Include="AutoStopUI\public\image\LOGO.svg" />
-    <Content Include="AutoStopUI\public\image\logoBits.png" />
-    <Content Include="AutoStopUI\public\image\oil.png" />
-    <Content Include="AutoStopUI\public\image\воздушный-фильтр-ситроен-с4.png" />
-    <Content Include="AutoStopUI\public\image\завантаження.jpg" />
-    <Content Include="AutoStopUI\public\image\масляные фильтра 300x300 %281%29.png" />
-    <Content Include="AutoStopUI\public\image\салону.png" />
-    <Content Include="AutoStopUI\public\image\фильтр-топливный.png" />
-    <Content Include="AutoStopUI\public\index.html" />
-    <Content Include="AutoStopUI\public\jquery.js" />
-    <Content Include="AutoStopUI\public\main.js" />
-    <Content Include="AutoStopUI\public\style.css" />
-    <Content Include="AutoStopUI\public\text.txt" />
-    <Content Include="AutoStopUI\public\w3.css" />
-    <Content Include="AutoStopUI\public\w3.js" />
-    <Content Include="AutoStopUI\src\App.css" />
-    <Content Include="AutoStopUI\src\App.jsx" />
-    <Content Include="AutoStopUI\src\components\Euro_exchange.jsx" />
-    <Content Include="AutoStopUI\src\components\Product.jsx" />
-    <Content Include="AutoStopUI\src\components\Search.jsx" />
-    <Content Include="AutoStopUI\src\index.css" />
-    <Content Include="AutoStopUI\src\index.js" />
-    <Content Include="AutoStopUI\src\logo.svg" />
-    <Content Include="AutoStopUI\src\registerServiceWorker.js" />
-    <Content Include="AutoStopUI\src\services\DataService.jsx" />
     <Content Include="Misc_Data.xml" />
     <Content Include="Parts.xml" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="AutoStopUI\package-lock.json" />
-    <Content Include="AutoStopUI\package.json" />
-    <Content Include="AutoStopUI\public\manifest.json" />
-    <Content Include="AutoStopUI\README.md" />
+    <Content Include="wwwroot\contact_footer.bundle.js" />
+    <Content Include="wwwroot\contact_page.bundle.js" />
+    <Content Include="wwwroot\currency.bundle.js" />
+    <Content Include="wwwroot\index.html" />
+    <Content Include="wwwroot\search.bundle.js" />
+    <Content Include="wwwroot\src\contact.css" />
+    <Content Include="wwwroot\src\contact.html" />
+    <Content Include="wwwroot\src\contact_form.css" />
+    <Content Include="wwwroot\src\image\30.gif" />
+    <Content Include="wwwroot\src\image\add analog.png" />
+    <Content Include="wwwroot\src\image\close up analog.png" />
+    <Content Include="wwwroot\src\image\contact\contacts image.png" />
+    <Content Include="wwwroot\src\image\contact\geomark.png" />
+    <Content Include="wwwroot\src\image\contact\Map-gogle.jpg" />
+    <Content Include="wwwroot\src\image\contact\phone mark.png" />
+    <Content Include="wwwroot\src\image\content\abs.jpg" />
+    <Content Include="wwwroot\src\image\content\air filter.png" />
+    <Content Include="wwwroot\src\image\content\airtex.png" />
+    <Content Include="wwwroot\src\image\content\asmetal.png" />
+    <Content Include="wwwroot\src\image\content\car_logo_PNG1660.jpg" />
+    <Content Include="wwwroot\src\image\content\citroen_PNG88.jpg" />
+    <Content Include="wwwroot\src\image\content\city delivery.png" />
+    <Content Include="wwwroot\src\image\content\dacialogo.jpg" />
+    <Content Include="wwwroot\src\image\content\denso.png" />
+    <Content Include="wwwroot\src\image\content\details to korean cars.png" />
+    <Content Include="wwwroot\src\image\content\discounts.png" />
+    <Content Include="wwwroot\src\image\content\Fiat-logo.jpg" />
+    <Content Include="wwwroot\src\image\content\fuel filter.png" />
+    <Content Include="wwwroot\src\image\content\ina.png" />
+    <Content Include="wwwroot\src\image\content\knecht.png" />
+    <Content Include="wwwroot\src\image\content\kyb.jpg" />
+    <Content Include="wwwroot\src\image\content\logo footer.png" />
+    <Content Include="wwwroot\src\image\content\luk.png" />
+    <Content Include="wwwroot\src\image\content\monro.jpg" />
+    <Content Include="wwwroot\src\image\content\nissens.jpg" />
+    <Content Include="wwwroot\src\image\content\nrf.jpg" />
+    <Content Include="wwwroot\src\image\content\oil filter.png" />
+    <Content Include="wwwroot\src\image\content\oil.png" />
+    <Content Include="wwwroot\src\image\content\perflux.png" />
+    <Content Include="wwwroot\src\image\content\pierburg.png" />
+    <Content Include="wwwroot\src\image\content\red line.png" />
+    <Content Include="wwwroot\src\image\content\red-line.png" />
+    <Content Include="wwwroot\src\image\content\renault_PNG39.jpg" />
+    <Content Include="wwwroot\src\image\content\sachs.png" />
+    <Content Include="wwwroot\src\image\content\sales herd.png" />
+    <Content Include="wwwroot\src\image\content\snr.png" />
+    <Content Include="wwwroot\src\image\content\termin.png" />
+    <Content Include="wwwroot\src\image\content\valeo.png" />
+    <Content Include="wwwroot\src\image\content\wide range.png" />
+    <Content Include="wwwroot\src\image\copper-loader.gif" />
+    <Content Include="wwwroot\src\image\favicon.jpg" />
+    <Content Include="wwwroot\src\image\footer\AMap.jpg" />
+    <Content Include="wwwroot\src\image\footer\AutostopMap.jpg" />
+    <Content Include="wwwroot\src\image\footer\Black-Background-Hole-Wallpapers.jpg" />
+    <Content Include="wwwroot\src\image\footer\geo mark gray.svg" />
+    <Content Include="wwwroot\src\image\footer\Map-gogle-black.jpg" />
+    <Content Include="wwwroot\src\image\footer\phone mark gray.svg" />
+    <Content Include="wwwroot\src\image\header goods - mobile.jpg" />
+    <Content Include="wwwroot\src\image\header goods.jpg" />
+    <Content Include="wwwroot\src\image\header\%40-h.png" />
+    <Content Include="wwwroot\src\image\header\%40.png" />
+    <Content Include="wwwroot\src\image\header\blue-back.jpg" />
+    <Content Include="wwwroot\src\image\header\blue-car.png" />
+    <Content Include="wwwroot\src\image\header\burger.svg" />
+    <Content Include="wwwroot\src\image\header\burger1.svg" />
+    <Content Include="wwwroot\src\image\header\gears.svg" />
+    <Content Include="wwwroot\src\image\header\green-back.jpg" />
+    <Content Include="wwwroot\src\image\header\green-car.png" />
+    <Content Include="wwwroot\src\image\header\logo.svg" />
+    <Content Include="wwwroot\src\image\header\phone-icon-h.png" />
+    <Content Include="wwwroot\src\image\header\phone-icon.png" />
+    <Content Include="wwwroot\src\image\header\red-back.jpg" />
+    <Content Include="wwwroot\src\image\header\red-car.png" />
+    <Content Include="wwwroot\src\image\hide analog.png" />
+    <Content Include="wwwroot\src\image\loadinfo.net %281%29.gif" />
+    <Content Include="wwwroot\src\image\loadinfo.net.gif" />
+    <Content Include="wwwroot\src\image\loadingParts.gif" />
+    <Content Include="wwwroot\src\index.css" />
+    <Content Include="wwwroot\src\index.html" />
+    <Content Include="wwwroot\src\search.css" />
+    <Content Include="wwwroot\src\search.html" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -336,6 +330,16 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="wwwroot\contact_footer.bundle.js.map" />
+    <Content Include="wwwroot\contact_page.bundle.js.map" />
+    <Content Include="wwwroot\currency.bundle.js.map" />
+    <Content Include="wwwroot\search.bundle.js.map" />
+    <Content Include="wwwroot\src\fonts\SegoeUIBold\SegoeUIBold.eot" />
+    <Content Include="wwwroot\src\fonts\SegoeUIBold\SegoeUIBold.ttf" />
+    <Content Include="wwwroot\src\fonts\SegoeUIBold\SegoeUIBold.woff" />
+    <Content Include="wwwroot\src\fonts\SegoeUISemiBold\SegoeUISemiBold.eot" />
+    <Content Include="wwwroot\src\fonts\SegoeUISemiBold\SegoeUISemiBold.ttf" />
+    <Content Include="wwwroot\src\fonts\SegoeUISemiBold\SegoeUISemiBold.woff" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -343,9 +347,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AutoStopUI\AUTO\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

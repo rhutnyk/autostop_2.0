@@ -37,6 +37,7 @@ namespace AutoStop.Models
             modelBuilder.Entity<Part>()
                 .Property(e => e.Brand)
                 .IsFixedLength();
+                       
         }
     }
 }

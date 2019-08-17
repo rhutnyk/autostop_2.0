@@ -1,0 +1,289 @@
+@font-face {
+    font-family: 'myFont';
+    src: url('./fonts/SegoeUIBold/SegoeUIBold.ttf');
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+header {
+    height: auto;
+
+}
+
+.information {
+    height: auto;
+    background-color: #2147B0;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.desc{
+    float: left; 
+    width: 65%; 
+    text-align: right;
+    margin: 0;
+    color: white;
+    font-size: 1.2em;
+    padding-top: 10px;
+}
+
+#currency {
+    text-align: left;
+    margin: 0;
+    color: #53BAFF;
+    font-size: 1.2em;
+    padding-top: 10px;
+    float: left;
+}
+
+
+.search-container {
+    margin-top: 35px;
+    margin-bottom: 40px;
+}
+
+.search-label {
+    text-align: center;
+    font-family: 'myFont';
+    font-size: 1.5em;
+}
+
+
+.row input {
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    border: 1px solid grey;
+    border-radius: 22px;
+    padding-top: 0;
+}
+
+.row .search-input:focus {
+    -webkit-box-shadow: 0px 0px 5px 6px rgba(46, 142, 235, 0.15);
+    -moz-box-shadow: 0px 0px 5px 6px rgba(46, 142, 235, 0.15);
+    box-shadow: 0px 0px 5px 6px rgba(46, 142, 235, 0.15);
+    border: 1px solid #2E8EEB;
+    color: #2E8EEB;
+    outline: none;
+}
+
+.search-btn {
+    width: 125px !important;
+    text-align: center;
+    height: 40px;
+    border-radius: 25px;
+    border: 1px solid #2E8EEB !important;
+    background-color: #2E8EEB !important;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding-bottom: 4px;
+}
+
+.search-btn:hover {
+    -webkit-box-shadow: 0px 0px 5px 6px rgba(46, 142, 235, 0.15);
+    -moz-box-shadow: 0px 0px 5px 6px rgba(46, 142, 235, 0.15);
+    box-shadow: 0px 0px 5px 6px rgba(46, 142, 235, 0.15);
+}
+
+.slash {
+    text-align: center;
+    margin: 0;
+    color: white;
+    font-size: 1.2em;
+    padding-top: 10px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+.word_or{
+    margin: 0;
+    padding: 0;
+    color: #2E8EEB;
+    display: flex;
+    align-items: center;
+    height: 43px;
+    text-align: center;
+}
+
+.word_or span{
+    margin-top: 32px;
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+
+    .desc,
+    #currency {
+        text-align: center;
+        font-size: 1em;
+    }
+
+    .search-btn-box {
+        text-align: center;
+    }
+}
+
+
+.parts-container-header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #E2E9FB;
+    color: grey;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.parts-content {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #2E8EEB;
+    min-height: 500px;
+}
+
+.parts-content .row {
+    border-bottom: 1px solid rgba(153, 149, 149, 0.376);
+
+}
+
+.parts-content .row div {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.parts-content img {
+    padding-top: 0px;
+    margin-top: -4px;
+    height: 36px;
+}
+
+.parts-content a {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+    .parts-container-header {
+        font-size: 0.8em;
+    }
+
+    .parts-content .row {
+        font-size: 0.8em;
+    }
+
+    .parts-content img {
+        height: 30px;
+    }
+}
+
+ @media screen and (max-width: 575px){
+    .parts-content{
+        text-align: center;
+    }
+    #analog{
+        border-bottom: 1px solid rgba(153, 149, 149, 0.376) !important;
+        border-radius: 46px;
+    }
+    .analog{
+        border-radius: 46px !important;
+        padding-bottom: 0 !important;
+    }
+    .back-image-search img{
+        width: 185% !important;
+    }
+ }
+
+.analog{
+    border-radius: 15px;
+    color: grey;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    background-color: #F4F4F4;
+    transition: visibility 0s linear 800ms, opacity 900ms;
+}
+
+.analog .row {
+    border: none !important;
+}
+
+#analog label{
+    color: #2E8EEB;
+    margin-right: 3px;
+    opacity: 0.5;
+}
+
+.part-label-mobile{
+    color: grey;
+    margin-right: 3px;
+    opacity: 0.6;
+}
+
+
+
+/* footer */
+
+#load {
+    background-image: url("./image/copper-loader.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 10px;
+    width: 120px;
+}
+
+#loadParts {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('./image/loadingParts.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+    background-size: 40px;
+    opacity: 0.4;
+}
+
+#color-grey {
+    color: grey;
+    min-height: 47px;
+}
+
+
+#load-scroll {
+    height: 29px;
+    background-image: url('./image/30.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 10px;
+}
+
+.number {
+    word-wrap: break-word;
+}
+
+
+.back-image-search img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 178px;
+}
+
+
+.logo-bootom-menu-mob{
+    width: 40px;
+    margin-left: 20px;
+}
+
