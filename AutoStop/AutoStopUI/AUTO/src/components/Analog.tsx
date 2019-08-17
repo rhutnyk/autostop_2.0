@@ -1,7 +1,7 @@
 import * as React from 'react';
 import dataService from '../services/data.service';
 import URL_Service from '../services/url_service';
-import PartModel from '../services/part_model';
+// import PartModel from '../services/part_model';
 
 
 class IProps {
@@ -20,7 +20,7 @@ export default class Analog extends React.Component<IProps, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            data: PartModel,
+            data: [],
             id: null,
             loading: false
         };

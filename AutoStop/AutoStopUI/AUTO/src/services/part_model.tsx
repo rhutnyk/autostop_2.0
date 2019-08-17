@@ -1,12 +1,12 @@
 
 
-export default class PartModel{
+export class PartModel{
     public Count: number;
-    public Items:Array<Item>;
+    public Items:Part[];
 }
 
 
-class Part{
+ export class Part{
     public id:string;
     public Number:string;
     public Description: string;
@@ -17,7 +17,7 @@ class Part{
     public hasAnalog:boolean;
 }
 
-class Item{
-    public Part:Part;
-    //public IsAnalog:boolean;
-}
+// class Item{
+//     public Part:Part;
+//     //public IsAnalog:boolean;
+// }

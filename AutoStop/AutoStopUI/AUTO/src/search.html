@@ -14,6 +14,8 @@
   <link rel="stylesheet" type="text/css" href="../src/contact_form.css">
   <link rel="icon" href="../src/image/favicon.jpg">
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <title>AUTOSTOP</title>
 </head>
 
@@ -25,7 +27,7 @@
       <a id="trans" class="navbar-brand logo-transition-l" href="/"><img class="" src="../src/../src/image/header/logo.svg"
           width=""></a>
 
-      <div class="row navbar-toggler">
+      <div id="action-header" class="row navbar-toggler">
         <div class="col padding-zero"><a href="../src/contact.html">
             <div class="button-phone"></div>
           </a></div>
@@ -49,9 +51,7 @@
           <li class="nav-item">
             <div class="border-bot"><a class="nav-link" href="../src/contact.html">контакти</a></div>
           </li>
-          <li class="nav-item">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Cart</button>
-        </li>
+        
           </ul>
       </div>
     </nav>
@@ -208,9 +208,13 @@
       if (scrolled) {
         document.getElementById('menu-nav').classList.add('opacity-naw');
         document.getElementById('trans').classList.add('logo-transition-s');
+        document.getElementById('card-buttons').classList.add('fixed-position');
+        document.getElementById('action-header').classList.add('padding-r');
       } else {
         document.getElementById('menu-nav').classList.remove('opacity-naw');
         document.getElementById('trans').classList.remove('logo-transition-s');
+        document.getElementById('card-buttons').classList.remove('fixed-position');
+        document.getElementById('action-header').classList.remove('padding-r');
       }
     });
 
