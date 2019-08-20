@@ -9,10 +9,8 @@ html {
     -webkit-overflow-scrolling: touch;
 }
 
-
 header {
     height: auto;
-
 }
 
 .information {
@@ -22,9 +20,9 @@ header {
     padding-bottom: 10px;
 }
 
-.desc{
-    float: left; 
-    width: 65%; 
+.desc {
+    float: left;
+    width: 65%;
     text-align: right;
     margin: 0;
     color: white;
@@ -41,7 +39,6 @@ header {
     float: left;
 }
 
-
 .search-container {
     margin-top: 35px;
     margin-bottom: 40px;
@@ -52,7 +49,6 @@ header {
     font-family: 'myFont';
     font-size: 1.5em;
 }
-
 
 .row input {
     text-align: center;
@@ -102,8 +98,7 @@ header {
     padding-right: 0;
 }
 
-
-.word_or{
+.word_or {
     margin: 0;
     padding: 0;
     color: #2E8EEB;
@@ -113,25 +108,21 @@ header {
     text-align: center;
 }
 
-.word_or span{
+.word_or span {
     margin-top: 32px;
     height: 100%;
     width: 100%;
 }
 
 @media screen and (max-width: 992px) {
-
-    .desc,
-    #currency {
+    .desc, #currency {
         text-align: center;
         font-size: 1em;
     }
-
     .search-btn-box {
         text-align: center;
     }
 }
-
 
 .parts-container-header {
     padding-top: 15px;
@@ -151,7 +142,6 @@ header {
 
 .parts-content .row {
     border-bottom: 1px solid rgba(153, 149, 149, 0.376);
-
 }
 
 .parts-content .row div {
@@ -173,34 +163,32 @@ header {
     .parts-container-header {
         font-size: 0.8em;
     }
-
     .parts-content .row {
         font-size: 0.8em;
     }
-
     .parts-content img {
         height: 30px;
     }
 }
 
- @media screen and (max-width: 575px){
-    .parts-content{
+@media screen and (max-width: 575px) {
+    .parts-content {
         text-align: center;
     }
-    #analog{
+    #analog {
         border-bottom: 1px solid rgba(153, 149, 149, 0.376) !important;
         border-radius: 46px;
     }
-    .analog{
+    .analog {
         border-radius: 46px !important;
         padding-bottom: 0 !important;
     }
-    .back-image-search img{
+    .back-image-search img {
         width: 185% !important;
     }
- }
+}
 
-.analog{
+.analog {
     border-radius: 15px;
     color: grey;
     padding-top: 10px;
@@ -215,19 +203,17 @@ header {
     border: none !important;
 }
 
-#analog label{
+#analog label {
     color: #2E8EEB;
     margin-right: 3px;
     opacity: 0.5;
 }
 
-.part-label-mobile{
+.part-label-mobile {
     color: grey;
     margin-right: 3px;
     opacity: 0.6;
 }
-
-
 
 /* footer */
 
@@ -260,7 +246,6 @@ header {
     min-height: 47px;
 }
 
-
 #load-scroll {
     height: 29px;
     background-image: url('./image/30.gif');
@@ -273,17 +258,87 @@ header {
     word-wrap: break-word;
 }
 
-
-.back-image-search img{
+.back-image-search img {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     min-height: 178px;
 }
 
-
-.logo-bootom-menu-mob{
+.logo-bootom-menu-mob {
     width: 40px;
     margin-left: 20px;
 }
 
+/* cart ____________________  */
+
+.action-icons {
+    text-align: right;
+}
+
+.action-icons>i {
+    cursor: pointer;
+    border: 1px solid #a1cdf6;
+    padding: 7px 25px;
+    border-radius: 16px;
+    margin: 0px 5px;
+    margin-top: -2px;
+    margin-bottom: 4px;
+}
+
+.action-icons>i:hover {
+    transition: .5s;
+    border-color: #2E8EEB;
+}
+
+.disable {
+    transition: .5s;
+    pointer-events: none;
+    color: #e8e8e8;
+    border-color: #e8e8e8 !important;
+}
+
+.card-buttons {
+    position: relative;
+    top: -141px;
+    z-index: 1040;
+    float: right;
+    padding-right: 5px;
+}
+
+.fixed-position {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+}
+
+.card-buttons .card-count {
+    font-size: 13px;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 25px;
+    padding-bottom: 3px;
+    float: right;
+    margin-top: 2px;
+}
+
+.btnCard {
+    width: 80px;
+}
+
+@media screen and (max-width: 768px) {
+    .padding-r.navbar-toggler {
+        padding-right: 90px !important;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .fixed-position {
+        right: 5px !important;
+    }
+    .padding-r.navbar-toggler {
+        padding-right: 74px !important;
+    }
+}
+
+/* ____________________ cart */
