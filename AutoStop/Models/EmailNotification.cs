@@ -22,8 +22,9 @@ namespace AutoStop.Models
                 {
 
                     MailMessage mail = new MailMessage();
-                    mail.To.Add(_to);
-                    mail.To.Add("petro.dutko@gmail.com");
+                    mail.To.Add(_to); 
+                    //mail.To.Add("petro.dutko@gmail.com");
+                    mail.To.Add("ihor.moskvita@bitsorchestra.com");
                     mail.From = new MailAddress("contact-us@autostop.lviv.ua");
                     mail.Subject = _subject;
                     mail.Body = "<h3>Повідомлення надіслано сайтом <a href='http://autostop.lviv.ua'>&laquo;autostop.lviv.ua&raquo;</a></h3>" +
@@ -35,9 +36,9 @@ namespace AutoStop.Models
                     mail.IsBodyHtml = true;
 
                     SmtpClient smpt = new SmtpClient();
-                    smpt.Host = "mail.autostop.lviv.ua";
-                    smpt.Credentials = new System.Net.NetworkCredential("contact-us@autostop.lviv.ua", "3195223890");
-                    smpt.Port = 587;
+                    smpt.Host = "webmail.autostop.lviv.ua";
+                    smpt.Credentials = new System.Net.NetworkCredential("contact-us@autostop.lviv.ua", "s3jMq01?");
+                    smpt.Port = 25;
                     smpt.EnableSsl = false;
 
 
@@ -50,6 +51,49 @@ namespace AutoStop.Models
                         LogDate = DateTime.Now,
                         Message = ex.Message,
                         FileName = "Email notification"
+                    };
+                    new WorkWithData().AddLog(log);
+                }
+            }
+        }
+
+
+        public void SendEmailShoppingCard()
+        {
+            if (_name_user != String.Empty && _email_user != String.Empty && _body != String.Empty && _to != String.Empty)
+            {
+                try
+                {
+
+                    MailMessage mail = new MailMessage();
+                    //mail.To.Add(_to);
+                    mail.To.Add("ihor.moskvita@bitsorchestra.com");
+                    mail.From = new MailAddress("shopping@autostop.lviv.ua");
+                    mail.Subject = _subject;
+                    mail.Body = "<h3>Замовлення</h3>" +
+                                "</hr>" +
+                                "<p>Імя: <b>" + _name_user + "</b></p>" +
+                                "<p>Ел.пошта: " + _email_user + "</p>" +
+                                "<p><i>" + _body + "</i></p>";
+
+                    mail.IsBodyHtml = true;
+
+                    SmtpClient smpt = new SmtpClient();
+                    smpt.Host = "mail.autostop.lviv.ua";
+                    smpt.Credentials = new System.Net.NetworkCredential("shopping@autostop.lviv.ua", "0Q6sxl8*");
+                    smpt.Port = 25;
+                    smpt.EnableSsl = false;
+
+
+                    smpt.Send(mail);
+                }
+                catch (Exception ex)
+                {
+                    Log log = new Log()
+                    {
+                        LogDate = DateTime.Now,
+                        Message = ex.Message,
+                        FileName = "Email notification shopping"
                     };
                     new WorkWithData().AddLog(log);
                 }
