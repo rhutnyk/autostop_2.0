@@ -6,9 +6,11 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace AutoStop.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ShoppingCartController : ApiController
     {
         EmailNotification email = new EmailNotification();
@@ -24,7 +26,14 @@ namespace AutoStop.Controllers
         {
             if (card != null && card.Parts != null)
             {
-                
+                Double uan;
+                try
+                {
+                    uan = Double.Parse(ParseXml.GetCurrencyRate()) * card.TotalSum;
+                }catch(Exception ex)
+                {
+                    uan = 0;
+                }
                 try
                 {
                     email._to = "ihor.moskvita@bitsorchestra.com";
@@ -52,13 +61,13 @@ namespace AutoStop.Controllers
                         email._body += "<tr>" +
                             "<td>" + p.Number + "<td>" +
                             "<td>" + p.Description + "<td>" +
-                            "<td>" + p.Qty + "<td>" +
+                            "<td>" + p.QtyOrder + "<td>" +
                             "<td>" + p.Price + "<td>" +
                             "</tr>";
                         PartNumbers += p.Number + "; ";
                     }
                     email._body += "</tbody></table>";
-                    email._body += "<p><b>Сума: </b>"+card.TotalSum+"</p>";
+                    email._body += "<p><b>Сума: </b>"+card.TotalSum+" Є ("+uan+" грн.)</p>";
                     //email._body = "<p>" + card.Parts.First().Description + "</p>";
 
                     new Task(() => email.SendEmailShoppingCard()).Start();
