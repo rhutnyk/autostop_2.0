@@ -14,10 +14,10 @@ header {
 }
 
 .information {
-    height: auto;
     background-color: #2147B0;
     font-weight: 600;
-    padding-bottom: 10px;
+    padding: 5px;
+    padding-bottom: 15px;
 }
 
 .desc {
@@ -48,6 +48,7 @@ header {
     text-align: center;
     font-family: 'myFont';
     font-size: 1.5em;
+    height: 55px;
 }
 
 .row input {
@@ -326,10 +327,128 @@ header {
     width: 80px;
 }
 
+/* _____________________ */
+
+.quantity {
+    /* padding-top: 20px; */
+    /* margin-right: 60px; */
+    display: flex;
+    /* width: 60px; */
+}
+
+.quantity input {
+    -webkit-appearance: none;
+    border: none;
+    text-align: center;
+    width: 32px !important;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+}
+
+#sm-input {
+    width: 80px !important;
+    overflow: hidden;
+}
+
+.shopping-cart {
+    /* width: 750px;
+    height: 423px;
+    margin: 80px auto; */
+    background: #FFFFFF;
+    box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.10);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+.quantity button[class*=btn] {
+    width: 30px;
+    height: 30px;
+    background-color: #E1E8EE;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.quantity button[class*=btn] i {
+    color: #6f6f6f;
+}
+
+.cart-count-item {
+    text-align: center;
+    width: 35px;
+}
+
+.quantity button:focus, .quantity input:focus {
+    outline: 0;
+}
+
+.quantity button:hover {
+    transition: .5s;
+    background-color: #dcdcdc;
+}
+
+.btn-delete {
+    cursor: pointer;
+    color: #6f6f6f;
+    font-size: 23px;
+    /* text-align: center; */
+}
+
+.btn-delete>i:hover {
+    color: #007bff;
+}
+
+.modal-body>.table th, .modal-body>.table td {
+    vertical-align: middle;
+}
+
+.total-card {
+    float: right;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #007bff;
+    font-weight: 600;
+}
+
+.total-card span {
+    color: #9e9e9e;
+    text-transform: uppercase;
+}
+
+.total-grn {
+    padding-left: 65px;
+}
+
+.modal-body>.table {
+   border-bottom: 1px solid #dee2e6;
+}
+
 @media screen and (max-width: 768px) {
     .padding-r.navbar-toggler {
         padding-right: 90px !important;
     }
+    .quantity button[class*=btn] {
+        width: 100%;
+        height: 23px;
+    }
+    .quantity {
+        display: block;
+    }
+    .cart-count-item {
+        width: auto;
+    }
+    .modal-body>.table {
+        font-size: 15px;
+    }
+    .modal-body>.table th, .modal-body>.table td {
+        padding: 5px;
+    }
+}
+.table-hover tbody tr:hover {
+    background-color: rgba(154, 154, 154, 0.075);
 }
 
 @media screen and (max-width: 350px) {
@@ -338,6 +457,20 @@ header {
     }
     .padding-r.navbar-toggler {
         padding-right: 74px !important;
+    }
+    .modal-body>.table th, .modal-body>.table td {
+        padding: 2px;
+        word-break: break-all;
+        max-width: 80px;
+    }
+    .show-only-tablet{
+        display: none;
+    }
+    .modal.show {
+        padding: 0px !important;
+    }
+    .modal-dialog.modal-lg{
+        margin: 0px !important;
     }
 }
 

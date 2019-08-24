@@ -9,7 +9,8 @@ export const URL = {
     part_url : url+"/api/parts?",
     analog_url : url+"/api/parts?analog=",
     currency_url : url+"/api/parts?rate",
-    contact_url: url + "/api/contact"
+    contact_url: url + "/api/contact",
+    shopingCart_url: url + "/api/shoppingcart",
 };
 
 export default URL;

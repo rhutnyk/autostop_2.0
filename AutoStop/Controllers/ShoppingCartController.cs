@@ -19,6 +19,7 @@ namespace AutoStop.Controllers
             return Ok("Shopping card");
         }
        
+        [HttpPost]
         public IHttpActionResult Post (ShoppingCart card)
         {
             if (card != null && card.Parts != null)

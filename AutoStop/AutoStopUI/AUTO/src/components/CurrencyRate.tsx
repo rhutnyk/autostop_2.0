@@ -4,6 +4,7 @@ import URL_Service from '../services/url_service';
 
 
 
+
 export default class CurrencyRate extends React.Component<any, any>{
 
     private mainService = new dataService();
