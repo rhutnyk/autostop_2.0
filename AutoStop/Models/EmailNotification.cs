@@ -66,8 +66,13 @@ namespace AutoStop.Models
                 {
 
                     MailMessage mail = new MailMessage();
+<<<<<<< HEAD
                     //mail.To.Add(_to);
                     mail.To.Add("vitaliy.moskvita@bitsorchestra.com");
+=======
+                    mail.To.Add(_to);
+                    //mail.To.Add("ihor.moskvita@bitsorchestra.com");
+>>>>>>> 7abade8ae52304e9913afc8fe91082429c924431
                     mail.From = new MailAddress("shopping@autostop.lviv.ua");
                     mail.Subject = _subject;
                     mail.Body = "<h3>Замовлення</h3>" +

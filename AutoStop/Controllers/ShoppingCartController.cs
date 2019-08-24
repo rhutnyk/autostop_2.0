@@ -13,6 +13,7 @@ namespace AutoStop.Controllers
     {
         EmailNotification email = new EmailNotification();
         readonly WorkWithData data = new WorkWithData();
+        string PartNumbers;
 
         public IHttpActionResult Get()
         {
@@ -55,13 +56,22 @@ namespace AutoStop.Controllers
                             "<td>" + p.Qty + "<td>" +
                             "<td>" + p.Price + "<td>" +
                             "</tr>";
-                            
+                        PartNumbers += p.Number + "; ";
                     }
                     email._body += "</tbody></table>";
                     email._body += "<p><b>Сума: </b>"+card.TotalSum+"</p>";
                     //email._body = "<p>" + card.Parts.First().Description + "</p>";
 
                     new Task(() => email.SendEmailShoppingCard()).Start();
+
+                    var log = new Log()
+                    {
+                        FileName = "Shopping cart",
+                        Message = card.NameCustomer + "/" + card.EmailCustomer + "/" + card.PaymentType + "/" + card.DeliveryType + "/" + PartNumbers,
+                        LogDate = DateTime.Now
+                    };
+                    data.AddLog(log);
+                    
                     return Ok();
                 }
                 catch (Exception ex)
