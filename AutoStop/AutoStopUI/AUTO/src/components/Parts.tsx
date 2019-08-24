@@ -224,7 +224,7 @@ export default class Parts extends React.Component<any, IState> {
         e.preventDefault();
         const newOrder: ShopingCart = this.state.order;
         newOrder.Parts = this.state.cardList;
-        console.log(newOrder);
+        newOrder.TotalSum = +this.getCartTotal().toFixed(2);
 
         new dataService().postForm(this.shopingCartUrl, newOrder)
             .then((res) => {
