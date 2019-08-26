@@ -274,7 +274,7 @@ header {
 /* cart ____________________  */
 
 .action-icons {
-    text-align: right;
+    /* text-align: right; */
 }
 
 .action-icons>i {
@@ -449,6 +449,23 @@ header {
 }
 .table-hover tbody tr:hover {
     background-color: rgba(154, 154, 154, 0.075);
+}
+
+.cart-container{
+    position: absolute;
+    right: 10px;
+    top: 3px;
+}
+
+.alert-success{
+    position: fixed;
+    width: 100%;
+    top: 85px;
+    color: #4177ad !important;
+}
+
+.cart-btn-disable{
+    pointer-events: none;
 }
 
 @media screen and (max-width: 350px) {

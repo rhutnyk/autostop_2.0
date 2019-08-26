@@ -69,7 +69,7 @@ namespace AutoStop.Controllers
                     }
                     email._body += "</tbody></table>";
                     email._body += "<p><b>Сума: </b>"+card.TotalSum+" Є ("+uan+" грн.)</p>";
-                    //email._body = "<p>" + card.Parts.First().Description + "</p>";
+                    
 
                     new Task(() => email.SendEmailShoppingCard()).Start();
 
@@ -80,7 +80,7 @@ namespace AutoStop.Controllers
                         LogDate = DateTime.Now
                     };
                     data.AddLog(log);
-                    
+
                     return Ok();
                 }
                 catch (Exception ex)

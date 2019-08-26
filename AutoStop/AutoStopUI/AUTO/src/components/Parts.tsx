@@ -17,6 +17,7 @@ interface IState {
     word: string,
     curentlyRate: number;
     showOrderForm: boolean;
+    isOrderSuccess:boolean;
     order: ShopingCart;
 }
 
@@ -55,6 +56,7 @@ export default class Parts extends React.Component<any, IState> {
             partsLoading: false,
             scrollLoading: false,
             showOrderForm: false,
+            isOrderSuccess:false,
             cardList: [],
             number: "",
             word: "",
@@ -109,7 +111,6 @@ export default class Parts extends React.Component<any, IState> {
 
         _item.QtyOrder = 1;
         this.setState({ cardList: [...this.state.cardList, _item] }, () => {
-            console.log(this.state.cardList);
         })
     }
 
@@ -228,11 +229,11 @@ export default class Parts extends React.Component<any, IState> {
 
         new dataService().postForm(this.shopingCartUrl, newOrder)
             .then((res) => {
-                this.setState({ showOrderForm: false })
+                let btn = document.getElementById('btn-close');
+                btn.click();
+                this.setState({isOrderSuccess:true, cardList:[]})
             })
             .catch((err) => console.log(err))
-
-
     }
 
     changeOrderForm = (e: any, property: string) => {
@@ -252,9 +253,9 @@ export default class Parts extends React.Component<any, IState> {
                     </div>
                     {/* cart______________________ */}
 
-                    <div id="card-buttons" className="card-buttons" onClick={() => this.setState({ showOrderForm: false })}>
-                        <div className="btn-group" title="Корзина" data-toggle="modal" data-target="#modal-cart" >
-                            <button className="btn btn-primary btnCard">
+                    <div id="card-buttons" className="card-buttons" onClick={() => this.setState({ showOrderForm: false, isOrderSuccess:false })}>
+                        <div className={`btn-group cart-container ${this.state.cardList.length == 0? 'cart-btn-disable': ''} `} title="Корзина" data-toggle="modal" data-target="#modal-cart" >
+                            <button className="btn btn-primary btnCard" >
                                 <i className="fa fa-shopping-cart" aria-hidden="true"> </i>
                                 {this.state.cardList.length > 0 ?
                                     <div className="card-count">{this.state.cardList.length}</div>
@@ -305,7 +306,7 @@ export default class Parts extends React.Component<any, IState> {
 
                                             </div>
                                             <div className="modal-footer">
-                                                <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={() => this.setState({ showOrderForm: false })}>Скасувати</button>
+                                                <button id="btn-close" type="button" className="btn btn-secondary" data-dismiss="modal" onClick={() => this.setState({ showOrderForm: false })}>Скасувати</button>
                                                 <button disabled={!this.state.order.DeliveryType || !this.state.order.PaymentType} type="submit" className={`btn btn-primary`}>Замовити</button>
                                             </div>
                                         </form>
@@ -396,6 +397,14 @@ export default class Parts extends React.Component<any, IState> {
                     </div>
                 </div>
 
+                {/* Thanks window */}
+                    {this.state.isOrderSuccess?
+                <div  className="alert alert-success alert-dismissible fade show" role="alert" style={{textAlign:"center"}}>
+                    <strong>Дякуємо за замовлення!</strong> Наші менеджери зв`яжуться з Вами найближчим часом.
+                        <button type="button" className="close" onClick={()=>this.setState({isOrderSuccess:false})} aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>:null}
 
                 <div className="parts-container-header">
                     <div className="container">
