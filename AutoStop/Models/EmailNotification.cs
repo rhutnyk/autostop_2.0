@@ -9,6 +9,7 @@ namespace AutoStop.Models
     {
         public string _name_user { get; set; }
         public string _email_user { get; set; }
+        public string _phone_user { get; set; }
         public string _to { get; set; }
         public string _subject { get; set; }
         public string _body { get; set; }
@@ -23,8 +24,7 @@ namespace AutoStop.Models
 
                     MailMessage mail = new MailMessage();
                     mail.To.Add(_to); 
-                    //mail.To.Add("petro.dutko@gmail.com");
-                    mail.To.Add("ihor.moskvita@bitsorchestra.com");
+                   
                     mail.From = new MailAddress("contact-us@autostop.lviv.ua");
                     mail.Subject = _subject;
                     mail.Body = "<h3>Повідомлення надіслано сайтом <a href='http://autostop.lviv.ua'>&laquo;autostop.lviv.ua&raquo;</a></h3>" +
@@ -74,6 +74,7 @@ namespace AutoStop.Models
                                 "</hr>" +
                                 "<p>Імя: <b>" + _name_user + "</b></p>" +
                                 "<p>Ел.пошта: " + _email_user + "</p>" +
+                                "<p>Телефон: " + _phone_user + "</p>" +
                                 "<p><i>" + _body + "</i></p>";
 
                     mail.IsBodyHtml = true;

@@ -22,6 +22,7 @@ namespace AutoStop.Models
         public ICollection<PartOrder> Parts { get; set; }
         public string NameCustomer { get; set; }
         public string EmailCustomer { get; set; }
+        public string PhoneCustomer { get; set; }
         public double TotalSum { get; set; }
         public string DeliveryType { get; set; }
         public string PaymentType { get; set; }

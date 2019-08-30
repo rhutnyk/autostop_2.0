@@ -1,6 +1,8 @@
 
 
-const url = "http://localhost:64827";
+//const url = "http://localhost:64827";
+
+const url = "";
 
 export const URL = {
 

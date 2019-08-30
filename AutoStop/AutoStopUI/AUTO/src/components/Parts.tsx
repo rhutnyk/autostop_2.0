@@ -26,6 +26,7 @@ export class ShopingCart {
     Parts: PartCart[];
     NameCustomer: string;
     EmailCustomer: string;
+    PhoneCustomer: string;
     TotalSum: number;
     DeliveryType: string;
     PaymentType: string;
@@ -281,11 +282,15 @@ export default class Parts extends React.Component<any, IState> {
 
                                                 <div className="form-group">
                                                     <label>Ім'я</label>
-                                                    <input required className="form-control" value={this.state.order.NameCustomer || ''} onChange={(e) => this.changeOrderForm(e, 'NameCustomer')} type="text" />
+                                                    <input required className="form-control" value={this.state.order.NameCustomer || ''} onChange={(e) => this.changeOrderForm(e, 'NameCustomer')} type="text" placeholder="Ім'я"/>
                                                 </div>
                                                 <div className="form-group">
-                                                    <label>Email</label>
-                                                    <input required className="form-control" value={this.state.order.EmailCustomer || ''} onChange={(e) => this.changeOrderForm(e, 'EmailCustomer')} type="email" />
+                                                    <label>Електронна пошта</label>
+                                                    <input required className="form-control" value={this.state.order.EmailCustomer || ''} onChange={(e) => this.changeOrderForm(e, 'EmailCustomer')} type="email" placeholder="example@email.com"/>
+                                                </div>
+                                                <div className="form-group">
+                                                    <label>Телефон</label>
+                                                    <input required className="form-control" value={this.state.order.PhoneCustomer || ''} onChange={(e) => this.changeOrderForm(e, 'PhoneCustomer')} type="number" placeholder="000-123-4567"/>
                                                 </div>
                                                 <div className="form-group">
                                                     <label>Спосіб оплати</label>
@@ -307,7 +312,7 @@ export default class Parts extends React.Component<any, IState> {
                                             </div>
                                             <div className="modal-footer">
                                                 <button id="btn-close" type="button" className="btn btn-secondary" data-dismiss="modal" onClick={() => this.setState({ showOrderForm: false })}>Скасувати</button>
-                                                <button disabled={!this.state.order.DeliveryType || !this.state.order.PaymentType} type="submit" className={`btn btn-primary`}>Замовити</button>
+                                                <button disabled={!this.state.order.EmailCustomer || !this.state.order.NameCustomer || !this.state.order.DeliveryType || !this.state.order.PaymentType} type="submit" className={`btn btn-primary`}>Замовити</button>
                                             </div>
                                         </form>
                                     </div>
