@@ -8,7 +8,7 @@ namespace AutoStop.Models
 {
     public static class ANet
     {
-        readonly static string connectionString = @"Data Source=localhost;Initial Catalog=autostop_autostop2;User ID=rhutnyk_autostop;Password=Q6wts5!8";
+        readonly static string connectionString = @"Data Source=185.207.136.49;Initial Catalog=autostop_autostop2;User ID=rhutnyk_autostop;Password=Q6wts5!8";
 
 
         public static string InsertPartToDb (List<Part> list)
@@ -37,10 +37,11 @@ namespace AutoStop.Models
                 var dataTable = AnalogConvertToDataTable(list);
                 var dropResult = DropTable("TempAnalog");
                 var insertResult = InsertTable(dataTable, "TempAnalog");
+                var dropAnalog = DropTable("Analog");
                 var mergeResult = CallProcedure("CopyAnalog");
-                var dropAfterMerge = DropTable("TempAnalog");
+                //var dropAfterMerge = DropTable("TempAnalog");
 
-                return CreateMessage("analog", dropAfterMerge, insertResult, mergeResult);
+                return CreateMessage("analog", dropAnalog, insertResult, mergeResult);
             }
             catch (Exception ex)
             {
