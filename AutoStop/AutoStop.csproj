@@ -237,87 +237,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="wwwroot\contact_footer.bundle.js" />
-    <Content Include="wwwroot\contact_page.bundle.js" />
-    <Content Include="wwwroot\currency.bundle.js" />
-    <Content Include="wwwroot\index.html" />
-    <Content Include="wwwroot\search.bundle.js" />
-    <Content Include="wwwroot\src\contact.css" />
-    <Content Include="wwwroot\src\contact.html" />
-    <Content Include="wwwroot\src\contact_form.css" />
-    <Content Include="wwwroot\src\image\30.gif" />
-    <Content Include="wwwroot\src\image\add analog.png" />
-    <Content Include="wwwroot\src\image\close up analog.png" />
-    <Content Include="wwwroot\src\image\contact\contacts image.png" />
-    <Content Include="wwwroot\src\image\contact\geomark.png" />
-    <Content Include="wwwroot\src\image\contact\Map-gogle.jpg" />
-    <Content Include="wwwroot\src\image\contact\phone mark.png" />
-    <Content Include="wwwroot\src\image\content\abs.jpg" />
-    <Content Include="wwwroot\src\image\content\air filter.png" />
-    <Content Include="wwwroot\src\image\content\airtex.png" />
-    <Content Include="wwwroot\src\image\content\asmetal.png" />
-    <Content Include="wwwroot\src\image\content\car_logo_PNG1660.jpg" />
-    <Content Include="wwwroot\src\image\content\citroen_PNG88.jpg" />
-    <Content Include="wwwroot\src\image\content\city delivery.png" />
-    <Content Include="wwwroot\src\image\content\dacialogo.jpg" />
-    <Content Include="wwwroot\src\image\content\denso.png" />
-    <Content Include="wwwroot\src\image\content\details to korean cars.png" />
-    <Content Include="wwwroot\src\image\content\discounts.png" />
-    <Content Include="wwwroot\src\image\content\Fiat-logo.jpg" />
-    <Content Include="wwwroot\src\image\content\fuel filter.png" />
-    <Content Include="wwwroot\src\image\content\ina.png" />
-    <Content Include="wwwroot\src\image\content\knecht.png" />
-    <Content Include="wwwroot\src\image\content\kyb.jpg" />
-    <Content Include="wwwroot\src\image\content\logo footer.png" />
-    <Content Include="wwwroot\src\image\content\luk.png" />
-    <Content Include="wwwroot\src\image\content\monro.jpg" />
-    <Content Include="wwwroot\src\image\content\nissens.jpg" />
-    <Content Include="wwwroot\src\image\content\nrf.jpg" />
-    <Content Include="wwwroot\src\image\content\oil filter.png" />
-    <Content Include="wwwroot\src\image\content\oil.png" />
-    <Content Include="wwwroot\src\image\content\perflux.png" />
-    <Content Include="wwwroot\src\image\content\pierburg.png" />
-    <Content Include="wwwroot\src\image\content\red line.png" />
-    <Content Include="wwwroot\src\image\content\red-line.png" />
-    <Content Include="wwwroot\src\image\content\renault_PNG39.jpg" />
-    <Content Include="wwwroot\src\image\content\sachs.png" />
-    <Content Include="wwwroot\src\image\content\sales herd.png" />
-    <Content Include="wwwroot\src\image\content\snr.png" />
-    <Content Include="wwwroot\src\image\content\termin.png" />
-    <Content Include="wwwroot\src\image\content\valeo.png" />
-    <Content Include="wwwroot\src\image\content\wide range.png" />
-    <Content Include="wwwroot\src\image\copper-loader.gif" />
-    <Content Include="wwwroot\src\image\favicon.jpg" />
-    <Content Include="wwwroot\src\image\footer\AMap.jpg" />
-    <Content Include="wwwroot\src\image\footer\AutostopMap.jpg" />
-    <Content Include="wwwroot\src\image\footer\Black-Background-Hole-Wallpapers.jpg" />
-    <Content Include="wwwroot\src\image\footer\geo mark gray.svg" />
-    <Content Include="wwwroot\src\image\footer\Map-gogle-black.jpg" />
-    <Content Include="wwwroot\src\image\footer\phone mark gray.svg" />
-    <Content Include="wwwroot\src\image\header goods - mobile.jpg" />
-    <Content Include="wwwroot\src\image\header goods.jpg" />
-    <Content Include="wwwroot\src\image\header\%40-h.png" />
-    <Content Include="wwwroot\src\image\header\%40.png" />
-    <Content Include="wwwroot\src\image\header\blue-back.jpg" />
-    <Content Include="wwwroot\src\image\header\blue-car.png" />
-    <Content Include="wwwroot\src\image\header\burger.svg" />
-    <Content Include="wwwroot\src\image\header\burger1.svg" />
-    <Content Include="wwwroot\src\image\header\gears.svg" />
-    <Content Include="wwwroot\src\image\header\green-back.jpg" />
-    <Content Include="wwwroot\src\image\header\green-car.png" />
-    <Content Include="wwwroot\src\image\header\logo.svg" />
-    <Content Include="wwwroot\src\image\header\phone-icon-h.png" />
-    <Content Include="wwwroot\src\image\header\phone-icon.png" />
-    <Content Include="wwwroot\src\image\header\red-back.jpg" />
-    <Content Include="wwwroot\src\image\header\red-car.png" />
-    <Content Include="wwwroot\src\image\hide analog.png" />
-    <Content Include="wwwroot\src\image\loadinfo.net %281%29.gif" />
-    <Content Include="wwwroot\src\image\loadinfo.net.gif" />
-    <Content Include="wwwroot\src\image\loadingParts.gif" />
-    <Content Include="wwwroot\src\index.css" />
-    <Content Include="wwwroot\src\index.html" />
-    <Content Include="wwwroot\src\search.css" />
-    <Content Include="wwwroot\src\search.html" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -332,16 +251,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="wwwroot\contact_footer.bundle.js.map" />
-    <Content Include="wwwroot\contact_page.bundle.js.map" />
-    <Content Include="wwwroot\currency.bundle.js.map" />
-    <Content Include="wwwroot\search.bundle.js.map" />
-    <Content Include="wwwroot\src\fonts\SegoeUIBold\SegoeUIBold.eot" />
-    <Content Include="wwwroot\src\fonts\SegoeUIBold\SegoeUIBold.ttf" />
-    <Content Include="wwwroot\src\fonts\SegoeUIBold\SegoeUIBold.woff" />
-    <Content Include="wwwroot\src\fonts\SegoeUISemiBold\SegoeUISemiBold.eot" />
-    <Content Include="wwwroot\src\fonts\SegoeUISemiBold\SegoeUISemiBold.ttf" />
-    <Content Include="wwwroot\src\fonts\SegoeUISemiBold\SegoeUISemiBold.woff" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -355,6 +264,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -452,7 +452,7 @@ export default class Parts extends React.Component<any, IState> {
                                     {this.state.collapseItemIddex == item.id ?
                                         <span>
                                             <div id={this.state.loading ? "load-scroll" : ""}></div>
-                                            <Analog isLoadingAnalog={this.isLoadingAnalog.bind(this)} analogId={+this.state.collapseItemIddex} loading={this.state.loading} />
+                                            <Analog addToCart={this.addToCard.bind(this)} isLoadingAnalog={this.isLoadingAnalog.bind(this)} analogId={+this.state.collapseItemIddex} loading={this.state.loading} />
                                         </span>
                                         : null}
 

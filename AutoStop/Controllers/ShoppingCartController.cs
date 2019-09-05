@@ -37,7 +37,8 @@ namespace AutoStop.Controllers
                 }
                 try
                 {
-                    email._to = "autostop04@gmail.com";
+                    //email._to = "autostop04@gmail.com";
+                    email._to = "ihor.moskvita@bitsorchestra.com";
                     email._name_user = card.NameCustomer;
                     email._email_user = card.EmailCustomer;
                     email._phone_user = card.PhoneCustomer;
