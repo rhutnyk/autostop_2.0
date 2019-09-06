@@ -7,6 +7,7 @@ import URL_Service from '../services/url_service';
 class IProps {
     isLoadingAnalog: (res: boolean) => void;
     addToCart: (item: any) => void;
+    isAlreadyAdded: (item: any) => boolean;
     analogId: number;
     loading: boolean
 }
@@ -58,7 +59,7 @@ export default class Analog extends React.Component<IProps, any> {
                                     <div className="col-12 col-sm-4"><label className="d-sm-none">Опис: </label>{item.Description}</div>
                                     <div className="col-12 col-sm-2"><label className="d-sm-none">К-сть: </label>{item.Qty > 5 ? '>5 ' : item.Qty}</div>
                                     <div className="col-12 col-sm-2"><label className="d-sm-none">Ціна: </label>{item.Price.toFixed(2)} &euro;</div>
-                                    <div className="col-12 col-sm-2 action-icons"><i onClick={() => this.props.addToCart(item)} className="fa fa-cart-plus text-primary float-md-right" title="Додати до кошика"></i></div>
+                                    <div className="col-12 col-sm-2 action-icons"><i onClick={() => this.props.addToCart(item)} className={`fa fa-cart-plus float-md-right ${this.props.isAlreadyAdded(item) ? 'disable' : 'text-primary'}`} title="Додати до кошика"></i></div>
                                 </div>
 
                             ) : null}
