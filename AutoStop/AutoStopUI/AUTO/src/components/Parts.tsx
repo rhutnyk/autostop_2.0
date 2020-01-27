@@ -17,7 +17,7 @@ interface IState {
     word: string,
     curentlyRate: number;
     showOrderForm: boolean;
-    isOrderSuccess:boolean;
+    isOrderSuccess: boolean;
     order: ShopingCart;
 }
 
@@ -57,7 +57,7 @@ export default class Parts extends React.Component<any, IState> {
             partsLoading: false,
             scrollLoading: false,
             showOrderForm: false,
-            isOrderSuccess:false,
+            isOrderSuccess: false,
             cardList: [],
             number: "",
             word: "",
@@ -232,7 +232,7 @@ export default class Parts extends React.Component<any, IState> {
             .then((res) => {
                 let btn = document.getElementById('btn-close');
                 btn.click();
-                this.setState({isOrderSuccess:true, cardList:[]})
+                this.setState({ isOrderSuccess: true, cardList: [] })
             })
             .catch((err) => console.log(err))
     }
@@ -249,13 +249,19 @@ export default class Parts extends React.Component<any, IState> {
             <React.Fragment>
 
                 <div className="search-container">
+                    
+                    <div className="search-label" style={{ color: 'red', fontSize: '1em' }}>
+                        <p style={{ paddingTop: '10px' }}>Aкція!!! Ціни вказані з 30% знижкою</p>
+                    </div>
+
+                    
                     <div className="search-label">
                         <p>ПОШУК ТОВАРІВ</p>
                     </div>
                     {/* cart______________________ */}
 
-                    <div id="card-buttons" className="card-buttons" onClick={() => this.setState({ showOrderForm: false, isOrderSuccess:false })}>
-                        <div className={`btn-group cart-container ${this.state.cardList.length == 0? 'cart-btn-disable': ''} `} title="Корзина" data-toggle="modal" data-target="#modal-cart" >
+                    <div id="card-buttons" className="card-buttons" onClick={() => this.setState({ showOrderForm: false, isOrderSuccess: false })}>
+                        <div className={`btn-group cart-container ${this.state.cardList.length == 0 ? 'cart-btn-disable' : ''} `} title="Корзина" data-toggle="modal" data-target="#modal-cart" >
                             <button className="btn btn-primary btnCard" >
                                 <i className="fa fa-shopping-cart" aria-hidden="true"> </i>
                                 {this.state.cardList.length > 0 ?
@@ -282,15 +288,15 @@ export default class Parts extends React.Component<any, IState> {
 
                                                 <div className="form-group">
                                                     <label>Ім'я</label>
-                                                    <input required className="form-control" value={this.state.order.NameCustomer || ''} onChange={(e) => this.changeOrderForm(e, 'NameCustomer')} type="text" placeholder="Ім'я"/>
+                                                    <input required className="form-control" value={this.state.order.NameCustomer || ''} onChange={(e) => this.changeOrderForm(e, 'NameCustomer')} type="text" placeholder="Ім'я" />
                                                 </div>
                                                 <div className="form-group">
                                                     <label>Електронна пошта</label>
-                                                    <input required className="form-control" value={this.state.order.EmailCustomer || ''} onChange={(e) => this.changeOrderForm(e, 'EmailCustomer')} type="email" placeholder="example@email.com"/>
+                                                    <input required className="form-control" value={this.state.order.EmailCustomer || ''} onChange={(e) => this.changeOrderForm(e, 'EmailCustomer')} type="email" placeholder="example@email.com" />
                                                 </div>
                                                 <div className="form-group">
                                                     <label>Телефон</label>
-                                                    <input required className="form-control" value={this.state.order.PhoneCustomer || ''} onChange={(e) => this.changeOrderForm(e, 'PhoneCustomer')} type="number" placeholder="000-123-4567"/>
+                                                    <input required className="form-control" value={this.state.order.PhoneCustomer || ''} onChange={(e) => this.changeOrderForm(e, 'PhoneCustomer')} type="number" placeholder="000-123-4567" />
                                                 </div>
                                                 <div className="form-group">
                                                     <label>Спосіб оплати</label>
@@ -403,13 +409,13 @@ export default class Parts extends React.Component<any, IState> {
                 </div>
 
                 {/* Thanks window */}
-                    {this.state.isOrderSuccess?
-                <div  className="alert alert-success alert-dismissible fade show" role="alert" style={{textAlign:"center"}}>
-                    <strong>Дякуємо за замовлення!</strong> Наші менеджери зв`яжуться з Вами найближчим часом.
-                        <button type="button" className="close" onClick={()=>this.setState({isOrderSuccess:false})} aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>:null}
+                {this.state.isOrderSuccess ?
+                    <div className="alert alert-success alert-dismissible fade show" role="alert" style={{ textAlign: "center" }}>
+                        <strong>Дякуємо за замовлення!</strong> Наші менеджери зв`яжуться з Вами найближчим часом.
+                        <button type="button" className="close" onClick={() => this.setState({ isOrderSuccess: false })} aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div> : null}
 
                 <div className="parts-container-header">
                     <div className="container">
